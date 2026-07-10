@@ -13,7 +13,7 @@ Format:
 - Innenraum: Schwarzweiß
 - Papier: Weiß
 - Format: 8.5 x 11 inch
-- Seitenzahl: 128
+- Seitenzahl: 106
 - Cover: Matt
 
 Kurzbeschreibung:
@@ -46,7 +46,7 @@ Kategorierichtung:
 Preisempfehlung:
 - Amazon.de: 12,99 EUR
 - Amazon.com: 14.99 USD
-- Herleitung: bewusst oberhalb des KDP-Mindestpreises für ein 128-seitiges Large-Trim-Paperback mit Schwarzweiß-Innenraum auf weißem Papier, damit der Planer als vollwertiges Familienprodukt positioniert ist.
+- Herleitung: bewusst oberhalb des KDP-Mindestpreises für ein 106-seitiges Large-Trim-Paperback mit Schwarzweiß-Innenraum auf weißem Papier, damit der Planer als vollwertiges Familienprodukt positioniert ist.
 
 Print-Optionen:
 - Bindung: Paperback

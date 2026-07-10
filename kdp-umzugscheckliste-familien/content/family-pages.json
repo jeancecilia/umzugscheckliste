@@ -55,28 +55,28 @@
     },
     {
       "kind": "familyProfile",
-      "title": "Kind 1 - Umzugsprofil",
-      "intro": "Diese Seite hilft euch, Bedürfnisse und Stärken eines Kindes vor dem Umzug bewusst wahrzunehmen.",
+      "title": "Umzugsprofil eines Kindes",
+      "intro": "Nutzt diese Seite für ein Kind ganz konkret, damit Bedürfnisse, Routinen und hilfreiche Bezugspersonen sichtbar bleiben.",
       "fields": [
+        "Name des Kindes",
+        "Alter / Klasse / Gruppe",
         "Was diesem Kind am Umzug Sorgen macht",
         "Was diesem Kind Sicherheit gibt",
         "Was am Umzugstag erreichbar sein muss",
-        "Welche Routine gleich bleiben sollte",
-        "Welche Aufgabe dieses Kind übernehmen kann",
-        "Wen dieses Kind vermissen wird"
+        "Besondere Bedürfnisse / Routinen"
       ]
     },
     {
       "kind": "familyProfile",
-      "title": "Kind 2 - Umzugsprofil",
-      "intro": "Nutzt diese Seite genauso konkret wie die erste, damit kein Kind im allgemeinen Plan untergeht.",
+      "title": "Zusätzliches Kinderprofil",
+      "intro": "Diese zweite Profilseite kann für ein weiteres Kind oder für spätere Ergänzungen zur Familiensituation genutzt werden.",
       "fields": [
-        "Was diesem Kind am Umzug Sorgen macht",
-        "Was diesem Kind Sicherheit gibt",
-        "Was am Umzugstag erreichbar sein muss",
-        "Welche Routine gleich bleiben sollte",
+        "Name des Kindes",
+        "Alter / Klasse / Gruppe",
+        "Was dieses Kind vermissen wird",
         "Welche Aufgabe dieses Kind übernehmen kann",
-        "Wen dieses Kind vermissen wird"
+        "Welche Bezugspersonen wichtig sind",
+        "Was beim Ankommen zuerst helfen wird"
       ]
     },
     {

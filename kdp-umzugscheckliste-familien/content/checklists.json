@@ -28,7 +28,7 @@
     },
     {
       "kind": "infoPage",
-      "title": "Nutzungshinweis",
+      "title": "Willkommen & Nutzungshinweis",
       "subtitle": "Praktische Hilfe für euren privaten Familienumzug",
       "cards": [
         {
@@ -48,7 +48,7 @@
           "text": "Tragt Zuständigkeiten direkt ein, markiert Erledigtes sofort und notiert Rückfragen auf der Seite, auf der sie entstehen."
         }
       ],
-      "note": "Nutzt den Planer lieber laufend im Familienalltag als nur an einem einzigen Planungstag. So bleiben Aufgaben, Termine und Kinderbedürfnisse gemeinsam sichtbar.",
+      "note": "Nutzt den Planer lieber laufend im Familienalltag als nur an einem einzigen Planungstag. So bleiben Aufgaben, Termine und Kinderbedürfnisse gemeinsam sichtbar. Marke und Gestaltung: Planvoll Familie. Dieser Planer ersetzt keine rechtliche Beratung und sollte immer zusammen mit euren Originalunterlagen verwendet werden.",
       "showFooter": false
     },
     {
@@ -184,18 +184,31 @@
       "showFooter": false
     },
     {
-      "kind": "snapshot",
-      "title": "Familienprioritäten",
-      "intro": "Nicht alles ist gleich wichtig. Haltet fest, was für eure Familie zuerst Ruhe und Stabilität bringt.",
-      "fields": [
-        "Was für uns zuerst geklärt sein muss",
-        "Was die Kinder sofort brauchen",
-        "Was organisatorisch am meisten Druck macht",
-        "Was wir delegieren können",
-        "Was uns im Alltag entlastet",
-        "Worauf wir bewusst verzichten können"
+      "kind": "customTable",
+      "title": "Helferübersicht",
+      "intro": "Haltet fest, wer euch wann unterstützt, welche Aufgabe übernommen wird und welche Absprachen noch offen sind.",
+      "calloutLabel": "Tipp",
+      "callout": "Gerade am Umzugstag spart eine klare Helferplanung viel Rückfragen und verhindert doppelte Wege.",
+      "tableVariant": "helper-table",
+      "columns": [
+        { "label": "Helfer/in", "width": "1.5in" },
+        { "label": "Aufgabe", "width": "2.05in" },
+        { "label": "Zeitfenster", "width": "1.1in" },
+        { "label": "Kontakt", "width": "1.65in" },
+        { "label": "Bestätigt", "width": "1.1in", "type": "checkbox", "align": "center" }
       ],
-      "notesLabel": "Unsere Familienentscheidung",
+      "minimumRows": 8,
+      "items": [
+        "Fahren / Transport",
+        "Möbelabbau",
+        "Möbelaufbau",
+        "Kinderbetreuung",
+        "Verpflegung / Snacks",
+        "Übergabe / Schlüssel",
+        "Reinigung alte Wohnung"
+      ],
+      "leftLabel": "Was wir Helfern frühzeitig sagen sollten",
+      "rightLabel": "Material, Treffpunkte oder offene Rückfragen",
       "showFooter": false
     },
     {

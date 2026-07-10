@@ -17,20 +17,32 @@
       ]
     },
     {
-      "kind": "budget",
+      "kind": "customTable",
       "title": "Umzugsunternehmen Kostenvergleich",
-      "intro": "Vergleicht Angebote nicht nur nach Endpreis, sondern auch nach Leistung, Versicherung und Zusatzkosten.",
+      "intro": "Vergleicht Anbieter nebeneinander, statt Preis und Leistungsumfang nur in Notizen zu verstreuen.",
+      "calloutLabel": "Vergleich",
+      "callout": "Erfasst Preis, Versicherung, Montage, Storno und euren Eindruck in einer einzigen Matrix.",
+      "tableVariant": "provider-comparison-table",
+      "columns": [
+        { "label": "Kriterium", "width": "2.05in" },
+        { "label": "Angebot 1", "width": "1.1in" },
+        { "label": "Angebot 2", "width": "1.1in" },
+        { "label": "Angebot 3", "width": "1.1in" },
+        { "label": "Notizen", "width": "2.05in" }
+      ],
+      "minimumRows": 9,
       "items": [
-        "Angebot 1",
-        "Angebot 2",
-        "Angebot 3",
+        "Preis gesamt",
+        "Leistungsumfang",
         "Tragewege / Etagen",
         "Montage / Demontage",
-        "Verpackungsservice",
         "Zusatzversicherung",
-        "Stornobedingungen",
-        "Bewertung / Eindruck"
-      ]
+        "Storno / Verschiebung",
+        "Terminverfügbarkeit",
+        "Gesamteindruck"
+      ],
+      "leftLabel": "Worauf wir beim Anbieter besonders achten",
+      "rightLabel": "Offene Fragen vor der Buchung"
     },
     {
       "kind": "budget",
@@ -112,20 +124,33 @@
       ]
     },
     {
-      "kind": "budget",
-      "title": "Unerwartete Kosten",
-      "intro": "Diese Seite ist für alles gedacht, was ungeplant dazugekommen ist und später nachvollziehbar bleiben soll.",
+      "kind": "customTable",
+      "title": "Bezahlte Rechnungen",
+      "intro": "Hier dokumentiert ihr, welche Rechnungen bereits bezahlt sind, wo der Beleg liegt und was noch geprüft werden muss.",
+      "calloutLabel": "Kontrolle",
+      "callout": "Gerade bei Kaution, Transport, Material und Handwerk lohnt sich eine saubere Belegübersicht.",
+      "tableVariant": "invoice-table",
+      "columns": [
+        { "label": "Rechnung / Anbieter", "width": "2.15in" },
+        { "label": "Fällig", "width": "0.95in" },
+        { "label": "Bezahlt am", "width": "1.1in" },
+        { "label": "Betrag", "width": "1in" },
+        { "label": "Beleg", "width": "0.8in", "type": "checkbox", "align": "center" },
+        { "label": "Notizen", "width": "1.4in" }
+      ],
+      "minimumRows": 9,
       "items": [
-        "Ersatzkauf",
-        "Reparatur",
-        "Lieferung",
-        "Zusatzfahrt",
-        "Notfallbetreuung",
-        "Material nachgekauft",
-        "Expresskauf / Soforthilfe",
-        "Schloss / Schlüssel",
-        "Reserve genutzt"
-      ]
+        "Umzugsunternehmen",
+        "Transporter / Miete",
+        "Material / Kartons",
+        "Halteverbotszone",
+        "Handwerker / Renovierung",
+        "Neue Möbel / Lieferung",
+        "Kaution / Verwaltung",
+        "Familienbezogene Zusatzkosten"
+      ],
+      "leftLabel": "Welche Belege wir getrennt ablegen",
+      "rightLabel": "Offene Rückfragen zu Rechnungen oder Erstattungen"
     },
     {
       "kind": "budget",

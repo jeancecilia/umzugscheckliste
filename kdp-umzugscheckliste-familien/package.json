@@ -9,9 +9,11 @@
     "pdf": "node src/generate-pdf.js",
     "qa": "node src/qa.js",
     "cover": "node src/generate-cover.js",
-    "build:all": "npm run build && npm run pdf && npm run qa"
+    "build:all": "npm run build && npm run pdf && npm run cover && npm run qa"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8",
     "playwright": "^1.54.2"
   }
 }

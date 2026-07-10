@@ -2,11 +2,18 @@
 
 - PDF-Datei: `output/umzugscheckliste-familien-interior-premium.pdf`
 - Preview-Datei: `output/umzugscheckliste-familien-interior-preview.html`
-- Seitenzahl: `106`
-- PDF-Format: `8.5 x 11 inch`
-- Leerseiten erkannt: `0`
-- Unterschiedliche Seitentypen: `16`
+- Cover-Datei: `output/umzugscheckliste-familien-cover.pdf`
+- Geplante Seiten aus JSON/Generator: `106`
+- Ziel-Seitenzahl aus Config: `106`
+- Tatsächliche Innen-PDF-Seiten: `106`
+- Innen-PDF-Formate: `8.5 x 11 inch`
+- Leerseiten per Textprüfung: `0`
+- Leerseiten per Bildprüfung: `0`
+- Unterschiedliche Seitentypen: `17`
 - Platzhaltertreffer: `0`
+- Sensible Formulierungen: `0`
+- Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular`
+- Cover-PDF-Schriften: `AAAAAA+MontserratThin-Bold, BAAAAA+MontserratThin-SemiBold`
 
 ## Wöchentliche Checklisten
 
@@ -27,16 +34,38 @@
 - Erste Woche danach: 11 Aufgaben
 - Erster Monat danach: 10 Aufgaben
 
+## Cover-Geometrie
+
+- Innen-Seitenzahl für das Cover: `106`
+- Rückenbreite: `0.238712 inch`
+- Cover-Gesamtgröße: `17.488712 x 11.25 inch`
+- Rücken-Text aktiviert: `nein`
+
 ## Prüfungen
 
+- Exakte Seitenzahl erreicht: ja
+- Geplante DOM-Seitenzahl stimmt mit PDF überein: ja
 - Keine versehentlichen Leerseiten: ja
-- Seitenzahl im Zielbereich 96-112: ja
+- Alle Innen-PDF-Seiten haben dasselbe Format: ja
+- Innen-PDF entspricht 8.5 x 11 inch: ja
+- Cover-PDF entspricht berechneter KDP-Größe: ja
+- Cover-Template entspricht berechneter KDP-Größe: ja
+- Cover nutzt dieselbe Seitenzahl wie der Innenraum: ja
+- Rücken-Text bei dünnem Rücken deaktiviert: ja
+- Innen-PDF enthält die Projektfonts Montserrat und Source Sans 3: ja
+- Cover-PDF enthält die eingebettete Projektfont Montserrat: ja
+- Keine offensichtlichen Times-New-Roman-Fallbacks im Innen-PDF: ja
+- Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ja
 - Mindestens 8 Seitentypen: ja
 - Platzhaltertext entfernt: ja
+- Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ja
 - Wöchentliche Seiten mit 10-14 Aufgaben: ja
+- Inhaltsübersicht hat Seitenbereiche für alle nummerierten Abschnitte: ja
+- How-to-Übersicht hat Seitenbereiche für alle nummerierten Abschnitte: ja
 
 ## Hinweise
 
 - Keine Roh-Platzhalter in den JSON-Dateien gefunden.
-
-- KDP Previewer muss weiterhin manuell mit den finalen PDFs geprüft werden.
+- Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden.
+- Manuelle Sichtprüfung bleibt erforderlich für Titel-, Divider-, Budget-, Prozess- und Coverseiten.
+- KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.

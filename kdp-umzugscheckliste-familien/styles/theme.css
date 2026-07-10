@@ -1,12 +1,12 @@
 :root {
-  --paper: #fbf8f2;
-  --panel: #ece6db;
-  --panel-strong: #dfd6c8;
-  --line: #c6bfb3;
-  --line-strong: #92897d;
-  --ink: #212121;
-  --muted: #5f584f;
-  --accent: #756c60;
+  --paper: #fbf7f0;
+  --panel: #efe8dc;
+  --panel-strong: #dfd5c6;
+  --line: #b6ab9d;
+  --line-strong: #7b7165;
+  --ink: #24211d;
+  --muted: #5c544c;
+  --accent: #746759;
 }
 
 * {
@@ -17,7 +17,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
   font-size: 10.2pt;
   color: var(--ink);
   background: #fff;
@@ -25,8 +25,8 @@ body {
 
 h1 {
   margin: 0 0 0.08in;
-  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
-  font-size: 22pt;
+  font-family: "Montserrat", "Source Sans 3", Arial, sans-serif;
+  font-size: 22.2pt;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -37,7 +37,7 @@ p {
 
 .subtitle {
   color: var(--muted);
-  font-size: 10.3pt;
+  font-size: 10.4pt;
   line-height: 1.5;
 }
 
@@ -46,7 +46,7 @@ p {
 .field-label,
 .subheading {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
 }
 
 .section-label,
@@ -58,7 +58,7 @@ p {
 }
 
 .field-label {
-  font-size: 8.2pt;
+  font-size: 8.25pt;
   font-weight: 700;
   color: var(--muted);
 }
@@ -66,6 +66,6 @@ p {
 .subheading {
   margin-bottom: 0.12in;
   color: var(--ink);
-  font-size: 8.7pt;
+  font-size: 8.8pt;
   font-weight: 700;
 }

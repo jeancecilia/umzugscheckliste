@@ -117,46 +117,83 @@
       ]
     },
     {
-      "kind": "addressChange",
+      "kind": "customTable",
       "title": "Nachsendeauftrag",
-      "intro": "Ein Nachsendeauftrag schließt organisatorische Lücken und gibt euch Zeit, alle Stellen sauber umzumelden.",
+      "intro": "Ein Nachsendeauftrag schließt organisatorische Lücken, ersetzt aber nicht eure vollständige Ummeldung.",
+      "calloutLabel": "Ablauf",
+      "callout": "Prüft Antrag, Start, Laufzeit und alle Familienmitglieder in einer klaren Prozessübersicht.",
+      "tableVariant": "process-table",
+      "columns": [
+        { "label": "Schritt", "width": "2.65in" },
+        { "label": "Erledigt", "width": "0.8in", "type": "checkbox", "align": "center" },
+        { "label": "Datum / Frist", "width": "1.25in" },
+        { "label": "Notizen", "width": "2.7in" }
+      ],
+      "minimumRows": 8,
       "items": [
-        "Antrag gestellt",
-        "Startdatum",
-        "Laufzeit",
-        "Bestätigung erhalten",
-        "Kosten bezahlt",
-        "Für alle Familienmitglieder geprüft",
-        "Enddatum notiert"
-      ]
+        "Anbieter auswählen und Antrag starten",
+        "Startdatum passend zum Umzug festlegen",
+        "Laufzeit prüfen und eintragen",
+        "Alle Familienmitglieder einbeziehen",
+        "Identitäts- oder Zahlungsdaten bestätigen",
+        "Bestätigung sichern und abheften",
+        "Ablaufdatum notieren"
+      ],
+      "leftLabel": "Welche Unterlagen oder Daten wir dafür brauchen",
+      "rightLabel": "Was wir danach trotzdem separat ummelden müssen"
     },
     {
-      "kind": "addressChange",
+      "kind": "customTable",
       "title": "Verträge kündigen / ummelden",
-      "intro": "Nicht jeder Vertrag wird einfach übernommen. Sammelt hier Fristen, Antworten und notwendige Schritte.",
+      "intro": "Nicht jeder Vertrag läuft einfach weiter. Diese Seite hält Kündigung, Ummeldung und Rückmeldung pro Schritt sauber fest.",
+      "calloutLabel": "Fristen",
+      "callout": "Achtet besonders auf Sonderkündigungsrechte, neue Mindestlaufzeiten und schriftliche Bestätigungen.",
+      "tableVariant": "process-table",
+      "columns": [
+        { "label": "Schritt", "width": "2.65in" },
+        { "label": "Erledigt", "width": "0.8in", "type": "checkbox", "align": "center" },
+        { "label": "Datum / Frist", "width": "1.25in" },
+        { "label": "Notizen", "width": "2.7in" }
+      ],
+      "minimumRows": 8,
       "items": [
-        "Kündigung versendet",
-        "Ummeldung beantragt",
-        "Rückmeldung erhalten",
-        "Sonderkündigungsrecht geprüft",
-        "Neuer Tarif bewertet",
-        "Bestätigung abgelegt",
-        "Unterlagen abgelegt"
-      ]
+        "Kündigungsfrist oder Umzugsregel prüfen",
+        "Sonderkündigungsrecht bewerten",
+        "Kündigung oder Ummeldung absenden",
+        "Rückmeldung des Anbieters dokumentieren",
+        "Neuen Tarif oder neue Adresse bestätigen",
+        "Bestätigung ablegen",
+        "Start- oder Enddatum gegenprüfen"
+      ],
+      "leftLabel": "Welche Verträge besonders kritisch sind",
+      "rightLabel": "Wo wir noch nachfassen oder erinnern müssen"
     },
     {
-      "kind": "addressChange",
-      "title": "Offene Rückmeldungen",
-      "intro": "Hier sammeln sich alle Stellen, bei denen noch Bestätigungen, Unterlagen oder Termine fehlen.",
+      "kind": "customTable",
+      "title": "Neue Verträge einrichten",
+      "intro": "Diese Seite sammelt alles, was am neuen Wohnort neu abgeschlossen oder bewusst neu geplant werden muss.",
+      "calloutLabel": "Neu am Wohnort",
+      "callout": "Nutzt diese Übersicht für neue Anschlüsse, Tarife oder Dienste, die nicht einfach übernommen werden können.",
+      "tableVariant": "new-contract-table",
+      "columns": [
+        { "label": "Vertrag / Dienst", "width": "2.35in" },
+        { "label": "Beauftragt", "width": "0.9in", "type": "checkbox", "align": "center" },
+        { "label": "Starttermin", "width": "1.15in" },
+        { "label": "Ansprechpartner", "width": "1.55in" },
+        { "label": "Notizen", "width": "1.45in" }
+      ],
+      "minimumRows": 8,
       "items": [
-        "Noch ohne Rückmeldung",
-        "Weitere Unterlagen angefordert",
-        "Erinnerung versendet",
-        "Termin steht aus",
-        "Nächster Rückruf / Nachfassen",
-        "Dokument fehlt noch",
-        "Besonders wichtig"
-      ]
+        "Internet / Router",
+        "Stromvertrag neu",
+        "Gas oder Fernwärme",
+        "Müll / Entsorgung",
+        "Hausrat oder Zusatzversicherung",
+        "Parken / Bewohnerausweis",
+        "Schulweg / Fahrkarte"
+      ],
+      "leftLabel": "Was vor dem Einzug aktiv sein muss",
+      "rightLabel": "Welche Unterlagen oder Rückmeldungen noch fehlen"
     }
   ]
 }

@@ -39,10 +39,19 @@
       ]
     },
     {
-      "kind": "packlist",
+      "kind": "customTable",
       "title": "Farbcodes nach Zimmern",
-      "intro": "Ein einfaches Farbsystem hilft Helfern und Familie, Kartons schneller in den richtigen Raum zu bringen.",
-      "room": "Farb- und Zielraumplan",
+      "intro": "Ein klares Farb- oder Symbolsystem hilft Helfern und Familie, Kartons schneller richtig zuzuordnen.",
+      "calloutLabel": "System",
+      "callout": "Verwendet auf Kartons, Türen und im Umzugsplan immer denselben Farbcode oder dasselbe Symbol.",
+      "tableVariant": "color-code-table",
+      "columns": [
+        { "label": "Raum", "width": "1.6in" },
+        { "label": "Farbe / Symbol", "width": "1.3in" },
+        { "label": "Kartonnummern", "width": "1.45in" },
+        { "label": "Türmarkierung", "width": "1.1in", "type": "checkbox", "align": "center" },
+        { "label": "Notizen", "width": "1.95in" }
+      ],
       "minimumRows": 10,
       "items": [
         "Küche",
@@ -53,7 +62,9 @@
         "Wohnzimmer",
         "Arbeitszimmer",
         "Keller / Abstellraum"
-      ]
+      ],
+      "leftLabel": "Welche Farben oder Symbole wir sicher wiedererkennen",
+      "rightLabel": "Sonderregeln für Helfer oder empfindliche Kartons"
     },
     {
       "kind": "checklist",
@@ -220,7 +231,7 @@
         "Drucker oder Technik",
         "Notizbücher",
         "Schul- oder Arbeitsunterlagen",
-        "Passwörter / Zugänge sicher notieren"
+        "Zugangsdaten im Passwortmanager prüfen - keine Passwörter in diesem Buch notieren"
       ]
     },
     {
@@ -269,18 +280,24 @@
       ]
     },
     {
-      "kind": "packlist",
-      "title": "Packliste Kleidung",
-      "intro": "Plant alltagstaugliche Kleidung für mehrere Tage separat ein, bevor alles in große Kartons wandert.",
-      "room": "Kleidung",
+      "kind": "checklist",
+      "title": "Möbel-Abbau Plan",
+      "intro": "Haltet fest, welche Möbel wann und von wem abgebaut werden, damit Werkzeuge und Kleinteile nicht verloren gehen.",
+      "focusLabel": "Worauf wir achten",
+      "focusText": "Schrauben, Dübel und Beschläge immer direkt beschriften und beim jeweiligen Möbelstück halten.",
+      "notesLabel": "Werkzeug, Fotos oder Helferhinweise",
+      "minimumRows": 11,
       "items": [
-        "Alltagskleidung",
-        "Unterwäsche",
-        "Schlafsachen",
-        "Jacken",
-        "Schuhe",
-        "Wetterabhängige Kleidung",
-        "Sport- oder Kita-Wechselkleidung"
+        "Bettgestell Eltern abbauen",
+        "Kinderbett oder Hochbett vorbereiten",
+        "Großen Kleiderschrank leeren und abbauen",
+        "Regale sichern oder demontieren",
+        "Esstisch und Stühle vorbereiten",
+        "Schreibtisch abbauen",
+        "Garderobe oder Schuhschrank lösen",
+        "TV-Halterung oder Wandregale prüfen",
+        "Lampen oder empfindliche Teile abnehmen",
+        "Schraubenbeutel pro Möbelstück beschriften"
       ]
     },
     {
@@ -310,22 +327,28 @@
         "Computer oder Tablet",
         "Fernsehzubehör",
         "Kabelbeutel",
-        "Wichtige Adapter oder Zugangsdaten"
+        "Wichtige Adapter und Gerätezuordnung prüfen"
       ]
     },
     {
-      "kind": "packlist",
-      "title": "Packliste Reinigungsmittel",
-      "intro": "Ein Teil der Reinigungsmittel wird bis zuletzt in der alten Wohnung und danach direkt in der neuen Wohnung gebraucht.",
-      "room": "Reinigungsmittel",
+      "kind": "checklist",
+      "title": "Möbel-Aufbau Plan",
+      "intro": "Hier legt ihr die Reihenfolge für den Aufbau fest, damit Schlafen, Essen und Familienroutine schnell funktionieren.",
+      "focusLabel": "Aufbau-Prinzip",
+      "focusText": "Beginnt mit Betten, Kinderzimmer, Tisch, Grundordnung und allem, was den ersten Abend leichter macht.",
+      "notesLabel": "Was wir zuerst aufbauen oder vorbereiten",
+      "minimumRows": 11,
       "items": [
-        "Allzweckreiniger",
-        "Fensterreiniger",
-        "Müllbeutel",
-        "Lappen und Schwämme",
-        "Besen oder Wischer",
-        "Handschuhe",
-        "Papiertücher"
+        "Elternbett aufbauen",
+        "Kinderbett oder Schlafplatz zuerst sichern",
+        "Kleiderschrank oder Übergangslösung bereitstellen",
+        "Esstisch oder Familienplatz aufbauen",
+        "Sitzmöglichkeit im Wohnzimmer schaffen",
+        "Schreibtisch oder Arbeitsfläche vorbereiten",
+        "Lampen für die erste Nacht montieren",
+        "Wichtige Regale kindersicher befestigen",
+        "Kabel und Router sinnvoll verlegen",
+        "Werkzeug für Nachjustierungen griffbereit halten"
       ]
     },
     {
@@ -359,17 +382,24 @@
       ]
     },
     {
-      "kind": "packlist",
-      "title": "Eigene Packliste",
-      "intro": "Diese Seite ist für alle Sonderbereiche, Hobbys oder Haushaltszonen gedacht, die in euren Umzug zusätzlich hineinspielen.",
-      "room": "Eigener Sonderbereich",
+      "kind": "checklist",
+      "title": "Was zuerst ausgepackt werden muss",
+      "intro": "Diese Seite hilft euch, nach dem Umzug nicht planlos Kartons zu öffnen, sondern zuerst die wirklich entlastenden Dinge zu sichern.",
+      "focusLabel": "Unsere Reihenfolge",
+      "focusText": "Erst Schlafen, Hygiene, Essen, Kinderalltag und wichtige Dokumente - dekorative Themen kommen später.",
+      "notesLabel": "Was wir im neuen Zuhause als Erstes brauchen",
+      "minimumRows": 11,
       "items": [
-        "Weitere Kartons",
-        "Sondermaterial",
-        "Projektkisten",
-        "Kinderprojekte",
-        "Wird separat transportiert",
-        "Zuerst auspacken"
+        "Dokumentenmappe an festen Ort legen",
+        "Bad-Grundausstattung auspacken",
+        "Küche für Frühstück und einfache Mahlzeiten vorbereiten",
+        "Kinder-Schlafplatz fertig machen",
+        "Kleidung für mehrere Tage griffbereit haben",
+        "Ladegeräte und Router finden",
+        "Medikamente und Notfalltasche sichern",
+        "Müllbeutel und Reinigungsmittel sichtbar halten",
+        "Wichtige Lebensmittel oder Snacks einsortieren",
+        "Lieblingssachen der Kinder zuerst bereitlegen"
       ]
     }
   ]

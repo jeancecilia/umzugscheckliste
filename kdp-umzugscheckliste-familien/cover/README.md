@@ -1,16 +1,17 @@
 # Cover-Arbeitsbereich
 
-Der Innenraum liegt aktuell bei 128 Seiten. Das Cover wurde auf Basis der offiziellen KDP-Formeln für Paperback-Cover aufgebaut:
+Der Innenraum liegt aktuell bei 106 Seiten. Das Cover wird direkt aus der Generator-Seitenzahl berechnet und auf Basis der offiziellen KDP-Formeln für Paperback-Cover aufgebaut:
 
 - Format: `8.5 x 11 inch`
 - Innenraum: `black and white`
 - Papier: `white paper`
-- Seitenzahl: `128`
+- Seitenzahl: `106`
 - Finish: `matte`
 
 ## Generierte Dateien
 
 - `cover-source.svg`: editierbare Vektor-Quelldatei, direkt in Figma importierbar
+- `cover-spec.json`: berechnete Cover-Geometrie aus der aktuellen Innen-Seitenzahl
 - `kdp-cover-template.svg`: Guide-Layer mit Trim, Safe Area, Spine und Barcode-Bereich
 - `kdp-cover-template.pdf`: druckbares Guide-PDF
 - `cover-export.pdf`: finales Cover-PDF
@@ -18,9 +19,10 @@ Der Innenraum liegt aktuell bei 128 Seiten. Das Cover wurde auf Basis der offizi
 
 ## Geometrie
 
-- Spine-Breite: `0.288256 inch`
-- Gesamtgröße Cover-PDF: `17.538256 x 11.25 inch`
+- Spine-Breite: `0.238712 inch`
+- Gesamtgröße Cover-PDF: `17.488712 x 11.25 inch`
 - Barcode-Freihaltebereich: `2 x 1.2 inch` auf der Rückseite
+- Rücken-Text: bewusst deaktiviert, weil der 106-Seiten-Rücken für sauberen KDP-Sicherheitsabstand zu schmal ist
 
 ## Front-Cover-Text
 
@@ -45,6 +47,6 @@ Ideal für Familien, die ihren Umzug strukturierter, ruhiger und besser vorberei
 
 - ruhige, warme, vertrauenswürdige Optik
 - keine stockfotoartige Familienaufnahme
-- matte, klare Typografie
+- offene Sicherheitsränder nach KDP-Vorgaben einhalten
 - Barcode-Bereich freihalten
 - SVG-Datei bei Bedarf in Figma oder Affinity nachjustieren und anschließend erneut als PDF exportieren

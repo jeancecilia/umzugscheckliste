@@ -7,6 +7,7 @@
 - Passende KDP-Kategorien festlegen
 - AI-Offenlegung ehrlich beantworten
 - Papierart, Beschnitt und Farbmodus passend zur Innen-PDF auswählen
-- Cover erst nach finaler Seitenzahl exportieren
+- Cover nur mit derselben finalen Seitenzahl wie der Innen-PDF exportieren
 - Barcode-Bereich auf dem finalen Cover freihalten
+- Rücken-Text bei 106 Seiten deaktiviert lassen
 - Nach dem Previewer alle Warnungen oder Fehler dokumentieren

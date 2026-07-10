@@ -1,79 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1262.754432pt" height="810pt" viewBox="0 0 1262.754432 810">
-  <rect x="0" y="0" width="1262.754432" height="810" fill="#f4eee6" />
+<svg xmlns="http://www.w3.org/2000/svg" width="1259.187264pt" height="810pt" viewBox="0 0 1259.187264 810">
+  <rect x="0" y="0" width="1259.187264" height="810" fill="#f4eee6" />
 
-  <rect x="621" y="9" width="20.754432" height="792" fill="#92a28f" />
+  <rect x="621" y="9" width="17.187264" height="792" fill="#97a793" />
 
-  <path d="M 751.754432 104 C 921.754432 19, 1141.754432 39, 1211.754432 179 L 1211.754432 319 C 1091.754432 284, 971.754432 294, 821.754432 364 C 721.754432 309, 686.754432 219, 751.754432 104 Z" fill="#e8dccb" />
-  <circle cx="1161.754432" cy="139" r="54" fill="#c97d64" opacity="0.18" />
-  <circle cx="786.754432" cy="174" r="38" fill="#7f95a6" opacity="0.16" />
+  <path d="M 730.187264 103 C 912.187264 17, 1138.1872640000001 45, 1204.1872640000001 187 L 1204.1872640000001 313 C 1090.1872640000001 285, 958.187264 295, 814.187264 361 C 710.187264 313, 676.187264 219, 730.187264 103 Z" fill="#e8dccb" />
+  <circle cx="1146.1872640000001" cy="141" r="56" fill="#c97d64" opacity="0.18" />
+  <circle cx="786.187264" cy="181" r="42" fill="#7f95a6" opacity="0.16" />
 
-  <path d="M 977.754432 159 L 1073.754432 97 L 1169.754432 159 L 1169.754432 339 L 977.754432 339 Z" fill="none" stroke="#7f95a6" stroke-width="4" stroke-linejoin="round" />
-  <path d="M 1027.754432 339 L 1027.754432 249 L 1119.754432 249 L 1119.754432 339" fill="none" stroke="#7f95a6" stroke-width="4" stroke-linejoin="round" />
-  <rect x="753.754432" y="439" width="90" height="74" rx="6" fill="#c97d64" opacity="0.65" />
-  <rect x="819.754432" y="403" width="112" height="92" rx="6" fill="#e8dccb" stroke="#d3cabd" stroke-width="1.5" />
-  <path d="M 819.754432 433 H 931.754432" stroke="#d3cabd" stroke-width="1.5" />
-  <path d="M 875.754432 403 V 495" stroke="#d3cabd" stroke-width="1.5" />
+  <path d="M 982.187264 151 L 1072.1872640000001 93 L 1162.1872640000001 151 L 1162.1872640000001 337 L 982.187264 337 Z" fill="none" stroke="#7f95a6" stroke-width="4" stroke-linejoin="round" />
+  <path d="M 1030.1872640000001 337 L 1030.1872640000001 249 L 1116.1872640000001 249 L 1116.1872640000001 337" fill="none" stroke="#7f95a6" stroke-width="4" stroke-linejoin="round" />
+  <rect x="754.187264" y="441" width="94" height="76" rx="8" fill="#c97d64" opacity="0.66" />
+  <rect x="826.187264" y="401" width="122" height="98" rx="8" fill="#ffffff" stroke="#d1c6b8" stroke-width="1.5" />
+  <path d="M 826.187264 433 H 948.187264" stroke="#d1c6b8" stroke-width="1.5" />
+  <path d="M 886.187264 401 V 499" stroke="#d1c6b8" stroke-width="1.5" />
 
-  <rect x="1027.754432" y="424" width="132" height="112" rx="10" fill="#ffffff" stroke="#7f95a6" stroke-width="2" />
-  <path d="M 1053.754432 457 l 10 10 l 18 -22" fill="none" stroke="#92a28f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 1081.754432 453 H 1137.754432" stroke="#23303a" stroke-width="2" stroke-linecap="round" />
-  <path d="M 1053.754432 487 l 10 10 l 18 -22" fill="none" stroke="#92a28f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 1081.754432 483 H 1137.754432" stroke="#23303a" stroke-width="2" stroke-linecap="round" />
+  <rect x="1024.1872640000001" y="427" width="138" height="116" rx="10" fill="#ffffff" stroke="#7f95a6" stroke-width="2" />
+  <path d="M 1050.1872640000001 463 l 10 10 l 18 -22" fill="none" stroke="#97a793" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 1078.1872640000001 459 H 1136.1872640000001" stroke="#23303a" stroke-width="2" stroke-linecap="round" />
+  <path d="M 1050.1872640000001 497 l 10 10 l 18 -22" fill="none" stroke="#97a793" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 1078.1872640000001 493 H 1136.1872640000001" stroke="#23303a" stroke-width="2" stroke-linecap="round" />
 
-  <circle cx="1087.754432" cy="624" r="16" fill="#7f95a6" />
-  <circle cx="1129.754432" cy="612" r="20" fill="#92a28f" />
-  <circle cx="1175.754432" cy="626" r="16" fill="#c97d64" />
-  <path d="M 1071.754432 673 C 1076.754432 639, 1096.754432 634, 1110.754432 648" fill="none" stroke="#7f95a6" stroke-width="6" stroke-linecap="round" />
-  <path d="M 1107.754432 674 C 1115.754432 635, 1145.754432 629, 1161.754432 655" fill="none" stroke="#92a28f" stroke-width="7" stroke-linecap="round" />
-  <path d="M 1156.754432 673 C 1164.754432 641, 1184.754432 637, 1193.754432 655" fill="none" stroke="#c97d64" stroke-width="6" stroke-linecap="round" />
+  <circle cx="1080.1872640000001" cy="621" r="16" fill="#7f95a6" />
+  <circle cx="1124.1872640000001" cy="611" r="20" fill="#97a793" />
+  <circle cx="1170.1872640000001" cy="623" r="16" fill="#c97d64" />
+  <path d="M 1064.1872640000001 667 C 1070.1872640000001 635, 1090.1872640000001 629, 1104.1872640000001 645" fill="none" stroke="#7f95a6" stroke-width="6" stroke-linecap="round" />
+  <path d="M 1102.1872640000001 669 C 1110.1872640000001 629, 1138.1872640000001 625, 1154.1872640000001 653" fill="none" stroke="#97a793" stroke-width="7" stroke-linecap="round" />
+  <path d="M 1150.1872640000001 667 C 1158.1872640000001 637, 1178.1872640000001 633, 1188.1872640000001 651" fill="none" stroke="#c97d64" stroke-width="6" stroke-linecap="round" />
 
-  <path d="M 74 129 C 169 39, 339 53, 423 144 C 379 204, 263 213, 133 199 C 91 177, 67 156, 74 129 Z" fill="#e8dccb" />
-  <circle cx="479" cy="189" r="48" fill="#92a28f" opacity="0.22" />
-  <rect x="63" y="553" width="116" height="90" rx="8" fill="#c97d64" opacity="0.64" />
-  <rect x="127" y="509" width="142" height="104" rx="8" fill="#ffffff" stroke="#d3cabd" stroke-width="1.5" />
-  <path d="M 127 543 H 269" stroke="#d3cabd" stroke-width="1.5" />
-  <path d="M 198 509 V 613" stroke="#d3cabd" stroke-width="1.5" />
+  <path d="M 71 133 C 163 45, 337 61, 421 153 C 379 207, 263 217, 135 205 C 91 185, 65 161, 71 133 Z" fill="#e8dccb" />
+  <circle cx="493" cy="183" r="44" fill="#97a793" opacity="0.2" />
+  <rect x="57" y="565" width="126" height="96" rx="8" fill="#c97d64" opacity="0.58" />
+  <rect x="135" y="517" width="150" height="112" rx="8" fill="#ffffff" stroke="#d1c6b8" stroke-width="1.5" />
+  <path d="M 135 553 H 285" stroke="#d1c6b8" stroke-width="1.5" />
+  <path d="M 209 517 V 629" stroke="#d1c6b8" stroke-width="1.5" />
 
   <rect x="459" y="696.6" width="144" height="86.39999999999999" fill="#ffffff" />
 
   
-    <text x="61" y="264" font-size="20" fill="#23303a" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="700">
-      <tspan x="61" dy="0">Ein Umzug mit Kindern muss nicht</tspan><tspan x="61" dy="24">chaotisch sein.</tspan>
+    <text x="53" y="265" font-size="20" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="700">
+      <tspan x="53" dy="0">Ein Umzug mit Kindern muss</tspan><tspan x="53" dy="24">nicht chaotisch sein.</tspan>
     </text>
   
-      <text x="61" y="309" font-size="14" fill="#5f6b74" font-family="Segoe UI, Arial, sans-serif">
-        <tspan x="61" dy="0">Ein Umzug mit Kindern bringt viele Aufgaben,</tspan><tspan x="61" dy="18">Termine und kleine Details mit sich. Dieser</tspan><tspan x="61" dy="18">praktische Umzugsplaner hilft Familien dabei,</tspan><tspan x="61" dy="18">den Überblick zu behalten und den Umzug Schritt</tspan><tspan x="61" dy="18">für Schritt zu organisieren.</tspan>
+      <text x="53" y="313" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+        <tspan x="53" dy="0">Ein Umzug mit Kindern bringt viele Aufgaben,</tspan><tspan x="53" dy="18">Termine und kleine Details mit sich. Dieser</tspan><tspan x="53" dy="18">praktische Umzugsplaner hilft Familien dabei,</tspan><tspan x="53" dy="18">den Überblick zu behalten und den Umzug</tspan><tspan x="53" dy="18">Schritt für Schritt zu organisieren.</tspan>
       </text>
-      <text x="61" y="413" font-size="14" fill="#5f6b74" font-family="Segoe UI, Arial, sans-serif">
-        <tspan x="61" dy="0">Enthalten sind Wochen-Checklisten, Packlisten</tspan><tspan x="61" dy="18">für jedes Zimmer, Budgetseiten,</tspan><tspan x="61" dy="18">Adressänderungen, Kinder-Checklisten,</tspan><tspan x="61" dy="18">Notfalltaschen, Erste-Nacht-Planung und</tspan><tspan x="61" dy="18">Übergabeprotokolle.</tspan>
+      <text x="53" y="416.8" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+        <tspan x="53" dy="0">Enthalten sind Wochen-Checklisten, Packlisten</tspan><tspan x="53" dy="18">für jedes Zimmer, Budgetseiten,</tspan><tspan x="53" dy="18">Adressänderungen, Kinder-Checklisten,</tspan><tspan x="53" dy="18">Notfalltaschen, Erste-Nacht-Planung und</tspan><tspan x="53" dy="18">Übergabeprotokolle.</tspan>
       </text>
-      <text x="61" y="517" font-size="14" fill="#5f6b74" font-family="Segoe UI, Arial, sans-serif">
-        <tspan x="61" dy="0">Ideal für Familien, die ihren Umzug</tspan><tspan x="61" dy="18">strukturierter, ruhiger und besser vorbereitet</tspan><tspan x="61" dy="18">angehen möchten.</tspan>
+      <text x="53" y="520.6" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+        <tspan x="53" dy="0">Ideal für Familien, die ihren Umzug</tspan><tspan x="53" dy="18">strukturierter, ruhiger und besser</tspan><tspan x="53" dy="18">vorbereitet angehen möchten.</tspan>
       </text>
 
-  <rect x="697.754432" y="127" width="136" height="24" rx="12" fill="#ffffff" stroke="#d3cabd" stroke-width="1.2" />
-  <text x="715.754432" y="144" font-size="11" fill="#5f6b74" font-family="Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="1.6">FAMILIENPLANER</text>
+  <rect x="688.187264" y="127" width="148" height="25" rx="12" fill="#ffffff" stroke="#d1c6b8" stroke-width="1.2" />
+  <text x="706.187264" y="145" font-size="11" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="700" letter-spacing="1.3">FAMILIENPLANER</text>
 
   
-    <text x="697.754432" y="237" font-size="36" fill="#23303a" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="700">
-      <tspan x="697.754432" dy="0">Umzugscheckliste</tspan>
-      <tspan x="697.754432" dy="42">für Familien</tspan>
+    <text x="688.187264" y="215" font-size="35" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="700">
+      <tspan x="688.187264" dy="0">Umzugscheckliste</tspan>
+      <tspan x="688.187264" dy="41">für Familien</tspan>
     </text>
   
-    <text x="697.754432" y="337" font-size="18" fill="#5f6b74" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="400">
-      <tspan x="697.754432" dy="0">Der praktische Umzugsplaner für einen</tspan><tspan x="697.754432" dy="22">stressfreien Umzug mit Kindern</tspan>
+    <text x="688.187264" y="321" font-size="18" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="400">
+      <tspan x="688.187264" dy="0">Der praktische Umzugsplaner für einen</tspan><tspan x="688.187264" dy="22">stressfreien Umzug mit Kindern</tspan>
     </text>
 
-  <rect x="697.754432" y="719" width="462" height="86" rx="12" fill="#ffffff" stroke="#d3cabd" stroke-width="1.5" />
+  <rect x="688.187264" y="677" width="438" height="84" rx="12" fill="#ffffff" stroke="#d1c6b8" stroke-width="1.5" />
   
-    <text x="717.754432" y="749" font-size="13" fill="#23303a" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="600">
-      <tspan x="717.754432" dy="0">Mit Wochenplan, Packlisten, Budgetplaner,</tspan><tspan x="717.754432" dy="17">Adressänderungen, Kinder-Checklisten und Übergabeprotokoll</tspan>
+    <text x="708.187264" y="707" font-size="13" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="600">
+      <tspan x="708.187264" dy="0">Mit Wochenplan, Packlisten, Budgetplaner,</tspan><tspan x="708.187264" dy="17">Adressänderungen, Kinder-Checklisten und</tspan><tspan x="708.187264" dy="17">Übergabeprotokoll</tspan>
     </text>
 
-  <text x="697.754432" y="835" font-size="14" fill="#5f6b74" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Planvoll Familie</text>
-
-  <g transform="translate(631.377216, 405) rotate(90)">
-    <text x="0" y="0" text-anchor="middle" font-size="8.5" fill="#23303a" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="0.8">Umzugscheckliste für Familien</text>
-  </g>
+  <text x="688.187264" y="775" font-size="13.5" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="600">Planvoll Familie</text>
 </svg>

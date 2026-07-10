@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { getEmbeddedFontCss } = require("./font-assets");
 
 const rootDir = path.resolve(__dirname, "..");
 const contentDir = path.join(rootDir, "content");
@@ -30,6 +31,15 @@ function escapeHtml(text) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function normalizeLookupKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 function padRows(values, minCount) {
@@ -253,6 +263,72 @@ function renderDividerHighlights(items = []) {
     .join("");
 }
 
+function normalizeCustomTableRow(item, columnCount) {
+  if (Array.isArray(item)) {
+    return item.slice(0, columnCount);
+  }
+
+  if (item && typeof item === "object") {
+    if (Array.isArray(item.cells)) {
+      return item.cells.slice(0, columnCount);
+    }
+    if (item.label) {
+      return [item.label];
+    }
+  }
+
+  if (typeof item === "string") {
+    return [item];
+  }
+
+  return [];
+}
+
+function renderCustomTableHead(columns = []) {
+  return columns
+    .map((column) => {
+      const classes = ["custom-table-cell"];
+      if (column.align === "center" || column.type === "checkbox") {
+        classes.push("center");
+      }
+
+      return `<div class="${classes.join(" ")}">${escapeHtml(column.label || "")}</div>`;
+    })
+    .join("");
+}
+
+function renderCustomTableRows(items = [], columns = [], minimumRows = 8) {
+  const paddedRows = padRows(items, minimumRows);
+
+  return paddedRows
+    .map((item) => {
+      const cells = normalizeCustomTableRow(item, columns.length);
+
+      return `
+        <div class="custom-table-row">
+          ${columns
+            .map((column, columnIndex) => {
+              const rawValue = cells[columnIndex];
+              const classes = ["custom-table-cell"];
+              if (column.align === "center" || column.type === "checkbox") {
+                classes.push("center");
+              }
+
+              let content = "&nbsp;";
+              if (column.type === "checkbox") {
+                content = '<span class="checkbox small"></span>';
+              } else if (rawValue) {
+                content = escapeHtml(rawValue);
+              }
+
+              return `<div class="${classes.join(" ")}">${content}</div>`;
+            })
+            .join("")}
+        </div>`;
+    })
+    .join("");
+}
+
 function decoratePageMarkup(markup, page) {
   const classes = [
     page.numbering === "body" ? "body-page" : "front-page",
@@ -386,8 +462,70 @@ function renderPage(page) {
         leftLabel: escapeHtml(page.leftLabel || "Besonders wichtig auf dieser Seite"),
         rightLabel: escapeHtml(page.rightLabel || "Wer kümmert sich / bis wann")
       });
+    case "customTable":
+      return replaceTokens(loadTemplate("custom-table-page.html"), {
+        ...shared,
+        callout: page.callout
+          ? `<div class="data-callout">${escapeHtml(page.calloutLabel || "Fokus")}: ${escapeHtml(page.callout)}</div>`
+          : "",
+        tableVariant: escapeHtml(page.tableVariant || ""),
+        columnLayout: escapeHtml((page.columns || []).map((column) => column.width || "1fr").join(" ")),
+        head: renderCustomTableHead(page.columns || []),
+        rows: renderCustomTableRows(
+          page.items || [],
+          page.columns || [],
+          page.minimumRows || Math.max((page.items || []).length, 8)
+        ),
+        leftLabel: escapeHtml(page.leftLabel || "Besondere Hinweise"),
+        rightLabel: escapeHtml(page.rightLabel || "Nächster Schritt / Rückfrage")
+      });
     default:
       throw new Error(`Unsupported page kind: ${page.kind}`);
+  }
+}
+
+function addSectionRanges(pages, sections) {
+  const rangeBySectionTitle = new Map();
+
+  for (const section of sections) {
+    const numberedPages = pages.filter(
+      (page) => page.sectionId === section.id && page.numbering === "body" && page.printNumber
+    );
+
+    if (!numberedPages.length) {
+      continue;
+    }
+
+    const firstNumber = numberedPages[0].printNumber;
+    const lastNumber = numberedPages[numberedPages.length - 1].printNumber;
+    const marker = `S. ${firstNumber}-${lastNumber}`;
+    rangeBySectionTitle.set(normalizeLookupKey(section.title), marker);
+    if (section.footerName) {
+      rangeBySectionTitle.set(normalizeLookupKey(section.footerName), marker);
+    }
+    if (section.label) {
+      rangeBySectionTitle.set(normalizeLookupKey(section.label), marker);
+    }
+  }
+
+  const rangeNote =
+    "Die Seitenbereiche beziehen sich auf die gedruckten Fußnummern ab dem Zeitplan. Die Einstiegsseiten vorne bleiben bewusst ohne Seitenzahl.";
+
+  for (const page of pages) {
+    if (page.kind === "howToUse" && Array.isArray(page.sections)) {
+      page.sections = page.sections.map((entry) => {
+        const marker = rangeBySectionTitle.get(normalizeLookupKey(entry.title));
+        return marker ? { ...entry, marker } : entry;
+      });
+    }
+
+    if (page.kind === "contentsPage" && Array.isArray(page.entries)) {
+      page.entries = page.entries.map((entry) => {
+        const marker = rangeBySectionTitle.get(normalizeLookupKey(entry.title));
+        return marker ? { ...entry, marker } : entry;
+      });
+      page.note = page.note ? `${page.note} ${rangeNote}` : rangeNote;
+    }
   }
 }
 
@@ -455,14 +593,14 @@ function buildPageList() {
     }
   }
 
+  addSectionRanges(pages, sections);
+
   return pages;
 }
 
 function getStyles() {
   const files = ["theme.css", "components.css", "print.css"];
-  return files
-    .map((fileName) => fs.readFileSync(path.join(styleDir, fileName), "utf8"))
-    .join("\n");
+  return [getEmbeddedFontCss(), ...files.map((fileName) => fs.readFileSync(path.join(styleDir, fileName), "utf8"))].join("\n");
 }
 
 function buildInterior(options = {}) {

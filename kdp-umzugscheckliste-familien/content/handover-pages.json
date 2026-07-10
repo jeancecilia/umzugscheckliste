@@ -33,24 +33,50 @@
       ]
     },
     {
-      "kind": "handover",
+      "kind": "customTable",
       "title": "Zählerstände",
-      "intro": "Zählerstände immer mit Datum und wenn möglich zusätzlich mit Foto dokumentieren.",
+      "intro": "Zählerstände sollten immer mit Datum, Uhrzeit und möglichst auch mit Foto dokumentiert werden.",
+      "calloutLabel": "Dokumentation",
+      "callout": "Gerade bei Ein- und Auszug verhindert eine klare Übersicht spätere Rückfragen zu Verbrauch oder Übergabe.",
+      "tableVariant": "meter-table",
+      "columns": [
+        { "label": "Zählerart", "width": "1.1in" },
+        { "label": "Zählernummer", "width": "1.2in" },
+        { "label": "Alt / Neu", "width": "0.75in" },
+        { "label": "Stand", "width": "0.95in" },
+        { "label": "Datum / Uhrzeit", "width": "1in" },
+        { "label": "Foto", "width": "0.6in", "type": "checkbox", "align": "center" },
+        { "label": "Übermittelt an", "width": "1.8in" }
+      ],
+      "minimumRows": 8,
       "items": [
-        "Strom alt",
-        "Strom neu",
-        "Gas alt",
-        "Gas neu",
-        "Wasser alt",
-        "Wasser neu",
+        "Strom",
+        "Gas",
+        "Wasser kalt",
+        "Wasser warm",
         "Heizung / Wärmemenge",
         "Weitere Zähler"
-      ]
+      ],
+      "leftLabel": "Welche Zähler wir sofort bei Ein- und Auszug prüfen",
+      "rightLabel": "An wen wir die Werte melden oder weiterleiten"
     },
     {
-      "kind": "handover",
+      "kind": "customTable",
       "title": "Schlüsselübergabe",
-      "intro": "Notiert hier Anzahl, Art und Übergabezeitpunkt aller Schlüssel für alte und neue Wohnung.",
+      "intro": "Haltet hier fest, welche Schlüssel laut Vertrag vorhanden sein sollten und was tatsächlich übergeben wurde.",
+      "calloutLabel": "Kontrolle",
+      "callout": "Prüft Anzahl, Zustand und bestätigte Übergabe immer direkt vor Ort - besonders bei Zusatzschlüsseln oder Briefkastenanlagen.",
+      "tableVariant": "key-table",
+      "columns": [
+        { "label": "Schlüsselart", "width": "1.6in" },
+        { "label": "Laut Vertrag", "width": "0.85in" },
+        { "label": "Erhalten", "width": "0.85in" },
+        { "label": "Zurückgegeben", "width": "1in" },
+        { "label": "Datum", "width": "1.15in" },
+        { "label": "Empfänger", "width": "1in" },
+        { "label": "Bestätigung", "width": "0.95in", "type": "checkbox", "align": "center" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Wohnungsschlüssel",
         "Haustür",
@@ -59,7 +85,9 @@
         "Garage / Stellplatz",
         "Fensterschlüssel",
         "Zusatzschlüssel"
-      ]
+      ],
+      "leftLabel": "Welche Schlüssel besonders leicht vergessen werden",
+      "rightLabel": "Abweichungen oder fehlende Bestätigungen"
     },
     {
       "kind": "handover",
@@ -134,18 +162,37 @@
       ]
     },
     {
-      "kind": "handover",
-      "title": "Übergabe-Notizen",
-      "intro": "Platz für offene Rückfragen, Zusagen, Fristen und alles, was aus der Übergabe noch folgen muss.",
+      "kind": "familyGuide",
+      "title": "Neue Umgebung erkunden",
+      "intro": "Diese Seite hilft euch, die ersten wichtigen Orte rund um das neue Zuhause bewusst zu entdecken und als Familie Sicherheit aufzubauen.",
+      "prompts": [
+        {
+          "title": "Was schauen wir zuerst an?",
+          "text": "Spielplatz, Apotheke, Bäcker, Supermarkt, Schule, Kita oder die wichtigsten Wege im Alltag."
+        },
+        {
+          "title": "Was hilft den Kindern beim Ankommen?",
+          "text": "Ein vertrauter Weg, ein Lieblingsort in der Nähe oder ein kleines gemeinsames Ritual nach dem Einzug."
+        },
+        {
+          "title": "Was sollten wir praktisch prüfen?",
+          "text": "Öffnungszeiten, Gehzeiten, Notfallorte, sichere Wege und gute Treffpunkte."
+        }
+      ],
+      "minimumRows": 10,
       "items": [
-        "Offene Rückfrage",
-        "Mündliche Zusage",
-        "Schriftlich nachreichen",
-        "Rückmeldung erwartet",
-        "Bis wann erledigen",
-        "An wen eskalieren",
-        "Wer kümmert sich"
-      ]
+        "Spielplatz oder Bewegungsort finden",
+        "Supermarkt und Bäcker erkunden",
+        "Apotheke in der Nähe notieren",
+        "Kinderarzt oder Notdienstweg prüfen",
+        "Schulweg gemeinsam testen",
+        "Kita-Weg gemeinsam testen",
+        "Park oder ruhigen Rückzugsort suchen",
+        "Bushaltestelle oder Bahnhof prüfen",
+        "Müllplatz, Keller oder Fahrradraum zeigen",
+        "Ersten kleinen Familienausflug planen"
+      ],
+      "notesLabel": "Was uns beim Ankommen in der neuen Umgebung hilft"
     },
     {
       "kind": "checklist",

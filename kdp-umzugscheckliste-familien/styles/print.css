@@ -7,9 +7,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  min-height: 9.76in;
+  justify-content: flex-start;
+  overflow: visible;
+  min-height: 10.06in;
   break-after: page;
   page-break-after: always;
 }
