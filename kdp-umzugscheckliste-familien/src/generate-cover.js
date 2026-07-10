@@ -149,6 +149,16 @@ function buildMovingScene({ x, y, scale = 1, stroke = palette.blue, strokeWidth 
     </g>`;
 }
 
+function buildBackMotif({ x, y, stroke = palette.muted, strokeWidth = 2.4 }) {
+  return `
+    <g transform="translate(${x} ${y})" fill="none" stroke="${stroke}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M0 18C18 6 34 6 52 18"></path>
+      <path d="M7 26H45"></path>
+      <path d="M18 10l8-6l8 6"></path>
+      <path d="M21 10v12h10V10"></path>
+    </g>`;
+}
+
 function buildCoverSvg(spec) {
   const { geometry } = spec;
   const {
@@ -175,7 +185,7 @@ function buildCoverSvg(spec) {
   const backTextX = backX + 44;
   const backTextWidth = 332;
   const frontTextX = frontX + 48;
-  const frontTextWidth = 334;
+  const frontTextWidth = 312;
 
   const titleLines = ["Umzugscheckliste", "für Familien"];
   const benefitText =
@@ -195,19 +205,19 @@ function buildCoverSvg(spec) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}pt" height="${totalHeight}pt" viewBox="0 0 ${totalWidth} ${totalHeight}">
   <rect x="0" y="0" width="${totalWidth}" height="${totalHeight}" fill="${palette.paper}" />
-  <rect x="${spineX}" y="${backY}" width="${spineWidth}" height="${trimHeight}" fill="${palette.sage}" />
+  <rect x="${spineX}" y="${backY}" width="${spineWidth}" height="${trimHeight}" fill="${palette.sand}" />
 
   <path d="M ${backX + 84} ${backY + 106} C ${backX + 194} ${backY + 54}, ${backX + 338} ${backY + 64}, ${backX + 424} ${backY + 158} L ${backX + 424} ${backY + 236} C ${backX + 332} ${backY + 220}, ${backX + 220} ${backY + 224}, ${backX + 118} ${backY + 204} C ${backX + 74} ${backY + 180}, ${backX + 62} ${backY + 136}, ${backX + 84} ${backY + 106} Z" fill="${palette.sand}" opacity="0.66" />
-  <path d="M ${frontX + 112} ${frontY + 88} C ${frontX + 252} ${frontY + 26}, ${frontX + 452} ${frontY + 48}, ${frontX + 556} ${frontY + 174} L ${frontX + 556} ${frontY + 314} C ${frontX + 446} ${frontY + 280}, ${frontX + 270} ${frontY + 292}, ${frontX + 132} ${frontY + 348} C ${frontX + 78} ${frontY + 286}, ${frontX + 70} ${frontY + 176}, ${frontX + 112} ${frontY + 88} Z" fill="${palette.sand}" opacity="0.76" />
+  <path d="M ${frontX + 118} ${frontY + 108} C ${frontX + 260} ${frontY + 44}, ${frontX + 472} ${frontY + 78}, ${frontX + 544} ${frontY + 236} L ${frontX + 544} ${frontY + 608} C ${frontX + 430} ${frontY + 654}, ${frontX + 242} ${frontY + 644}, ${frontX + 126} ${frontY + 546} C ${frontX + 74} ${frontY + 452}, ${frontX + 76} ${frontY + 214}, ${frontX + 118} ${frontY + 108} Z" fill="${palette.sand}" opacity="0.74" />
 
-  ${buildMovingScene({ x: backX + 58, y: backY + 488, scale: 0.66, stroke: palette.blue, strokeWidth: 4.1 })}
-  ${buildMovingScene({ x: frontX + 304, y: frontY + 104, scale: 1.02, stroke: palette.blue, strokeWidth: 4.1 })}
+  ${buildBackMotif({ x: backX + 54, y: backY + 662 })}
+  ${buildMovingScene({ x: frontX + 150, y: frontY + 360, scale: 1.04, stroke: palette.blue, strokeWidth: 4.1 })}
 
   <rect x="${barcode.x}" y="${barcode.y}" width="${barcode.width}" height="${barcode.height}" fill="${palette.white}" />
 
   ${textBlock({
     x: backTextX,
-    y: backY + 252,
+    y: backY + 214,
     width: backTextWidth,
     text: "Ein Umzug mit Kindern muss nicht chaotisch sein.",
     fontSize: 20,
@@ -218,7 +228,7 @@ function buildCoverSvg(spec) {
   })}
   ${paragraphBlock({
     x: backTextX,
-    y: backY + 300,
+    y: backY + 266,
     width: backTextWidth,
     paragraphs: backParagraphs,
     fontSize: 13.8,
@@ -234,20 +244,20 @@ function buildCoverSvg(spec) {
   ${frontTitle}
   ${textBlock({
     x: frontTextX,
-    y: frontY + 312,
+    y: frontY + 304,
     width: frontTextWidth,
     text: "Der praktische Umzugsplaner für einen stressfreien Umzug mit Kindern",
-    fontSize: 18,
-    lineHeight: 22,
+    fontSize: 16.8,
+    lineHeight: 21,
     fill: palette.muted,
     family: bodyFontFamily
   })}
 
-  <rect x="${frontTextX}" y="${frontY + 668}" width="446" height="84" rx="12" fill="${palette.white}" stroke="${palette.line}" stroke-width="1.5" />
+  <path d="M ${frontTextX} ${frontY + 664} H ${frontTextX + 430}" stroke="${palette.line}" stroke-width="1.5" />
   ${textBlock({
-    x: frontTextX + 20,
-    y: frontY + 698,
-    width: 402,
+    x: frontTextX,
+    y: frontY + 690,
+    width: 430,
     text: benefitText,
     fontSize: 13,
     lineHeight: 17,

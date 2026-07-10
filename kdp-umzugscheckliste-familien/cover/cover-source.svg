@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1259.187264pt" height="810pt" viewBox="0 0 1259.187264 810">
   <rect x="0" y="0" width="1259.187264" height="810" fill="#f4eee6" />
-  <rect x="621" y="9" width="17.187264" height="792" fill="#97a793" />
+  <rect x="621" y="9" width="17.187264" height="792" fill="#e8dccb" />
 
   <path d="M 93 115 C 203 63, 347 73, 433 167 L 433 245 C 341 229, 229 233, 127 213 C 83 189, 71 145, 93 115 Z" fill="#e8dccb" opacity="0.66" />
-  <path d="M 750.187264 97 C 890.187264 35, 1090.1872640000001 57, 1194.1872640000001 183 L 1194.1872640000001 323 C 1084.1872640000001 289, 908.187264 301, 770.187264 357 C 716.187264 295, 708.187264 185, 750.187264 97 Z" fill="#e8dccb" opacity="0.76" />
+  <path d="M 756.187264 117 C 898.187264 53, 1110.1872640000001 87, 1182.1872640000001 245 L 1182.1872640000001 617 C 1068.1872640000001 663, 880.187264 653, 764.187264 555 C 712.187264 461, 714.187264 223, 756.187264 117 Z" fill="#e8dccb" opacity="0.74" />
 
   
-    <g transform="translate(67 497) scale(0.66)" fill="none" stroke="#7f95a6" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M44 110L124 44L204 110V232H44Z"></path>
-      <path d="M104 232V156H144V232"></path>
-      <path d="M26 246C72 236 178 236 226 246"></path>
-      <rect x="112" y="170" width="58" height="46" rx="6"></rect>
-      <path d="M112 184H170"></path>
-      <path d="M141 170V216"></path>
-      <rect x="68" y="190" width="44" height="34" rx="5"></rect>
-      <path d="M68 201H112"></path>
-      <path d="M90 190V224"></path>
-      <path d="M176 152H206"></path>
-      <path d="M198 152V214"></path>
-      <path d="M182 214H214"></path>
+    <g transform="translate(63 671)" fill="none" stroke="#55616b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M0 18C18 6 34 6 52 18"></path>
+      <path d="M7 26H45"></path>
+      <path d="M18 10l8-6l8 6"></path>
+      <path d="M21 10v12h10V10"></path>
     </g>
   
-    <g transform="translate(942.187264 113) scale(1.02)" fill="none" stroke="#7f95a6" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(788.187264 369) scale(1.04)" fill="none" stroke="#7f95a6" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round">
       <path d="M44 110L124 44L204 110V232H44Z"></path>
       <path d="M104 232V156H144V232"></path>
       <path d="M26 246C72 236 178 236 226 246"></path>
@@ -40,17 +32,17 @@
   <rect x="459" y="696.6" width="144" height="86.39999999999999" fill="#ffffff" />
 
   
-    <text x="53" y="261" font-size="20" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="700">
+    <text x="53" y="223" font-size="20" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="700">
       <tspan x="53" dy="0">Ein Umzug mit Kindern muss</tspan><tspan x="53" dy="24">nicht chaotisch sein.</tspan>
     </text>
   
-      <text x="53" y="309" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+      <text x="53" y="275" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
         <tspan x="53" dy="0">Ein Umzug mit Kindern bringt viele Aufgaben,</tspan><tspan x="53" dy="18">Termine und kleine Details mit sich. Dieser</tspan><tspan x="53" dy="18">praktische Umzugsplaner hilft Familien</tspan><tspan x="53" dy="18">dabei, den Überblick zu behalten und den</tspan><tspan x="53" dy="18">Umzug Schritt für Schritt zu organisieren.</tspan>
       </text>
-      <text x="53" y="412.8" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+      <text x="53" y="378.8" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
         <tspan x="53" dy="0">Enthalten sind Wochen-Checklisten,</tspan><tspan x="53" dy="18">Packlisten für jedes Zimmer, Budgetseiten,</tspan><tspan x="53" dy="18">Adressänderungen, Kinder-Checklisten,</tspan><tspan x="53" dy="18">Notfalltaschen, Erste-Nacht-Planung und</tspan><tspan x="53" dy="18">Übergabeprotokolle.</tspan>
       </text>
-      <text x="53" y="516.6" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
+      <text x="53" y="482.6" font-size="13.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif">
         <tspan x="53" dy="0">Ideal für Familien, die ihren Umzug</tspan><tspan x="53" dy="18">strukturierter, ruhiger und besser</tspan><tspan x="53" dy="18">vorbereitet angehen möchten.</tspan>
       </text>
 
@@ -63,14 +55,14 @@
       <tspan x="686.187264" dy="41">für Familien</tspan>
     </text>
   
-    <text x="686.187264" y="321" font-size="18" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="400">
-      <tspan x="686.187264" dy="0">Der praktische Umzugsplaner für</tspan><tspan x="686.187264" dy="22">einen stressfreien Umzug mit</tspan><tspan x="686.187264" dy="22">Kindern</tspan>
+    <text x="686.187264" y="313" font-size="16.8" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="400">
+      <tspan x="686.187264" dy="0">Der praktische Umzugsplaner für</tspan><tspan x="686.187264" dy="21">einen stressfreien Umzug mit</tspan><tspan x="686.187264" dy="21">Kindern</tspan>
     </text>
 
-  <rect x="686.187264" y="677" width="446" height="84" rx="12" fill="#ffffff" stroke="#d1c6b8" stroke-width="1.5" />
+  <path d="M 686.187264 673 H 1116.1872640000001" stroke="#d1c6b8" stroke-width="1.5" />
   
-    <text x="706.187264" y="707" font-size="13" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="600">
-      <tspan x="706.187264" dy="0">Mit Wochenplan, Packlisten, Budgetplaner,</tspan><tspan x="706.187264" dy="17">Adressänderungen, Kinder-Checklisten und</tspan><tspan x="706.187264" dy="17">Übergabeprotokoll</tspan>
+    <text x="686.187264" y="699" font-size="13" fill="#23303a" font-family="Montserrat, Arial, sans-serif" font-weight="600">
+      <tspan x="686.187264" dy="0">Mit Wochenplan, Packlisten, Budgetplaner, Adressänderungen,</tspan><tspan x="686.187264" dy="17">Kinder-Checklisten und Übergabeprotokoll</tspan>
     </text>
 
   <text x="686.187264" y="775" font-size="13.5" fill="#55616b" font-family="Montserrat, Arial, sans-serif" font-weight="600">Planvoll Familie</text>

@@ -16,6 +16,7 @@
     "numbering": "body",
     "motif": "Zeitplan",
     "description": "Woche für Woche klar sehen, was jetzt wichtig ist, damit euer Umzug planbar und ruhiger bleibt.",
+    "outcome": "Am Ende dieses Abschnitts stehen eure Fristen, Zuständigkeiten und die nächsten Wochen in einer Reihenfolge, die im Familienalltag wirklich tragbar bleibt.",
     "highlights": [
       "Fristen früh sichern und nichts Wichtiges übersehen",
       "Helfer, Termine und Verträge rechtzeitig abstimmen",
@@ -32,6 +33,7 @@
     "numbering": "body",
     "motif": "Familie",
     "description": "Dieser Abschnitt hilft euch, den Umzug nicht nur organisatorisch, sondern auch emotional familiengerecht zu planen.",
+    "outcome": "Am Ende dieses Abschnitts habt ihr die wichtigsten Kinder- und Familienthemen so gesammelt, dass Übergänge, Routinen und Bedürfnisse nicht nebenbei untergehen.",
     "highlights": [
       "Kinder auf Veränderungen vorbereiten",
       "Schule, Kita und Betreuung geordnet vorbereiten",
@@ -48,6 +50,7 @@
     "numbering": "body",
     "motif": "Packen",
     "description": "Hier plant ihr Kartons, Prioritäten und alles, was beim Ein- und Auspacken wirklich funktionieren muss.",
+    "outcome": "Am Ende dieses Abschnitts wisst ihr, was wohin kommt, was zuerst griffbereit bleiben muss und wie Helfer eure Packlogik sofort verstehen.",
     "highlights": [
       "Kisten logisch markieren und priorisieren",
       "Zimmerweise packen und schneller wiederfinden",
@@ -64,6 +67,7 @@
     "numbering": "body",
     "motif": "Budget",
     "description": "Ein guter Umzug braucht auch einen klaren Kostenüberblick, damit ihr nicht von vielen kleinen Beträgen überrascht werdet.",
+    "outcome": "Am Ende dieses Abschnitts sind geplante, bezahlte und noch offene Kosten sauber getrennt, damit ihr Entscheidungen nicht aus dem Bauch treffen müsst.",
     "highlights": [
       "Geplante und echte Kosten vergleichen",
       "Familienbezogene Zusatzkosten sichtbar machen",
@@ -79,6 +83,7 @@
     "numbering": "body",
     "motif": "Verträge",
     "description": "Von Behörden bis Familienkasse: Hier haltet ihr fest, wen ihr informiert habt und was noch offen ist.",
+    "outcome": "Am Ende dieses Abschnitts bleibt nachvollziehbar, welche Stellen informiert sind, welche Rückmeldungen fehlen und welche Angaben ihr noch beschaffen müsst.",
     "highlights": [
       "Behörden und Anbieter vollständig informieren",
       "Bestätigungen und Rückmeldungen dokumentieren",
@@ -94,6 +99,7 @@
     "numbering": "body",
     "motif": "Übergabe",
     "description": "Zum Abschluss dokumentiert ihr Übergaben, Mängel, Reinigungspläne und alles, was nach dem Einzug noch wichtig bleibt.",
+    "outcome": "Am Ende dieses Abschnitts sind Übergaben, Zählerstände, Schlüssel und die wichtigsten Nacharbeiten so dokumentiert, dass später nichts mehr rekonstruiert werden muss.",
     "highlights": [
       "Alte und neue Wohnung sauber dokumentieren",
       "Zählerstände, Schäden und Fotos geordnet festhalten",

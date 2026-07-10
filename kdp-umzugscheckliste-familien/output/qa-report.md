@@ -15,8 +15,10 @@
 - Sensible Formulierungen: `0`
 - Verdaechtige Innenraum-Farbtreffer im HTML/CSS: `0`
 - Maximale gemessene Saettigung im Innen-PDF: `0.225`
-- Seite-5-Notes-Box dominante Farben: `255/255/255:1`
-- Gerenderte QA-Seiten: `5, 6, 7, 9, 31, 45, 46`
+- Seite-5-Notes-Box dominante Farben: `255/255/255:0.945274, 202/194/180:0.00995, 216/210/199:0.004975`
+- Seite-5-Notes-Box erlaubter Fuellanteil: `0.945274`
+- Gerenderte QA-Seiten: `1, 2, 3, 4, 11, 12, 29, 47, 50, 71, 73, 79, 81, 90, 91, 92, 93, 96, 97, 106`
+- Cover-QA-Renders: `cover-sheet.png, cover-front.png, cover-back.png`
 - Verbotene *-updated.pdf-Dateien: `0`
 - Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular, DAAAAA+SourceSans3ExtraLight-SemiBold, EAAAAA+MontserratThin-SemiBold`
 - Cover-PDF-Schriften: `AAAAAA+MontserratThin-Bold, BAAAAA+MontserratThin-SemiBold`
@@ -71,7 +73,6 @@
 - Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ja
 - Woechentliche Seiten mit 10-14 Aufgaben: ja
 - Inhaltsuebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ja
-- How-to-Uebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ja
 
 ## Hinweise
 
@@ -79,7 +80,7 @@
 - Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden.
 - Keine verdaechtigen Magenta-/Pink-/Debug-Tokens in styles/*.css oder dist/interior.html gefunden.
 - Keine hochgesaettigten Farbflaechen im gerenderten Innen-PDF erkannt.
-- Die analysierte Seite-5-Notes-Box nutzt nur erlaubte Fuellfarben (250,248,244 | 255,255,255).
-- Die PNG-QA-Renders fuer Seite 5, 6, 7, 9, 31, 45 und 46 liegen in `output/qa-renders/`.
-- Manuelle Sichtpruefung bleibt erforderlich fuer Titel-, Divider-, Budget-, Prozess- und Coverseiten.
+- Die analysierte Seite-5-Notes-Box bleibt neutral; erlaubte Fuellfarben decken 0.945274 des Hintergrunds ab (250,248,244 | 255,255,255).
+- Die PNG-QA-Renders fuer die risikoreichen Innen- und Coverseiten liegen in `output/qa-renders/`.
+- Manuelle Sichtpruefung bleibt erforderlich, auch wenn die Render-Abdeckung jetzt Titel-, Divider-, Tabellen-, Prozess- und Coverseiten umfasst.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.

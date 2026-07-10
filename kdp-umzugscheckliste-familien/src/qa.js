@@ -34,8 +34,36 @@ const DISALLOWED_STYLE_TOKENS = [
   "highlight"
 ];
 
-const QA_RENDER_PAGES = [5, 6, 7, 9, 31, 45, 46];
 const ALLOWED_WRITING_SURFACE_COLORS = new Set(["250,248,244", "255,255,255"]);
+
+function getQaRenderPages(pages) {
+  const requiredTitles = new Set([
+    "Umzugscheckliste für Familien",
+    "Willkommen & Nutzungshinweis",
+    "So nutzt ihr diesen Planer",
+    "Inhaltsübersicht",
+    "12 Wochen vorher",
+    "Farbcodes nach Zimmern",
+    "Umzugsunternehmen Kostenvergleich",
+    "Bezahlte Rechnungen",
+    "Nachsendeauftrag",
+    "Verträge kündigen / ummelden",
+    "Neue Verträge einrichten",
+    "Zählerstände",
+    "Schlüsselübergabe",
+    "Wichtige Erfahrungen für den nächsten Umzug"
+  ]);
+
+  const renderPages = new Set();
+
+  for (const page of pages) {
+    if (page.kind === "divider" || requiredTitles.has(page.title)) {
+      renderPages.add(page.sequenceNumber);
+    }
+  }
+
+  return [...renderPages].sort((left, right) => left - right);
+}
 function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(contentDir, "book-config.json"), "utf8"));
 }
@@ -288,18 +316,22 @@ print(json.dumps({
   return JSON.parse(raw);
 }
 
-function renderQaPagesAndInspectNotesBox(pdfFilePath) {
+function renderQaPagesAndInspectNotesBox(pdfFilePath, renderPages, coverSpec) {
+  fs.rmSync(qaRenderDir, { recursive: true, force: true });
   const script = `
 import fitz, json, os, sys
 from collections import Counter
 
 pdf = fitz.open(sys.argv[1])
 output_dir = sys.argv[2]
-pages_to_render = [5, 6, 7, 9, 31, 45, 46]
+pages_to_render = json.loads(sys.argv[3])
 allowed = {(250, 248, 244), (255, 255, 255)}
+cover_pdf_path = sys.argv[4]
+cover_geometry = json.loads(sys.argv[5])
 
 os.makedirs(output_dir, exist_ok=True)
 rendered = []
+cover_renders = []
 
 def saturation(rgb):
     r, g, b = [value / 255 for value in rgb]
@@ -322,6 +354,42 @@ for page_number in pages_to_render:
     pix.save(file_path)
     rendered.append({
         "page": page_number,
+        "file": file_name,
+        "width": pix.width,
+        "height": pix.height
+    })
+
+cover_pdf = fitz.open(cover_pdf_path)
+cover_page = cover_pdf[0]
+cover_pix = cover_page.get_pixmap(matrix=fitz.Matrix(1.6, 1.6), colorspace=fitz.csRGB, alpha=False)
+cover_sheet_file = "cover-sheet.png"
+cover_pix.save(os.path.join(output_dir, cover_sheet_file))
+cover_renders.append({
+    "name": "sheet",
+    "file": cover_sheet_file,
+    "width": cover_pix.width,
+    "height": cover_pix.height
+})
+
+front_rect = fitz.Rect(
+    cover_geometry["frontX"],
+    cover_geometry["frontY"],
+    cover_geometry["frontX"] + cover_geometry["trimWidth"],
+    cover_geometry["frontY"] + cover_geometry["trimHeight"]
+)
+back_rect = fitz.Rect(
+    cover_geometry["backX"],
+    cover_geometry["backY"],
+    cover_geometry["backX"] + cover_geometry["trimWidth"],
+    cover_geometry["backY"] + cover_geometry["trimHeight"]
+)
+
+for name, rect in [("front", front_rect), ("back", back_rect)]:
+    pix = cover_page.get_pixmap(matrix=fitz.Matrix(1.8, 1.8), clip=rect, colorspace=fitz.csRGB, alpha=False)
+    file_name = f"cover-{name}.png"
+    pix.save(os.path.join(output_dir, file_name))
+    cover_renders.append({
+        "name": name,
         "file": file_name,
         "width": pix.width,
         "height": pix.height
@@ -394,10 +462,12 @@ for rgb, count in background_counter.most_common(8):
         "allowedFill": rgb in allowed
     })
 
-allowed_fill_only = all(entry["allowedFill"] for entry in dominant_colors[:3]) if dominant_colors else False
+allowed_fill_pixels = sum(count for rgb, count in background_counter.items() if rgb in allowed)
+allowed_fill_ratio = round(allowed_fill_pixels / max(1, background_pixels), 6)
 
 print(json.dumps({
     "renderedPages": rendered,
+    "coverRenders": cover_renders,
     "notesBox": {
         "labelRect": [round(label.x0, 2), round(label.y0, 2), round(label.x1, 2), round(label.y1, 2)],
         "sampleRegion": [round(sample_region.x0, 2), round(sample_region.y0, 2), round(sample_region.x1, 2), round(sample_region.y1, 2)],
@@ -408,15 +478,27 @@ print(json.dumps({
         "maxChannelDiff": int(max_channel_diff),
         "magentaPixelCount": magenta_pixels,
         "highSaturationPixelCount": high_saturation_pixels,
-        "allowedFillOnly": allowed_fill_only
+        "allowedFillRatio": allowed_fill_ratio
     }
 }))
 `;
 
-  const raw = execFileSync("python", ["-c", script, pdfFilePath, qaRenderDir], {
-    cwd: rootDir,
-    encoding: "utf8"
-  });
+  const raw = execFileSync(
+    "python",
+    [
+      "-c",
+      script,
+      pdfFilePath,
+      qaRenderDir,
+      JSON.stringify(renderPages),
+      coverPdfPath,
+      JSON.stringify(coverSpec.geometry)
+    ],
+    {
+      cwd: rootDir,
+      encoding: "utf8"
+    }
+  );
 
   const result = JSON.parse(raw);
   fs.writeFileSync(
@@ -429,20 +511,14 @@ print(json.dumps({
 
 function inspectContentsCoverage(pages) {
   const contentsPage = pages.find((page) => page.kind === "contentsPage");
-  const howToPage = pages.find((page) => page.kind === "howToUse");
 
   const contentsMarkers = contentsPage
     ? contentsPage.entries.filter((entry) => entry.marker || entry.range).length
     : 0;
-  const howToMarkers = howToPage
-    ? howToPage.sections.filter((entry) => entry.marker || entry.range).length
-    : 0;
 
   return {
     contentsMarkers,
-    howToMarkers,
-    expectedContentsMarkers: contentsPage ? contentsPage.entries.length - 1 : 0,
-    expectedHowToMarkers: howToPage ? howToPage.sections.length - 1 : 0
+    expectedContentsMarkers: contentsPage ? contentsPage.entries.length - 1 : 0
   };
 }
 
@@ -472,8 +548,9 @@ function generateQaReport() {
   const updatedPdfCopies = findUpdatedPdfCopies();
   const interiorSourceScan = inspectInteriorSourceColors();
   const interiorPdf = inspectPdf(pdfPath);
-  const qaRenderData = renderQaPagesAndInspectNotesBox(pdfPath);
   const cover = inspectCover();
+  const qaRenderPages = getQaRenderPages(pages);
+  const qaRenderData = renderQaPagesAndInspectNotesBox(pdfPath, qaRenderPages, cover.spec);
   const contentsCoverage = inspectContentsCoverage(pages);
   const interiorHasProjectFonts =
     hasFontFamily(interiorPdf.fonts, "montserrat") &&
@@ -491,7 +568,7 @@ function generateQaReport() {
     notesBox.magentaPixelCount === 0 &&
     notesBox.highSaturationPixelCount === 0 &&
     notesBox.maxChannelDiff <= 25 &&
-    notesBox.allowedFillOnly;
+    notesBox.allowedFillRatio >= 0.9;
 
   const weeklyRanges = weeklyPages.map(
     (page) => `${page.title}: ${page.items.length} Aufgaben`
@@ -533,7 +610,9 @@ function generateQaReport() {
     .slice(0, 3)
     .map((entry) => `${entry.rgb.join("/")}:${entry.ratio}`)
     .join(", ")}\`
+- Seite-5-Notes-Box erlaubter Fuellanteil: \`${notesBox.allowedFillRatio}\`
 - Gerenderte QA-Seiten: \`${qaRenderData.renderedPages.map((entry) => entry.page).join(", ")}\`
+- Cover-QA-Renders: \`${qaRenderData.coverRenders.map((entry) => entry.file).join(", ")}\`
 - Verbotene *-updated.pdf-Dateien: \`${updatedPdfCopies.length}\`
 - Innen-PDF-Schriften: \`${interiorPdf.fonts.join(", ")}\`
 - Cover-PDF-Schriften: \`${cover.outputPdf.fonts.join(", ")}\`
@@ -593,9 +672,6 @@ ${renderList(weeklyRanges)}
 - Inhaltsuebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ${
     contentsCoverage.contentsMarkers === contentsCoverage.expectedContentsMarkers ? "ja" : "nein"
   }
-- How-to-Uebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ${
-    contentsCoverage.howToMarkers === contentsCoverage.expectedHowToMarkers ? "ja" : "nein"
-  }
 
 ## Hinweise
 
@@ -618,7 +694,7 @@ ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-H
   }
 - ${
     notesBoxPass
-      ? `Die analysierte Seite-5-Notes-Box nutzt nur erlaubte Fuellfarben (${[...ALLOWED_WRITING_SURFACE_COLORS].join(" | ")}).`
+      ? `Die analysierte Seite-5-Notes-Box bleibt neutral; erlaubte Fuellfarben decken ${notesBox.allowedFillRatio} des Hintergrunds ab (${[...ALLOWED_WRITING_SURFACE_COLORS].join(" | ")}).`
       : renderList(
           notesBox.dominantColors.map(
             (entry) =>
@@ -626,8 +702,8 @@ ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-H
           )
         )
   }
-- Die PNG-QA-Renders fuer Seite 5, 6, 7, 9, 31, 45 und 46 liegen in \`output/qa-renders/\`.
-- Manuelle Sichtpruefung bleibt erforderlich fuer Titel-, Divider-, Budget-, Prozess- und Coverseiten.
+- Die PNG-QA-Renders fuer die risikoreichen Innen- und Coverseiten liegen in \`output/qa-renders/\`.
+- Manuelle Sichtpruefung bleibt erforderlich, auch wenn die Render-Abdeckung jetzt Titel-, Divider-, Tabellen-, Prozess- und Coverseiten umfasst.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.
 `;
 

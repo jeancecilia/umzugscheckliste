@@ -177,15 +177,6 @@ function renderTitlePillars(items = []) {
     .join("");
 }
 
-function renderTitleTags(items = []) {
-  return items
-    .map(
-      (item) => `
-        <span class="title-tag">${escapeHtml(item.title)}</span>`
-    )
-    .join("");
-}
-
 function renderInfoCards(items = []) {
   return items
     .map(
@@ -249,47 +240,60 @@ function renderContentsCards(items = []) {
     .join("");
 }
 
-function renderHowToSectionCards(items = []) {
+function getSnapshotLineCount(label) {
+  const key = normalizeLookupKey(label);
+
+  if (
+    key.includes("adresse") ||
+    key.includes("priorit") ||
+    key.includes("reparatur") ||
+    key.includes("druck") ||
+    key.includes("funktionieren muss")
+  ) {
+    return 2;
+  }
+
+  return 1;
+}
+
+function renderSnapshotWriteLines(lineCount = 1) {
+  return Array.from({ length: lineCount }, () => '<div class="snapshot-line"></div>').join("");
+}
+
+function renderSnapshotCards(items = []) {
   return items
     .map((item) => {
-      const marker = item.absoluteMarker || item.marker || "Vorne";
+      const lineCount = getSnapshotLineCount(item);
 
       return `
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">${escapeHtml(marker)}</span>
-            <strong>${escapeHtml(item.title)}</strong>
+        <div class="snapshot-card">
+          <div class="field-label">${escapeHtml(item)}</div>
+          <div class="snapshot-write${lineCount > 1 ? " multi-line" : ""}">
+            ${renderSnapshotWriteLines(lineCount)}
           </div>
-          <p>${escapeHtml(item.description)}</p>
         </div>`;
     })
     .join("");
 }
 
-function renderSnapshotCards(items = []) {
-  return items
-    .map(
-      (item) => `
-        <div class="snapshot-card">
-          <div class="field-label">${escapeHtml(item)}</div>
-          <div class="snapshot-write"></div>
-        </div>`
-    )
-    .join("");
-}
-
 function renderChecklistRows(items = [], minimumRows = 10, options = {}) {
   const customRowLabel = options.customRowLabel || "Eigene Ergänzung";
+  let customRowCount = 0;
 
   return padRows(items, minimumRows)
     .map((item) => {
       const isCustomRow = !item;
-      const label = isCustomRow ? customRowLabel : item;
+      if (isCustomRow) {
+        customRowCount += 1;
+      }
+
+      const label = isCustomRow && customRowCount === 1 ? customRowLabel : item;
+      const labelMarkup = label ? escapeHtml(label) : "&nbsp;";
 
       return `
         <div class="checklist-row">
           <span class="checkbox"></span>
-          <span class="row-label${isCustomRow ? " custom-row-label" : ""}">${escapeHtml(label)}</span>
+          <span class="row-label${isCustomRow && customRowCount === 1 ? " custom-row-label" : ""}">${labelMarkup}</span>
           <span class="row-line"></span>
         </div>`;
     })
@@ -310,6 +314,35 @@ function renderPromptCards(items = []) {
 
 function renderLines(lineCount = 18) {
   return Array.from({ length: lineCount }, () => '<div class="line"></div>').join("");
+}
+
+function renderWritingGuideLines(lineCount = 6) {
+  return Array.from({ length: lineCount }, () => '<div class="writing-line"></div>').join("");
+}
+
+function renderNotesBox(label, options = {}) {
+  const classes = ["notes-box"];
+
+  if (options.fill) {
+    classes.push("fill");
+  }
+  if (options.compact) {
+    classes.push("compact");
+  }
+  if (options.medium) {
+    classes.push("medium");
+  }
+  if (options.lined !== false) {
+    classes.push("lined");
+  }
+
+  return `
+    <div class="${classes.join(" ")}">
+      <div class="field-label">${escapeHtml(label)}</div>
+      <div class="writing-guides">
+        ${renderWritingGuideLines(options.lineCount || 6)}
+      </div>
+    </div>`;
 }
 
 function renderProfileFields(fields = []) {
@@ -401,6 +434,19 @@ function renderDividerHighlights(items = []) {
         <li>${escapeHtml(item)}</li>`
     )
     .join("");
+}
+
+function buildInfoPageMeta(page) {
+  const notes = [];
+
+  if (page.disclaimer) {
+    notes.push(`<div class="info-small-note">${escapeHtml(page.disclaimer)}</div>`);
+  }
+  if (page.imprint) {
+    notes.push(`<div class="info-small-note info-imprint">${escapeHtml(page.imprint)}</div>`);
+  }
+
+  return notes.join("");
 }
 
 function normalizeCustomTableRow(item, columnCount) {
@@ -501,21 +547,19 @@ function renderPage(page) {
         promise: escapeHtml(page.promise || ""),
         features: renderTitlePillars(page.features || []),
         benefit: escapeHtml(page.benefit || ""),
-        tags: renderTitleTags(page.features || []),
-        heroIcon: renderSvgIcon("house-heart", "planner-icon title-visual-icon"),
-        focusIcon: renderSvgIcon("house-heart", "planner-icon title-focus-icon")
+        heroIcon: renderSvgIcon("house-heart", "planner-icon title-visual-icon")
       });
     case "infoPage":
       return replaceTokens(loadTemplate("info-page.html"), {
         ...shared,
         cards: renderInfoCards(page.cards || []),
-        note: escapeHtml(page.note || "")
+        note: escapeHtml(page.note || ""),
+        metaNotes: buildInfoPageMeta(page)
       });
     case "howToUse":
       return replaceTokens(loadTemplate("how-to-use-page.html"), {
         ...shared,
         steps: renderHowToStepCards(page.steps || []),
-        sections: renderHowToSectionCards(page.sections || []),
         note: escapeHtml(page.note || "")
       });
     case "contentsPage":
@@ -528,13 +572,19 @@ function renderPage(page) {
       return replaceTokens(loadTemplate("snapshot-page.html"), {
         ...shared,
         cards: renderSnapshotCards(page.fields || []),
-        notesLabel: escapeHtml(page.notesLabel || "Zusätzliche Hinweise")
+        notesBox: renderNotesBox(page.notesLabel || "Zusätzliche Hinweise", {
+          fill: true,
+          lineCount: 6
+        })
       });
     case "contacts":
       return replaceTokens(loadTemplate("contacts-page.html"), {
         ...shared,
         rows: renderContactRows(page.rowCount || 8),
-        notesLabel: escapeHtml(page.notesLabel || "Zusätzliche Kontakte")
+        notesBox: renderNotesBox(page.notesLabel || "Zusätzliche Kontakte", {
+          fill: true,
+          lineCount: 6
+        })
       });
     case "divider":
       return replaceTokens(loadTemplate("divider-page.html"), {
@@ -542,6 +592,9 @@ function renderPage(page) {
         description: escapeHtml(page.description || ""),
         motif: escapeHtml(page.motif || ""),
         sectionTag: escapeHtml(page.sectionTag || ""),
+        pageRange: escapeHtml(page.pageRange || ""),
+        worksheetCount: escapeHtml(page.worksheetCountLabel || ""),
+        outcome: escapeHtml(page.outcome || ""),
         icon: renderSvgIcon(resolveSectionIcon(page.sectionId), "planner-icon divider-icon"),
         highlights: renderDividerHighlights(page.highlights || [])
       });
@@ -553,6 +606,10 @@ function renderPage(page) {
         familyReminder: escapeHtml(page.familyReminder || ""),
         rows: renderChecklistRows(page.items || [], 12, {
           customRowLabel: page.customRowLabel || "Eigene Ergänzung"
+        }),
+        notesBox: renderNotesBox("Notizen", {
+          fill: true,
+          lineCount: 7
         })
       });
     case "checklist":
@@ -560,7 +617,10 @@ function renderPage(page) {
         ...shared,
         focusLabel: escapeHtml(page.focusLabel || "Heute im Blick"),
         focusText: escapeHtml(page.focusText || ""),
-        notesLabel: escapeHtml(page.notesLabel || "Notizen"),
+        notesBox: renderNotesBox(page.notesLabel || "Notizen", {
+          fill: true,
+          lineCount: 7
+        }),
         rows: renderChecklistRows(page.items || [], page.minimumRows || 9, {
           customRowLabel: page.customRowLabel || "Eigene Ergänzung"
         })
@@ -572,7 +632,10 @@ function renderPage(page) {
         rows: renderChecklistRows(page.items || [], page.minimumRows || 10, {
           customRowLabel: page.customRowLabel || "Eigene Ergänzung"
         }),
-        notesLabel: escapeHtml(page.notesLabel || "Familien-Notizen")
+        notesBox: renderNotesBox(page.notesLabel || "Familien-Notizen", {
+          fill: true,
+          lineCount: 7
+        })
       });
     case "familyProfile":
       return replaceTokens(loadTemplate("family-profile-page.html"), {
@@ -595,22 +658,40 @@ function renderPage(page) {
       return replaceTokens(loadTemplate("budget-page.html"), {
         ...shared,
         rows: renderBudgetRows(page.items || [], page.minimumRows || 9),
-        leftLabel: escapeHtml(page.leftLabel || "Was wir im Blick behalten wollen"),
-        rightLabel: escapeHtml(page.rightLabel || "Nächster Betrag / offene Frage")
+        leftNotesBox: renderNotesBox(page.leftLabel || "Was wir im Blick behalten wollen", {
+          medium: true,
+          lineCount: 5
+        }),
+        rightNotesBox: renderNotesBox(page.rightLabel || "Nächster Betrag / offene Frage", {
+          medium: true,
+          lineCount: 5
+        })
       });
     case "addressChange":
       return replaceTokens(loadTemplate("address-change-page.html"), {
         ...shared,
         rows: renderAddressRows(page.items || [], page.minimumRows || 9),
-        leftLabel: escapeHtml(page.leftLabel || "Fehlende Unterlagen / Zugangsdaten"),
-        rightLabel: escapeHtml(page.rightLabel || "Rückmeldung / Frist")
+        leftNotesBox: renderNotesBox(page.leftLabel || "Fehlende Unterlagen und Angaben", {
+          medium: true,
+          lineCount: 5
+        }),
+        rightNotesBox: renderNotesBox(page.rightLabel || "Rückmeldung / Frist", {
+          medium: true,
+          lineCount: 5
+        })
       });
     case "handover":
       return replaceTokens(loadTemplate("handover-page.html"), {
         ...shared,
         rows: renderHandoverRows(page.items || [], page.minimumRows || 9),
-        leftLabel: escapeHtml(page.leftLabel || "Besonders wichtig auf dieser Seite"),
-        rightLabel: escapeHtml(page.rightLabel || "Wer kümmert sich / bis wann")
+        leftNotesBox: renderNotesBox(page.leftLabel || "Besonders wichtig auf dieser Seite", {
+          medium: true,
+          lineCount: 5
+        }),
+        rightNotesBox: renderNotesBox(page.rightLabel || "Wer kümmert sich / bis wann", {
+          medium: true,
+          lineCount: 5
+        })
       });
     case "customTable":
       return replaceTokens(loadTemplate("custom-table-page.html"), {
@@ -626,8 +707,14 @@ function renderPage(page) {
           page.columns || [],
           page.minimumRows || Math.max((page.items || []).length, 8)
         ),
-        leftLabel: escapeHtml(page.leftLabel || "Besondere Hinweise"),
-        rightLabel: escapeHtml(page.rightLabel || "Nächster Schritt / Rückfrage")
+        leftNotesBox: renderNotesBox(page.leftLabel || "Besondere Hinweise", {
+          medium: true,
+          lineCount: 5
+        }),
+        rightNotesBox: renderNotesBox(page.rightLabel || "Nächster Schritt / Rückfrage", {
+          medium: true,
+          lineCount: 5
+        })
       });
     default:
       throw new Error(`Unsupported page kind: ${page.kind}`);
@@ -704,6 +791,39 @@ function addSectionRanges(pages, sections) {
   }
 }
 
+function formatSectionPageRange(firstNumber, lastNumber) {
+  if (!firstNumber || !lastNumber) {
+    return "";
+  }
+
+  return firstNumber === lastNumber ? `S. ${firstNumber}` : `S. ${firstNumber}-${lastNumber}`;
+}
+
+function addDividerMetadata(pages, sections) {
+  for (const section of sections) {
+    const dividerPage = pages.find((page) => page.kind === "divider" && page.sectionId === section.id);
+    if (!dividerPage) {
+      continue;
+    }
+
+    const worksheetPages = pages.filter(
+      (page) => page.sectionId === section.id && page.numbering === "body" && page.kind !== "divider"
+    );
+
+    if (!worksheetPages.length) {
+      continue;
+    }
+
+    dividerPage.pageRange = formatSectionPageRange(
+      worksheetPages[0].printNumber,
+      worksheetPages[worksheetPages.length - 1].printNumber
+    );
+    dividerPage.worksheetCountLabel =
+      worksheetPages.length === 1 ? "1 Arbeitsseite" : `${worksheetPages.length} Arbeitsseiten`;
+    dividerPage.outcome = section.outcome || "";
+  }
+}
+
 function buildPageList() {
   const config = loadJson("book-config.json");
   const sections = loadJson("sections.json");
@@ -775,6 +895,7 @@ function buildPageList() {
     page.totalPageCount = pages.length;
   }
 
+  addDividerMetadata(pages, sections);
   addSectionRanges(pages, sections);
 
   return pages;

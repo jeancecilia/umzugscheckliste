@@ -7,12 +7,23 @@
     <div class="divider-icon-wrap" aria-hidden="true">{{icon}}</div>
     <h1>{{title}}</h1>
     <p class="subtitle">{{description}}</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>{{pageRange}}</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>{{worksheetCount}}</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
         {{highlights}}
       </ul>
     </div>
+    <p class="divider-outcome">{{outcome}}</p>
   </div>
   {{footer}}
 </section>

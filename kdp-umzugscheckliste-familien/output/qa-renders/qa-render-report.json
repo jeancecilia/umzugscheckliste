@@ -1,60 +1,158 @@
 {
   "renderedPages": [
     {
-      "page": 5,
-      "file": "page-005.png",
+      "page": 1,
+      "file": "page-001.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 6,
-      "file": "page-006.png",
+      "page": 2,
+      "file": "page-002.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 7,
-      "file": "page-007.png",
+      "page": 3,
+      "file": "page-003.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 9,
-      "file": "page-009.png",
+      "page": 4,
+      "file": "page-004.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 31,
-      "file": "page-031.png",
+      "page": 11,
+      "file": "page-011.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 45,
-      "file": "page-045.png",
+      "page": 12,
+      "file": "page-012.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 46,
-      "file": "page-046.png",
+      "page": 29,
+      "file": "page-029.png",
       "width": 1224,
       "height": 1584
+    },
+    {
+      "page": 47,
+      "file": "page-047.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 50,
+      "file": "page-050.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 71,
+      "file": "page-071.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 73,
+      "file": "page-073.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 79,
+      "file": "page-079.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 81,
+      "file": "page-081.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 90,
+      "file": "page-090.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 91,
+      "file": "page-091.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 92,
+      "file": "page-092.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 93,
+      "file": "page-093.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 96,
+      "file": "page-096.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 97,
+      "file": "page-097.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 106,
+      "file": "page-106.png",
+      "width": 1224,
+      "height": 1584
+    }
+  ],
+  "coverRenders": [
+    {
+      "name": "sheet",
+      "file": "cover-sheet.png",
+      "width": 2015,
+      "height": 1296
+    },
+    {
+      "name": "front",
+      "file": "cover-front.png",
+      "width": 1103,
+      "height": 1426
+    },
+    {
+      "name": "back",
+      "file": "cover-back.png",
+      "width": 1102,
+      "height": 1426
     }
   ],
   "notesBox": {
     "labelRect": [
       104.83,
-      411.9,
+      452.36,
       144.15,
-      423.02
+      463.48
     ],
     "sampleRegion": [
       106.83,
-      433.02,
+      473.48,
       505.17,
-      533.02
+      573.48
     ],
     "cropFile": "page-005-notes-box-crop.png",
     "backgroundPixelCount": 160398,
@@ -65,17 +163,101 @@
           255,
           255
         ],
-        "count": 160398,
-        "ratio": 1,
+        "count": 151620,
+        "ratio": 0.945274,
         "saturation": 0,
         "channelDiff": 0,
         "allowedFill": true
+      },
+      {
+        "rgb": [
+          202,
+          194,
+          180
+        ],
+        "count": 1596,
+        "ratio": 0.00995,
+        "saturation": 0.1089,
+        "channelDiff": 22,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          216,
+          210,
+          199
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.0787,
+        "channelDiff": 17,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          219,
+          214,
+          204
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.0685,
+        "channelDiff": 15,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          212,
+          206,
+          194
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.0849,
+        "channelDiff": 18,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          223,
+          218,
+          209
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.0628,
+        "channelDiff": 14,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          205,
+          198,
+          184
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.1024,
+        "channelDiff": 21,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          230,
+          226,
+          220
+        ],
+        "count": 798,
+        "ratio": 0.004975,
+        "saturation": 0.0435,
+        "channelDiff": 10,
+        "allowedFill": false
       }
     ],
-    "maxSaturation": 0,
-    "maxChannelDiff": 0,
+    "maxSaturation": 0.1089,
+    "maxChannelDiff": 22,
     "magentaPixelCount": 0,
     "highSaturationPixelCount": 0,
-    "allowedFillOnly": true
+    "allowedFillRatio": 0.945274
   }
 }

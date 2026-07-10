@@ -301,58 +301,16 @@ p {
 }
 
 .title-focus-panel {
-  display: grid;
-  grid-template-columns: 1.88in 1fr;
-  gap: 0.18in;
-  align-items: stretch;
-  margin-top: auto;
+  display: block;
+  margin-top: 0.22in;
   padding: 0.18in;
   border: 1px solid var(--ink);
   background: rgba(255, 255, 255, 0.74);
 }
 
-.title-focus-art {
-  display: flex;
-  min-height: 1.66in;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.18in;
-  border: 1px solid rgba(36, 33, 29, 0.08);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(235, 225, 209, 0.82) 100%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(116, 103, 89, 0.07) 0 0.16in,
-      transparent 0.16in 0.32in
-    );
-}
-
-.title-focus-emblem {
-  width: 0.82in;
-  height: 0.82in;
-  border: 1px solid rgba(123, 113, 101, 0.3);
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.title-focus-icon {
-  width: 0.42in;
-  height: 0.42in;
-  opacity: 0.62;
-}
-
-.title-focus-art-copy {
-  max-width: 1.25in;
-  color: var(--muted);
-  font-size: 8.3pt;
-  line-height: 1.45;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
 .title-focus-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .title-focus-copy .subheading {
@@ -360,30 +318,10 @@ p {
 }
 
 .title-focus-quote {
-  max-width: 4.85in;
+  max-width: 5.95in;
   color: var(--ink);
   font-size: 10.2pt;
   line-height: 1.6;
-  font-style: italic;
-}
-
-.title-tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.08in;
-  margin-top: 0.14in;
-}
-
-.title-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.04in 0.08in;
-  border: 1px solid var(--ink);
-  background: #fff;
-  font-size: 8pt;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 .hero-panel,
@@ -523,6 +461,27 @@ p {
   min-height: 1.2in;
 }
 
+.info-meta-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08in;
+  margin-top: 0.14in;
+}
+
+.info-small-note {
+  padding-top: 0.08in;
+  border-top: 1px solid rgba(123, 113, 101, 0.28);
+  color: var(--muted);
+  font-size: 8.8pt;
+  line-height: 1.5;
+}
+
+.info-imprint {
+  font-size: 8.2pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .info-page .info-grid,
 .contents-page .contents-grid,
 .howto-page .howto-steps-block,
@@ -610,49 +569,6 @@ p {
   line-height: 1.42;
 }
 
-.howto-editorial-structure-block {
-  flex: 1;
-  margin-top: 0.26in;
-}
-
-.howto-editorial-sections-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.12in 0.25in;
-}
-
-.howto-editorial-section-card {
-  min-height: 0.92in;
-  padding: 0.14in 0.16in 0.15in;
-  border-left: 2px solid var(--ink);
-  background: var(--writing-surface);
-}
-
-.howto-editorial-section-head {
-  display: flex;
-  align-items: baseline;
-  gap: 0.08in;
-  margin-bottom: 0.04in;
-}
-
-.howto-editorial-section-range {
-  color: var(--muted);
-  font-size: 8.2pt;
-  font-weight: 700;
-}
-
-.howto-editorial-section-head strong {
-  font-family: "Montserrat", "Source Sans 3", Arial, sans-serif;
-  font-size: 8.6pt;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.howto-editorial-section-card p {
-  color: var(--muted);
-  line-height: 1.4;
-}
-
 .howto-editorial-note {
   margin-top: 0.24in;
   margin-bottom: 0.16in;
@@ -662,6 +578,14 @@ p {
   text-align: center;
   font-style: italic;
   line-height: 1.5;
+}
+
+.howto-editorial-handoff {
+  margin-bottom: 0.18in;
+  color: var(--muted);
+  font-size: 9.1pt;
+  line-height: 1.45;
+  text-align: center;
 }
 
 .howto-editorial-footer {
@@ -770,7 +694,17 @@ p {
 
 .snapshot-write {
   margin-top: 0.12in;
-  min-height: 0.66in;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12in;
+}
+
+.snapshot-write.multi-line {
+  min-height: 0.86in;
+}
+
+.snapshot-line {
+  min-height: 0.22in;
   border-bottom: 1px solid var(--line);
 }
 
@@ -843,6 +777,39 @@ p {
 .divider-panel {
   width: 6.05in;
   margin: 0.24in auto 0;
+}
+
+.divider-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.14in;
+  width: 5.18in;
+  margin: 0.18in auto 0;
+}
+
+.divider-stat {
+  padding: 0.12in 0.14in;
+  border: 1px solid rgba(123, 113, 101, 0.28);
+  background: rgba(255, 255, 255, 0.56);
+  text-align: center;
+}
+
+.divider-stat-label {
+  display: block;
+  margin-bottom: 0.04in;
+  color: var(--muted);
+  font-size: 7.9pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.divider-outcome {
+  width: 5.18in;
+  margin: 0.18in auto 0;
+  color: var(--ink);
+  line-height: 1.52;
+  text-align: center;
 }
 
 .divider-list {
@@ -933,6 +900,8 @@ p {
 }
 
 .notes-box {
+  display: flex;
+  flex-direction: column;
   margin-top: 0.18in;
   border: 1px solid var(--line);
   background: var(--writing-surface-alt);
@@ -954,6 +923,19 @@ p {
 
 .notes-box.lined {
   background: var(--writing-surface-alt);
+}
+
+.writing-guides {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.11in;
+  margin-top: 0.12in;
+}
+
+.writing-line {
+  min-height: 0.16in;
+  border-bottom: 1px solid #cac2b5;
 }
 
 .prompt-grid {
@@ -1087,8 +1069,8 @@ p {
 .address-head,
 .handover-head,
 .custom-table-head {
-  font-size: 7.15pt;
-  letter-spacing: 0.01em;
+  font-size: 8.15pt;
+  letter-spacing: 0.005em;
   text-transform: none;
 }
 
@@ -1449,27 +1431,9 @@ p {
       </div>
     </div>
     <div class="title-focus-panel">
-      <div class="title-focus-art">
-        <div class="title-focus-emblem">
-    <svg class="planner-icon title-focus-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      
-      <path d="M5.5 14.5L16 6l10.5 8.5"></path>
-      <path d="M8 13.5V27h16V13.5"></path>
-      <path d="M13 27v-7h6v7"></path>
-      <path d="M16 14.2c-1.1-1.6-4-1.1-4 1.3c0 2.8 4 4.8 4 4.8s4-2 4-4.8c0-2.4-2.9-2.9-4-1.3z"></path>
-    </svg></div>
-        <div class="title-focus-art-copy">Checklisten, Familienseiten, Packlisten und Raum f&uuml;r Notizen.</div>
-      </div>
       <div class="title-focus-copy">
         <div class="subheading">Euer Begleiter im Wandel</div>
-        <p class="title-focus-quote">&bdquo;Mit Wochenplan, Familienseiten, Packlisten, Budgetplaner, Adressänderungen und Übergabeprotokoll für einen wirklich alltagstauglichen Umzug.&ldquo;</p>
-        <div class="title-tag-list">
-          
-        <span class="title-tag">Zeitplan</span>
-        <span class="title-tag">Familie &amp; Kinder</span>
-        <span class="title-tag">Packen &amp; Kartons</span>
-        <span class="title-tag">Budget &amp; Übergabe</span>
-        </div>
+        <p class="title-focus-quote">Mit Wochenplan, Familienseiten, Packlisten, Budgetplaner, Adressänderungen und Übergabeprotokoll für einen wirklich alltagstauglichen Umzug.</p>
       </div>
     </div>
   </div>
@@ -1503,7 +1467,10 @@ p {
         </div>
     </div>
     <div class="tip-box">
-      Nutzt den Planer lieber laufend im Familienalltag als nur an einem einzigen Planungstag. So bleiben Aufgaben, Termine und Kinderbedürfnisse gemeinsam sichtbar. Marke und Gestaltung: Planvoll Familie. Dieser Planer ersetzt keine rechtliche Beratung und sollte immer zusammen mit euren Originalunterlagen verwendet werden.
+      Nutzt den Planer lieber laufend im Familienalltag als nur an einem einzigen Planungstag. So bleiben Aufgaben, Termine und Kinderbedürfnisse gemeinsam sichtbar.
+    </div>
+    <div class="info-meta-notes">
+      <div class="info-small-note">Dieser Planer ersetzt keine rechtliche oder steuerliche Beratung. Prüft Fristen, Verträge und amtliche Anforderungen immer mit euren Originalunterlagen.</div><div class="info-small-note info-imprint">Marke und Gestaltung: Planvoll Familie</div>
     </div>
   </div>
   
@@ -1540,62 +1507,8 @@ p {
         </div>
       </div>
     </section>
-    <section class="howto-editorial-structure-block avoid-break">
-      <div class="subheading">So ist der Planer aufgebaut</div>
-      <div class="howto-editorial-sections-grid">
-        
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 1-10</span>
-            <strong>Start &amp; Überblick</strong>
-          </div>
-          <p>Kerninfos, Kontakte, Prioritäten und Dokumente.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 11-28</span>
-            <strong>Zeitplan</strong>
-          </div>
-          <p>Alle Phasen vor, während und nach dem Umzug.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 29-46</span>
-            <strong>Familie &amp; Kinder</strong>
-          </div>
-          <p>Schule, Kita, Routinen, Sorgen und Ankommen.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 47-70</span>
-            <strong>Packen &amp; Kartons</strong>
-          </div>
-          <p>Packsystem, Raumlisten, Notfalltasche und erste Nacht.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 71-80</span>
-            <strong>Budget &amp; Kosten</strong>
-          </div>
-          <p>Geplante, echte und offene Kosten sauber im Blick behalten.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 81-92</span>
-            <strong>Adressen &amp; Verträge</strong>
-          </div>
-          <p>Behörden, Anbieter, Schule, Kita und offene Rückmeldungen.</p>
-        </div>
-        <div class="howto-editorial-section-card">
-          <div class="howto-editorial-section-head">
-            <span class="howto-editorial-section-range">S. 93-106</span>
-            <strong>Übergabe &amp; Nachbereitung</strong>
-          </div>
-          <p>Abnahme, Reinigung, Einkaufsliste und Erfahrungen festhalten.</p>
-        </div>
-      </div>
-    </section>
     <div class="howto-editorial-note">Nehmt euch lieber regelmäßig kurze Zeitfenster für den Planer als einen einzigen großen Planungstag. Das hält eure Liste realistisch und alltagstauglich.</div>
+    <div class="howto-editorial-handoff">Die komplette Abschnitts&uuml;bersicht mit Seitenbereichen folgt auf der n&auml;chsten Seite.</div>
     <footer class="howto-editorial-footer">
       <div class="howto-editorial-footer-left">Journal f&uuml;r den Familienumzug</div>
       <div class="howto-editorial-footer-right">&copy; Planvoll Familie</div>
@@ -1677,31 +1590,47 @@ p {
       
         <div class="snapshot-card">
           <div class="field-label">Umzugstermin</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Neue Adresse</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write multi-line">
+            <div class="snapshot-line"></div><div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Alte Adresse</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write multi-line">
+            <div class="snapshot-line"></div><div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Nächster wichtiger Schritt</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Schule / Kita / Betreuung</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Unsere drei größten Prioritäten</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write multi-line">
+            <div class="snapshot-line"></div><div class="snapshot-line"></div>
+          </div>
         </div>
     </div>
+    
     <div class="notes-box fill lined">
       <div class="field-label">Zusätzliche Hinweise</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -1718,31 +1647,47 @@ p {
       
         <div class="snapshot-card">
           <div class="field-label">Übergabetermin</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Offene Reparaturen</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write multi-line">
+            <div class="snapshot-line"></div><div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Keller / Abstellraum</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Balkon / Außenbereich</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Was bis zuletzt draußen bleibt</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Was noch besorgt werden muss</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
     </div>
+    
     <div class="notes-box fill lined">
       <div class="field-label">Besonderheiten der alten Wohnung</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -1759,31 +1704,47 @@ p {
       
         <div class="snapshot-card">
           <div class="field-label">Einzugstermin</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Schlüssel / Übergabe</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Zählerstände</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Kinderzimmer zuerst</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Erste Einkäufe</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write">
+            <div class="snapshot-line"></div>
+          </div>
         </div>
         <div class="snapshot-card">
           <div class="field-label">Was am ersten Abend funktionieren muss</div>
-          <div class="snapshot-write"></div>
+          <div class="snapshot-write multi-line">
+            <div class="snapshot-line"></div><div class="snapshot-line"></div>
+          </div>
         </div>
     </div>
+    
     <div class="notes-box fill lined">
       <div class="field-label">Besonderheiten der neuen Wohnung</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -1877,8 +1838,12 @@ p {
       <div></div>
     </div>
     </div>
+    
     <div class="notes-box fill lined">
       <div class="field-label">Zusätzliche Kontakte</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -1925,12 +1890,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir Helfern frühzeitig sagen sollten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir Helfern frühzeitig sagen sollten</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Material, Treffpunkte oder offene Rückfragen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Material, Treffpunkte oder offene Rückfragen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -2000,8 +1973,12 @@ p {
       <div class="field-label">Diese Mappe bleibt griffbereit</div>
       <div class="field-line field-copy">Legt sie nicht in allgemeine Kartons, sondern bewahrt sie separat und jederzeit erreichbar auf.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Welche Unterlagen noch fehlen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2024,6 +2001,16 @@ p {
     </svg></div>
     <h1>Zeitplan</h1>
     <p class="subtitle">Woche für Woche klar sehen, was jetzt wichtig ist, damit euer Umzug planbar und ruhiger bleibt.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 2-18</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>17 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -2034,6 +2021,7 @@ p {
         <li>Vor dem Umzug, am Umzugstag und danach strukturiert bleiben</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts stehen eure Fristen, Zuständigkeiten und die nächsten Wochen in einer Reihenfolge, die im Familienalltag wirklich tragbar bleibt.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -2127,8 +2115,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2223,8 +2215,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2319,8 +2315,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2415,8 +2415,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2511,8 +2515,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2607,8 +2615,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2703,8 +2715,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2799,8 +2815,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2895,8 +2915,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -2991,8 +3015,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3087,8 +3115,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3183,8 +3215,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3279,8 +3315,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3371,12 +3411,16 @@ p {
         </div>
         <div class="checklist-row">
           <span class="checkbox"></span>
-          <span class="row-label custom-row-label">Eigene Ergänzung</span>
+          <span class="row-label">&nbsp;</span>
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3471,8 +3515,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3563,12 +3611,16 @@ p {
         </div>
         <div class="checklist-row">
           <span class="checkbox"></span>
-          <span class="row-label custom-row-label">Eigene Ergänzung</span>
+          <span class="row-label">&nbsp;</span>
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Notizen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3645,7 +3697,7 @@ p {
         </div>
         <div class="checklist-row">
           <span class="checkbox"></span>
-          <span class="row-label custom-row-label">Eigene Ergänzung</span>
+          <span class="row-label">&nbsp;</span>
           <span class="row-line"></span>
         </div>
     </div>
@@ -3653,8 +3705,12 @@ p {
       <div class="field-label">Was jetzt noch abgeschlossen werden muss</div>
       <div class="field-line field-copy">Nutzt diese Seite als Resteliste, damit offene Rückmeldungen und Nacharbeiten sichtbar bleiben.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir später noch prüfen wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -3681,6 +3737,16 @@ p {
     </svg></div>
     <h1>Familie &amp; Kinder</h1>
     <p class="subtitle">Dieser Abschnitt hilft euch, den Umzug nicht nur organisatorisch, sondern auch emotional familiengerecht zu planen.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 20-36</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>17 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -3691,6 +3757,7 @@ p {
         <li>Ankommen bewusst familienfreundlich gestalten</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts habt ihr die wichtigsten Kinder- und Familienthemen so gesammelt, dass Übergänge, Routinen und Bedürfnisse nicht nebenbei untergehen.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -3780,8 +3847,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was unseren Kindern besonders hilft</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4003,8 +4074,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was auf keinen Fall fehlen darf</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4090,8 +4165,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was euer Kind abends beruhigt</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4177,8 +4256,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was der neuen Kita wichtig mitgeteilt werden soll</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4264,8 +4347,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was der Schulstart erleichtert</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4351,8 +4438,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir auf den neuen Wegen beachten müssen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4438,8 +4529,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was die Betreuungsperson wissen muss</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4525,8 +4620,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was bei Baby oder Kleinkind besonders wichtig ist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4612,8 +4711,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Wichtige medizinische Hinweise</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4699,8 +4802,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was uns vor dem Umzug Stabilität gibt</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4786,8 +4893,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was nach dem Umzug zuerst wieder vertraut sein soll</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4873,8 +4984,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was unsere Kinder emotional stärkt</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -4971,6 +5086,16 @@ p {
     </svg></div>
     <h1>Packen &amp; Kartons</h1>
     <p class="subtitle">Hier plant ihr Kartons, Prioritäten und alles, was beim Ein- und Auspacken wirklich funktionieren muss.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 38-60</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>23 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -4981,6 +5106,7 @@ p {
         <li>Eigene Packlogik für euren Haushalt festhalten</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts wisst ihr, was wohin kommt, was zuerst griffbereit bleiben muss und wie Helfer eure Packlogik sofort verstehen.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -5054,8 +5180,12 @@ p {
       <div class="field-label">Packprinzip</div>
       <div class="field-line field-copy">Packt nach Nutzungshäufigkeit, Priorität und Zielraum, nicht nur nach Schrankinhalt.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir beim Packen bewusst vereinfachen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -5220,12 +5350,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Farben oder Symbole wir sicher wiedererkennen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Farben oder Symbole wir sicher wiedererkennen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Sonderregeln für Helfer oder empfindliche Kartons</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Sonderregeln für Helfer oder empfindliche Kartons</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -5300,8 +5438,12 @@ p {
       <div class="field-label">Bis zuletzt griffbereit</div>
       <div class="field-line field-copy">Denkt an Essen, Hygiene, Schlafen, Dokumente und vertraute Kinderdinge.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was erst am Ende eingepackt wird</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -5376,8 +5518,12 @@ p {
       <div class="field-label">Nicht in den Kartonstapel</div>
       <div class="field-line field-copy">Diese Box bleibt sichtbar und wird zuletzt geladen oder direkt selbst transportiert.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir zusätzlich für die erste Nacht brauchen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -5452,8 +5598,12 @@ p {
       <div class="field-label">Sofort erreichbar</div>
       <div class="field-line field-copy">Diese Tasche begleitet euch durch den Tag und gehört nicht in den Möbel- oder Kartonbereich.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir in die Notfalltasche ergänzen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -6603,8 +6753,12 @@ p {
       <div class="field-label">Worauf wir achten</div>
       <div class="field-line field-copy">Schrauben, Dübel und Beschläge immer direkt beschriften und beim jeweiligen Möbelstück halten.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Werkzeug, Fotos oder Helferhinweise</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -6898,8 +7052,12 @@ p {
       <div class="field-label">Aufbau-Prinzip</div>
       <div class="field-line field-copy">Beginnt mit Betten, Kinderzimmer, Tisch, Grundordnung und allem, was den ersten Abend leichter macht.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir zuerst aufbauen oder vorbereiten</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -7193,8 +7351,12 @@ p {
       <div class="field-label">Unsere Reihenfolge</div>
       <div class="field-line field-copy">Erst Schlafen, Hygiene, Essen, Kinderalltag und wichtige Dokumente - dekorative Themen kommen später.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir im neuen Zuhause als Erstes brauchen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -7222,6 +7384,16 @@ p {
     </svg></div>
     <h1>Budget &amp; Kosten</h1>
     <p class="subtitle">Ein guter Umzug braucht auch einen klaren Kostenüberblick, damit ihr nicht von vielen kleinen Beträgen überrascht werdet.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 62-70</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>9 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -7231,6 +7403,7 @@ p {
         <li>Belege, Referenzen und Zahlungen festhalten</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts sind geplante, bezahlte und noch offene Kosten sauber getrennt, damit ihr Entscheidungen nicht aus dem Bauch treffen müsst.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -7331,12 +7504,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7391,12 +7572,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Worauf wir beim Anbieter besonders achten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Worauf wir beim Anbieter besonders achten</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Offene Fragen vor der Buchung</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Offene Fragen vor der Buchung</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7498,12 +7687,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7605,12 +7802,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7712,12 +7917,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7819,12 +8032,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7926,12 +8147,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -7986,12 +8215,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Belege wir getrennt ablegen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Belege wir getrennt ablegen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Offene Rückfragen zu Rechnungen oder Erstattungen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Offene Rückfragen zu Rechnungen oder Erstattungen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8093,12 +8330,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir im Blick behalten wollen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir im Blick behalten wollen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Nächster Betrag / offene Frage</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Nächster Betrag / offene Frage</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8126,6 +8371,16 @@ p {
     </svg></div>
     <h1>Adressen, Verträge &amp; Behörden</h1>
     <p class="subtitle">Von Behörden bis Familienkasse: Hier haltet ihr fest, wen ihr informiert habt und was noch offen ist.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 72-82</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>11 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -8135,6 +8390,7 @@ p {
         <li>Wichtige deutsche Umzugsthemen sichtbar abarbeiten</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts bleibt nachvollziehbar, welche Stellen informiert sind, welche Rückmeldungen fehlen und welche Angaben ihr noch beschaffen müsst.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -8221,12 +8477,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8308,12 +8572,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8395,12 +8667,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8482,12 +8762,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8569,12 +8857,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8656,12 +8952,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8743,12 +9047,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8830,12 +9142,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Fehlende Unterlagen / Zugangsdaten</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Fehlende Unterlagen und Angaben</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Rückmeldung / Frist</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Rückmeldung / Frist</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8887,12 +9207,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Unterlagen oder Daten wir dafür brauchen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Unterlagen oder Daten wir dafür brauchen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Was wir danach trotzdem separat ummelden müssen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was wir danach trotzdem separat ummelden müssen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -8944,12 +9272,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Verträge besonders kritisch sind</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Verträge besonders kritisch sind</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wo wir noch nachfassen oder erinnern müssen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wo wir noch nachfassen oder erinnern müssen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9001,12 +9337,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Was vor dem Einzug aktiv sein muss</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Was vor dem Einzug aktiv sein muss</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Unterlagen oder Rückmeldungen noch fehlen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Unterlagen oder Rückmeldungen noch fehlen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9033,6 +9377,16 @@ p {
     </svg></div>
     <h1>Übergabe &amp; Nachbereitung</h1>
     <p class="subtitle">Zum Abschluss dokumentiert ihr Übergaben, Mängel, Reinigungspläne und alles, was nach dem Einzug noch wichtig bleibt.</p>
+    <div class="divider-stats">
+      <div class="divider-stat">
+        <span class="divider-stat-label">Arbeitsseiten</span>
+        <strong>S. 84-96</strong>
+      </div>
+      <div class="divider-stat">
+        <span class="divider-stat-label">Umfang</span>
+        <strong>13 Arbeitsseiten</strong>
+      </div>
+    </div>
     <div class="divider-panel">
       <div class="subheading">In diesem Abschnitt</div>
       <ul class="divider-list">
@@ -9042,6 +9396,7 @@ p {
         <li>Nach dem Einzug offen gebliebene Punkte sauber abschließen</li>
       </ul>
     </div>
+    <p class="divider-outcome">Am Ende dieses Abschnitts sind Übergaben, Zählerstände, Schlüssel und die wichtigsten Nacharbeiten so dokumentiert, dass später nichts mehr rekonstruiert werden muss.</p>
   </div>
   
     <div class="page-footer is-right-page">
@@ -9132,12 +9487,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9229,12 +9592,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9286,12 +9657,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Zähler wir sofort bei Ein- und Auszug prüfen</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Zähler wir sofort bei Ein- und Auszug prüfen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">An wen wir die Werte melden oder weiterleiten</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">An wen wir die Werte melden oder weiterleiten</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9343,12 +9722,20 @@ p {
       </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Welche Schlüssel besonders leicht vergessen werden</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Welche Schlüssel besonders leicht vergessen werden</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Abweichungen oder fehlende Bestätigungen</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Abweichungen oder fehlende Bestätigungen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9440,12 +9827,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9537,12 +9932,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9634,12 +10037,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9731,12 +10142,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9828,12 +10247,20 @@ p {
         </div>
     </div>
     <div class="data-bottom two-up">
-      <div class="notes-box medium lined">
-        <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Besonders wichtig auf dieser Seite</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
-      <div class="notes-box medium lined">
-        <div class="field-label">Wer kümmert sich / bis wann</div>
+    </div>
+      
+    <div class="notes-box medium lined">
+      <div class="field-label">Wer kümmert sich / bis wann</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
       </div>
+    </div>
     </div>
   </div>
   
@@ -9919,8 +10346,12 @@ p {
           <span class="row-line"></span>
         </div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was uns beim Ankommen in der neuen Umgebung hilft</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -9997,7 +10428,7 @@ p {
         </div>
         <div class="checklist-row">
           <span class="checkbox"></span>
-          <span class="row-label custom-row-label">Eigene Ergänzung</span>
+          <span class="row-label">&nbsp;</span>
           <span class="row-line"></span>
         </div>
     </div>
@@ -10005,8 +10436,12 @@ p {
       <div class="field-label">Jetzt wirklich nötig</div>
       <div class="field-line field-copy">Trennt zwischen sofort nötig und später sinnvoll, damit ihr nicht unter Druck unnötig viel einkauft.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Zusätzliche Besorgungen</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
@@ -10091,8 +10526,12 @@ p {
       <div class="field-label">Unser Entlastungsprinzip</div>
       <div class="field-line field-copy">Einfach, schnell und mit möglichst wenig Küchenchaos nach dem Umzug.</div>
     </div>
-    <div class="notes-box fill">
+    
+    <div class="notes-box fill lined">
       <div class="field-label">Was wir vorbereiten oder bestellen können</div>
+      <div class="writing-guides">
+        <div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div><div class="writing-line"></div>
+      </div>
     </div>
   </div>
   
