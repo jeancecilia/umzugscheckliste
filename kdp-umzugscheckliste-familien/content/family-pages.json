@@ -1,0 +1,475 @@
+{
+  "pages": [
+    {
+      "kind": "familyGuide",
+      "title": "Kinder auf den Umzug vorbereiten",
+      "intro": "Je klarer ihr die Veränderung begleitet, desto sicherer fühlen sich Kinder im Übergang zwischen alter und neuer Wohnung.",
+      "prompts": [
+        {
+          "title": "Worüber wir sprechen",
+          "text": "Was sich ändert, was gleich bleibt und wann wichtige Schritte passieren."
+        },
+        {
+          "title": "Was Kinder hören müssen",
+          "text": "Wer bleibt an ihrer Seite, was mit Freundschaften passiert und wo ihre Sachen wiederzufinden sind."
+        },
+        {
+          "title": "Was wir beobachten",
+          "text": "Sorgen, Fragen, Rückzug oder große Vorfreude."
+        }
+      ],
+      "items": [
+        "Den Umzug in einfachen Worten erklären",
+        "Wichtige Termine kindgerecht ankündigen",
+        "Fragen der Kinder sammeln",
+        "Positives an der neuen Wohnung benennen",
+        "Fotos der neuen Umgebung zeigen, wenn möglich",
+        "Abschied von vertrauten Orten planen",
+        "Lieblingsgegenstände bewusst schützen",
+        "Mit den Kindern über den Umzugstag sprechen",
+        "Rückzugsorte für den Umzugstag überlegen",
+        "Vertraute Routinen benennen, die gleich bleiben",
+        "Zeit für Gefühle und Unsicherheiten einplanen"
+      ],
+      "notesLabel": "Was unseren Kindern besonders hilft"
+    },
+    {
+      "kind": "journal",
+      "title": "Gesprächsnotizen mit den Kindern",
+      "intro": "Diese Seite ist für Gedanken, Fragen und Beobachtungen, die in Gesprächen rund um den Umzug auftauchen.",
+      "prompts": [
+        {
+          "title": "Was beschäftigt die Kinder gerade?",
+          "text": "Schreibt Ängste, Hoffnungen oder wiederkehrende Fragen sofort auf."
+        },
+        {
+          "title": "Welche Antworten helfen?",
+          "text": "Notiert Formulierungen oder Rituale, die beruhigend wirken."
+        },
+        {
+          "title": "Was sollten wir wieder aufgreifen?",
+          "text": "Themen, über die ihr noch einmal in Ruhe sprechen wollt."
+        }
+      ],
+      "lineCount": 17
+    },
+    {
+      "kind": "familyProfile",
+      "title": "Kind 1 - Umzugsprofil",
+      "intro": "Diese Seite hilft euch, Bedürfnisse und Stärken eines Kindes vor dem Umzug bewusst wahrzunehmen.",
+      "fields": [
+        "Was diesem Kind am Umzug Sorgen macht",
+        "Was diesem Kind Sicherheit gibt",
+        "Was am Umzugstag erreichbar sein muss",
+        "Welche Routine gleich bleiben sollte",
+        "Welche Aufgabe dieses Kind übernehmen kann",
+        "Wen dieses Kind vermissen wird"
+      ]
+    },
+    {
+      "kind": "familyProfile",
+      "title": "Kind 2 - Umzugsprofil",
+      "intro": "Nutzt diese Seite genauso konkret wie die erste, damit kein Kind im allgemeinen Plan untergeht.",
+      "fields": [
+        "Was diesem Kind am Umzug Sorgen macht",
+        "Was diesem Kind Sicherheit gibt",
+        "Was am Umzugstag erreichbar sein muss",
+        "Welche Routine gleich bleiben sollte",
+        "Welche Aufgabe dieses Kind übernehmen kann",
+        "Wen dieses Kind vermissen wird"
+      ]
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Lieblingssachen-Box pro Kind",
+      "intro": "Diese Boxen helfen dabei, am Umzugstag nicht erst nach den wichtigsten vertrauten Dingen suchen zu müssen.",
+      "prompts": [
+        {
+          "title": "Was gehört hinein?",
+          "text": "Alles, was Trost spendet, beschäftigt oder am Abend direkt gebraucht wird."
+        },
+        {
+          "title": "Wo bleibt die Box?",
+          "text": "Nicht im Kartonstapel, sondern sofort greifbar bei euch oder im Auto."
+        },
+        {
+          "title": "Wer prüft sie noch einmal?",
+          "text": "Vergebt die letzte Kontrolle bewusst an eine erwachsene Person."
+        }
+      ],
+      "items": [
+        "Lieblingskuscheltier einpacken",
+        "Lieblingsbuch oder Hörspiel einpacken",
+        "Kleines Spiel oder Beschäftigung einpacken",
+        "Trinkflasche und Snack einpacken",
+        "Wechselkleidung bereitlegen",
+        "Schlafsachen hinzufügen",
+        "Wichtige Pflegeprodukte dazulegen",
+        "Etwas Vertrautes aus dem alten Zimmer mitnehmen",
+        "Box sichtbar beschriften",
+        "Box getrennt transportieren"
+      ],
+      "notesLabel": "Was auf keinen Fall fehlen darf"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Erste-Nacht-Box für Kinder",
+      "intro": "Für die erste Nacht braucht ihr nicht viele Dinge, aber die richtigen an einem Ort.",
+      "prompts": [
+        {
+          "title": "Worauf es ankommt",
+          "text": "Schlafen, Hygiene, Nähe und ein ruhiger Abend."
+        },
+        {
+          "title": "Besonders wichtig",
+          "text": "Alles, was Einschlafen erleichtert und nachts schnell gebraucht werden könnte."
+        },
+        {
+          "title": "Praktischer Tipp",
+          "text": "Packt diese Box mit den Kindern gemeinsam oder besprecht zumindest den Inhalt."
+        }
+      ],
+      "items": [
+        "Schlafanzug einpacken",
+        "Zahnbürste und Zahnpasta einpacken",
+        "Nachtlicht oder Schlummerlicht bereitlegen",
+        "Kuscheltier und Decke einpacken",
+        "Windeln oder Pflegeprodukte ergänzen",
+        "Abendmedikamente bereitlegen",
+        "Buch oder Abendritual mitnehmen",
+        "Wechselkleidung dazulegen",
+        "Wasserflasche bereitstellen",
+        "Box gut sichtbar markieren"
+      ],
+      "notesLabel": "Was euer Kind abends beruhigt"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Kita-Wechsel",
+      "intro": "Ein geordneter Wechsel nimmt Druck aus der Eingewöhnung und hilft euch, wichtige Informationen nicht zu verlieren.",
+      "prompts": [
+        {
+          "title": "Organisation",
+          "text": "Fristen, Unterlagen, Ansprechpartner und Betreuungszeiten sauber notieren."
+        },
+        {
+          "title": "Übergang",
+          "text": "Was erleichtert eurem Kind den Wechsel in die neue Einrichtung?"
+        },
+        {
+          "title": "Wichtige Unterlagen",
+          "text": "Impfstatus, Abholberechtigungen, Essensregelung, Notfallkontakte."
+        }
+      ],
+      "items": [
+        "Abmeldung oder Kündigungsfrist prüfen",
+        "Neue Kita kontaktieren",
+        "Unterlagen anfordern oder übergeben",
+        "Betreuungszeiten abstimmen",
+        "Essensregelung klären",
+        "Eingewöhnung planen",
+        "Ansprechpartner notieren",
+        "Abholberechtigungen prüfen",
+        "Notfallkontakte aktualisieren",
+        "Wichtige Gewohnheiten des Kindes mitteilen"
+      ],
+      "notesLabel": "Was der neuen Kita wichtig mitgeteilt werden soll"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Schulwechsel",
+      "intro": "Bei einem Schulwechsel zählen Unterlagen, Wege und das soziale Ankommen gleichermaßen.",
+      "prompts": [
+        {
+          "title": "Unterlagen",
+          "text": "Zeugnisse, Anmeldedaten, Bescheinigungen und Betreuung frühzeitig ordnen."
+        },
+        {
+          "title": "Ankommen",
+          "text": "Was hilft eurem Kind, sich in der neuen Schule schneller zurechtzufinden?"
+        },
+        {
+          "title": "Alltag",
+          "text": "Schulweg, Uhrzeiten, Materialien und Nachmittagsbetreuung."
+        }
+      ],
+      "items": [
+        "Alte Schule informieren",
+        "Neue Schule kontaktieren",
+        "Zeugnisse und Unterlagen ordnen",
+        "Anmeldung oder Ummeldung prüfen",
+        "Schulweg testen",
+        "Mittagsbetreuung klären",
+        "Schulmaterial ergänzen",
+        "Freundschaften oder Kontakte im Blick behalten",
+        "Fahrkarte oder Transportweg prüfen",
+        "Wichtige Ansprechpartner notieren"
+      ],
+      "notesLabel": "Was der Schulstart erleichtert"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Neue Wege: Schule, Kita, Arzt",
+      "intro": "Neue Wege bedeuten oft neuen Zeitdruck. Diese Seite hilft euch, Anfahrt und Alltag realistisch zu planen.",
+      "prompts": [
+        {
+          "title": "Wichtige Ziele",
+          "text": "Schule, Kita, Kinderarzt, Apotheke, Spielplatz, Einkauf."
+        },
+        {
+          "title": "Was zählt wirklich?",
+          "text": "Fahrzeit, Parken, Haltestellen, Fahrradweg, Begleitung."
+        },
+        {
+          "title": "Praktischer Check",
+          "text": "Was sollte vor dem ersten Tag einmal geprobt werden?"
+        }
+      ],
+      "items": [
+        "Schulweg notieren",
+        "Kita-Weg notieren",
+        "Kinderarzt am neuen Wohnort recherchieren",
+        "Apotheke in der Nähe notieren",
+        "Fahrzeit morgens prüfen",
+        "Haltestellen oder Parken prüfen",
+        "Begleitperson für die ersten Wege abstimmen",
+        "Regen- oder Schlechtwetterplan überlegen",
+        "Notfallweg am Wochenende prüfen",
+        "Wichtige Kontakte griffbereit halten"
+      ],
+      "notesLabel": "Was wir auf den neuen Wegen beachten müssen"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Kinderbetreuung am Umzugstag",
+      "intro": "Verlässliche Betreuung bringt am Umzugstag oft die größte Entlastung für alle Beteiligten.",
+      "prompts": [
+        {
+          "title": "Wer übernimmt?",
+          "text": "Name, Zeiten, Ort und Zuständigkeiten klar vereinbaren."
+        },
+        {
+          "title": "Was muss mit?",
+          "text": "Essen, Kleidung, Lieblingssachen, Notfallkontakte."
+        },
+        {
+          "title": "Was klären wir vorher?",
+          "text": "Abholung, Schlafen, Medikamente, Allergien, Rückzugsorte."
+        }
+      ],
+      "items": [
+        "Betreuungsperson anfragen",
+        "Zeiten und Übergabe abstimmen",
+        "Essen und Snacks vorbereiten",
+        "Wechselkleidung bereitlegen",
+        "Notfallnummern weitergeben",
+        "Lieblingssachen mitgeben",
+        "Medikamente oder Hinweise mitteilen",
+        "Abholzeit klar festlegen",
+        "Rückzugsort oder Tagesablauf erklären",
+        "Ersatzkontakt benennen"
+      ],
+      "notesLabel": "Was die Betreuungsperson wissen muss"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Baby- und Kleinkind-Checkliste",
+      "intro": "Bei den Kleinsten entscheidet gute Vorbereitung besonders stark darüber, wie ruhig der Umzugstag läuft.",
+      "prompts": [
+        {
+          "title": "Was sofort verfügbar sein muss",
+          "text": "Pflege, Nahrung, Schlafsachen, Ersatzkleidung und Beruhigung."
+        },
+        {
+          "title": "Was den Tag erleichtert",
+          "text": "Ruhiger Rückzugsort, vertrauter Gegenstand, kurze Wege."
+        },
+        {
+          "title": "Woran wir denken müssen",
+          "text": "Wetter, Schlafrhythmus, Medikamente, Transport."
+        }
+      ],
+      "items": [
+        "Windeln griffbereit halten",
+        "Feuchttücher einpacken",
+        "Ersatzkleidung bereitlegen",
+        "Fläschchen oder Snacks vorbereiten",
+        "Schlafsachen separat halten",
+        "Kinderwagen oder Tragehilfe sichern",
+        "Lieblingsdecke einpacken",
+        "Pflegeprodukte griffbereit lagern",
+        "Medikamente oder Thermometer bereitlegen",
+        "Ruhige Ecke für Pausen vorsehen"
+      ],
+      "notesLabel": "Was bei Baby oder Kleinkind besonders wichtig ist"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Medikamente & Notfalltasche",
+      "intro": "Alles Medizinische gehört in eine eigene, sofort zugängliche Tasche und nicht in allgemeine Umzugskartons.",
+      "prompts": [
+        {
+          "title": "Was unbedingt hineinmuss",
+          "text": "Regelmedikamente, Fiebermittel, Pflaster, Allergiehinweise, wichtige Unterlagen."
+        },
+        {
+          "title": "Wo bleibt die Tasche?",
+          "text": "Immer bei euch oder direkt bei der Hauptverantwortungsperson."
+        },
+        {
+          "title": "Worauf achten?",
+          "text": "Ablaufdaten, Kühlung, Dosierung, Telefonnummern."
+        }
+      ],
+      "items": [
+        "Regelmedikamente einpacken",
+        "Pflaster und Fiebermittel einpacken",
+        "Allergiehinweise notieren",
+        "Impfpass oder medizinische Unterlagen bereithalten",
+        "Thermometer ergänzen",
+        "Kühlpflichtige Medikamente prüfen",
+        "Kinderarzt oder Notdienst notieren",
+        "Ladegerät für medizinische Geräte ergänzen",
+        "Notfallnummern griffbereit halten",
+        "Tasche sichtbar kennzeichnen"
+      ],
+      "notesLabel": "Wichtige medizinische Hinweise"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Familienroutine vor dem Umzug",
+      "intro": "Je näher der Umzug rückt, desto wertvoller werden kleine stabile Abläufe im Alltag.",
+      "prompts": [
+        {
+          "title": "Was sollte gleich bleiben?",
+          "text": "Aufstehen, Essen, Schlafen, Vorlesen, Pausen, Abholen."
+        },
+        {
+          "title": "Wo wird es enger?",
+          "text": "Abende, Wochenenden, Packzeiten, Transporte."
+        },
+        {
+          "title": "Wie entlasten wir uns?",
+          "text": "Vorbereiten, delegieren, vereinfachen, bewusst streichen."
+        }
+      ],
+      "items": [
+        "Feste Schlafenszeiten schützen",
+        "Einfache Mahlzeiten planen",
+        "Wöchentliche Familienbesprechung einplanen",
+        "Kinder nicht in jeden Packschritt einbeziehen",
+        "Lieblingsrituale bewusst beibehalten",
+        "Packzeiten auf mehrere kleine Einheiten verteilen",
+        "Wochenende nicht komplett mit Umzug füllen",
+        "Verlässliche Hilfe anfragen",
+        "Stresssignale bei Kindern beobachten",
+        "Kurze Erholungsmomente absichtlich einbauen"
+      ],
+      "notesLabel": "Was uns vor dem Umzug Stabilität gibt"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Familienroutine nach dem Umzug",
+      "intro": "Die ersten Tage werden leichter, wenn ihr möglichst schnell wieder verlässliche Tagespunkte schafft.",
+      "prompts": [
+        {
+          "title": "Was bauen wir zuerst wieder auf?",
+          "text": "Morgenroutine, Essenszeiten, Schlafenszeit, Wege, Rückzug."
+        },
+        {
+          "title": "Was braucht Priorität?",
+          "text": "Kinderzimmer, Bad, Küche, Schule, Kita, Ruhepunkte."
+        },
+        {
+          "title": "Woran merken wir Entlastung?",
+          "text": "Weniger Chaos, verlässliche Zeiten, klare Orte, weniger Suchen."
+        }
+      ],
+      "items": [
+        "Kinderzimmer priorisieren",
+        "Schlafensroutine schnell wieder aufnehmen",
+        "Feste Essenszeiten einplanen",
+        "Schul- oder Kita-Weg früh üben",
+        "Morgenabläufe vereinfachen",
+        "Weniger wichtige Auspackthemen verschieben",
+        "Lieblingsplätze für die Kinder schaffen",
+        "Rückzugsorte sichtbar halten",
+        "Einfache Wochenplanung für die erste Woche nutzen",
+        "Familienstimmung bewusst beobachten"
+      ],
+      "notesLabel": "Was nach dem Umzug zuerst wieder vertraut sein soll"
+    },
+    {
+      "kind": "familyGuide",
+      "title": "Emotionale To-dos für Kinder",
+      "intro": "Nicht jede wichtige Aufgabe ist organisatorisch. Manche helfen einfach dabei, dass Kinder sich gesehen fühlen.",
+      "prompts": [
+        {
+          "title": "Abschied",
+          "text": "Wie könnt ihr bewusst Tschüss sagen, statt einfach nur wegzufahren?"
+        },
+        {
+          "title": "Vorfreude",
+          "text": "Was darf am neuen Zuhause spannend oder schön klingen?"
+        },
+        {
+          "title": "Sicherheit",
+          "text": "Welche Worte, Bilder oder Rituale geben Halt?"
+        }
+      ],
+      "items": [
+        "Abschied von Freunden planen",
+        "Lieblingsecken fotografieren",
+        "Gefühle benennen statt wegdrücken",
+        "Fragen offen sammeln",
+        "Vorfreude auf Neues sichtbar machen",
+        "Kindern kleine Entscheidungen ermöglichen",
+        "Wichtige Kontakte nicht abrupt abbrechen lassen",
+        "Ersten Besuch neuer Lieblingsorte planen",
+        "Erfolgsmomente am Umzugstag bewusst benennen",
+        "Nach dem Umzug gemeinsame Zeit einplanen"
+      ],
+      "notesLabel": "Was unsere Kinder emotional stärkt"
+    },
+    {
+      "kind": "journal",
+      "title": "Abschied von alter Wohnung / Nachbarschaft",
+      "intro": "Diese Seite ist für Namen, Orte und Erinnerungen, die ihr bewusst mitnehmen möchtet.",
+      "prompts": [
+        {
+          "title": "Was war hier wichtig für uns?",
+          "text": "Menschen, Wege, Räume, Rituale, kleine Lieblingsorte."
+        },
+        {
+          "title": "Von wem möchten wir uns verabschieden?",
+          "text": "Nachbarn, Freunde, Betreuung, Schule, Lieblingsorte."
+        },
+        {
+          "title": "Wie gestalten wir den Abschied gut?",
+          "text": "Kleine Rituale, Fotos, Karten, Verabredungen."
+        }
+      ],
+      "lineCount": 17
+    },
+    {
+      "kind": "journal",
+      "title": "Ankommen im neuen Zuhause",
+      "intro": "Hier notiert ihr, was beim Ankommen gut tut und wie sich das neue Zuhause Schritt für Schritt vertraut anfühlen kann.",
+      "prompts": [
+        {
+          "title": "Was fühlt sich schon gut an?",
+          "text": "Räume, Wege, Menschen, Rituale oder kleine erste Erfolge."
+        },
+        {
+          "title": "Was braucht noch Zeit?",
+          "text": "Unsicherheiten, offene Fragen oder Dinge, die noch nicht ihren Platz haben."
+        },
+        {
+          "title": "Was wollen wir bewusst neu beginnen?",
+          "text": "Routinen, Ausflüge, Familienrituale oder kleine Gewohnheiten."
+        }
+      ],
+      "lineCount": 17
+    }
+  ]
+}

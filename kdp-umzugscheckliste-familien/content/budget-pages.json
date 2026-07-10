@@ -1,0 +1,146 @@
+{
+  "pages": [
+    {
+      "kind": "budget",
+      "title": "Umzugsbudget Übersicht",
+      "intro": "Ein Gesamtblick auf alle Kosten schafft Sicherheit und hilft euch, Prioritäten realistisch zu setzen.",
+      "items": [
+        "Umzugsunternehmen / Transport",
+        "Verpackungsmaterial",
+        "Verpflegung / Helfer",
+        "Renovierung",
+        "Neue Möbel / Anschaffungen",
+        "Schule / Kita / Familie",
+        "Doppelmiete / Kaution",
+        "Lagerung / Zwischenlösung",
+        "Reserve / Puffer"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Umzugsunternehmen Kostenvergleich",
+      "intro": "Vergleicht Angebote nicht nur nach Endpreis, sondern auch nach Leistung, Versicherung und Zusatzkosten.",
+      "items": [
+        "Angebot 1",
+        "Angebot 2",
+        "Angebot 3",
+        "Tragewege / Etagen",
+        "Montage / Demontage",
+        "Verpackungsservice",
+        "Zusatzversicherung",
+        "Stornobedingungen",
+        "Bewertung / Eindruck"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Transportkosten",
+      "intro": "Hier haltet ihr Fahrzeug, Kraftstoff, Parken, Halteverbotszone oder Zusatzfahrten fest.",
+      "items": [
+        "Transporter",
+        "Kraftstoff",
+        "Halteverbotszone / Parkgenehmigung",
+        "Maut / Fahrtkosten",
+        "Parktickets / Zufahrt",
+        "Zusatzfahrten",
+        "Helfertransport",
+        "Leihmaterial / Gurte",
+        "Sonstiges"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Renovierungskosten",
+      "intro": "Kleine Arbeiten summieren sich schnell. Diese Seite hält Material, Werkzeug und Dienstleister sichtbar.",
+      "items": [
+        "Farbe / Material",
+        "Werkzeug",
+        "Handwerker",
+        "Boden / Reparaturen",
+        "Spachtel / Dübel",
+        "Reinigung",
+        "Müll / Entsorgung",
+        "Abnahme-Nacharbeit",
+        "Sonstiges"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Neue Möbel / Anschaffungen",
+      "intro": "Notiert hier, was durch die neue Wohnung oder den Familienalltag wirklich neu gebraucht wird.",
+      "items": [
+        "Bett / Matratze",
+        "Schrank / Regal",
+        "Kinderzimmer",
+        "Küche",
+        "Lampen",
+        "Haushaltswaren",
+        "Ordnungssysteme",
+        "Vorhänge / Sichtschutz",
+        "Geräte / Anschlüsse"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Kaution / Mietkosten",
+      "intro": "Gerade rund um den Wohnungswechsel laufen mehrere große Beträge parallel. Diese Seite hält sie sauber fest.",
+      "items": [
+        "Neue Kaution",
+        "Doppelmiete",
+        "Restmiete alte Wohnung",
+        "Nebenkosten",
+        "Makler / Verwaltung",
+        "Rückzahlung alte Kaution",
+        "Schlüssel / Pfand",
+        "Offene Rückfragen"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Schule / Kita / Familie Zusatzkosten",
+      "intro": "Familienbezogene Zusatzkosten werden leicht übersehen und gehören deshalb in eine eigene Übersicht.",
+      "items": [
+        "Neue Betreuung",
+        "Schulmaterial",
+        "Fahrtkosten",
+        "Babysitter / Betreuung",
+        "Verpflegung / Mittagessen",
+        "Kleine Ersatzkäufe",
+        "Vereine / Kurse",
+        "Tickets / Schulweg",
+        "Sonstiges"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Unerwartete Kosten",
+      "intro": "Diese Seite ist für alles gedacht, was ungeplant dazugekommen ist und später nachvollziehbar bleiben soll.",
+      "items": [
+        "Ersatzkauf",
+        "Reparatur",
+        "Lieferung",
+        "Zusatzfahrt",
+        "Notfallbetreuung",
+        "Material nachgekauft",
+        "Expresskauf / Soforthilfe",
+        "Schloss / Schlüssel",
+        "Reserve genutzt"
+      ]
+    },
+    {
+      "kind": "budget",
+      "title": "Gesamtkosten-Auswertung",
+      "intro": "Zum Abschluss vergleicht ihr hier Planung und Realität, damit ihr den Überblick nicht verliert.",
+      "items": [
+        "Geplant gesamt",
+        "Tatsächlich gesamt",
+        "Größte Abweichung",
+        "Beste Einsparung",
+        "Offene Zahlung",
+        "Rückerstattung / Kaution",
+        "Noch nicht eingeplant",
+        "Lektion für das nächste Mal"
+      ]
+    }
+  ]
+}

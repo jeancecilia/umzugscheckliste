@@ -1,0 +1,17 @@
+{
+  "name": "kdp-umzugscheckliste-familien",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Amazon KDP family moving planner generator in German.",
+  "scripts": {
+    "build": "node src/build.js",
+    "preview": "node src/build.js --preview",
+    "pdf": "node src/generate-pdf.js",
+    "qa": "node src/qa.js",
+    "cover": "node src/generate-cover.js",
+    "build:all": "npm run build && npm run pdf && npm run qa"
+  },
+  "dependencies": {
+    "playwright": "^1.54.2"
+  }
+}

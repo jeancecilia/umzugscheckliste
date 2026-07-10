@@ -1,0 +1,14 @@
+{
+  "book": {
+    "title": "Umzugscheckliste für Familien",
+    "subtitle": "Der praktische Umzugsplaner für einen stressfreien Umzug mit Kindern",
+    "language": "de",
+    "trimSize": "8.5x11",
+    "pageTarget": 106,
+    "interior": "black-and-white",
+    "paper": "white",
+    "fontHeading": "Trebuchet MS, Segoe UI, Arial, sans-serif",
+    "fontBody": "Segoe UI, Arial, sans-serif",
+    "authorPlaceholder": "Planvoll Familie"
+  }
+}

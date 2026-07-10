@@ -1,0 +1,215 @@
+{
+  "pages": [
+    {
+      "kind": "handover",
+      "title": "Alte Wohnung Übergabe",
+      "intro": "Haltet für die alte Wohnung Zustand, offene Punkte und wichtige Räume für die Abnahme sauber fest.",
+      "items": [
+        "Flur",
+        "Küche",
+        "Bad",
+        "Wohnzimmer",
+        "Kinderzimmer",
+        "Schlafzimmer",
+        "Arbeitszimmer",
+        "Keller / Balkon",
+        "Fenster / Türen"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Neue Wohnung Übergabe",
+      "intro": "Auch bei der neuen Wohnung sollte der Zustand beim Einzug sofort sauber dokumentiert werden.",
+      "items": [
+        "Flur",
+        "Küche",
+        "Bad",
+        "Wohnzimmer",
+        "Kinderzimmer",
+        "Schlafzimmer",
+        "Arbeitszimmer",
+        "Abstellraum / Balkon",
+        "Fenster / Türen"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Zählerstände",
+      "intro": "Zählerstände immer mit Datum und wenn möglich zusätzlich mit Foto dokumentieren.",
+      "items": [
+        "Strom alt",
+        "Strom neu",
+        "Gas alt",
+        "Gas neu",
+        "Wasser alt",
+        "Wasser neu",
+        "Heizung / Wärmemenge",
+        "Weitere Zähler"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Schlüsselübergabe",
+      "intro": "Notiert hier Anzahl, Art und Übergabezeitpunkt aller Schlüssel für alte und neue Wohnung.",
+      "items": [
+        "Wohnungsschlüssel",
+        "Haustür",
+        "Briefkasten",
+        "Keller",
+        "Garage / Stellplatz",
+        "Fensterschlüssel",
+        "Zusatzschlüssel"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Schäden & Mängel dokumentieren",
+      "intro": "Beschreibt Mängel konkret und notiert, ob Fotos, Zeugen oder Rückmeldungen vorliegen.",
+      "items": [
+        "Wand / Decke",
+        "Boden",
+        "Fenster",
+        "Sanitär",
+        "Elektrik",
+        "Türen / Schlösser",
+        "Küche / Einbauten",
+        "Sonstiges"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Renovierungsarbeiten",
+      "intro": "Hier können notwendige Arbeiten vor Auszug oder nach Einzug gesammelt und priorisiert werden.",
+      "items": [
+        "Streichen",
+        "Bohrlöcher / Dübel",
+        "Silikon / Fugen",
+        "Bodenpflege",
+        "Kleinreparaturen",
+        "Handwerkertermin",
+        "Material nachkaufen",
+        "Nachkontrolle"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Reinigungsplan alte Wohnung",
+      "intro": "Ein klarer Reinigungsplan verhindert hektische Nacharbeiten kurz vor der Übergabe.",
+      "items": [
+        "Küche",
+        "Bad",
+        "Fenster",
+        "Böden",
+        "Wände / Türen",
+        "Keller / Balkon",
+        "Müll / Leerräumung"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Reinigungsplan neue Wohnung",
+      "intro": "Manches lässt sich vor dem Einräumen leichter reinigen. Haltet hier die wichtigsten Schritte fest.",
+      "items": [
+        "Küche",
+        "Bad",
+        "Böden",
+        "Schränke",
+        "Fenster",
+        "Sanitär / Armaturen",
+        "Kinderzimmer"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Fotos / Dokumentationsliste",
+      "intro": "Diese Seite hilft euch dabei, Bilder oder Nachweise später sauber wiederzufinden.",
+      "items": [
+        "Alte Wohnung gesamt",
+        "Neue Wohnung gesamt",
+        "Zählerstände",
+        "Mängel",
+        "Schlüssel",
+        "Abnahme-Unterschriften",
+        "Verträge / Protokolle"
+      ]
+    },
+    {
+      "kind": "handover",
+      "title": "Übergabe-Notizen",
+      "intro": "Platz für offene Rückfragen, Zusagen, Fristen und alles, was aus der Übergabe noch folgen muss.",
+      "items": [
+        "Offene Rückfrage",
+        "Mündliche Zusage",
+        "Schriftlich nachreichen",
+        "Rückmeldung erwartet",
+        "Bis wann erledigen",
+        "An wen eskalieren",
+        "Wer kümmert sich"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Einkaufsliste nach dem Umzug",
+      "intro": "Hier sammelt ihr alles, was im neuen Zuhause in den ersten Tagen fehlt oder spontan gebraucht wird.",
+      "focusLabel": "Jetzt wirklich nötig",
+      "focusText": "Trennt zwischen sofort nötig und später sinnvoll, damit ihr nicht unter Druck unnötig viel einkauft.",
+      "notesLabel": "Zusätzliche Besorgungen",
+      "minimumRows": 12,
+      "items": [
+        "Lebensmittel für die ersten Tage",
+        "Putzmittel oder Schwämme",
+        "Lampen oder Leuchtmittel",
+        "Ordnungskisten",
+        "Bad- und Hygieneartikel",
+        "Kinderbedarf",
+        "Haushaltskleinteile",
+        "Müllbeutel",
+        "Werkzeug oder Befestigungsmaterial",
+        "Was wir kurzfristig ersetzen müssen"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Erste Woche Essensplan",
+      "intro": "Ein einfacher Essensplan spart Energie in der ersten Woche und verhindert unnötigen Entscheidungsstress.",
+      "focusLabel": "Unser Entlastungsprinzip",
+      "focusText": "Einfach, schnell und mit möglichst wenig Küchenchaos nach dem Umzug.",
+      "notesLabel": "Was wir vorbereiten oder bestellen können",
+      "minimumRows": 12,
+      "items": [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+        "Sonntag",
+        "Snack / Notfallmahlzeit",
+        "Einkaufsidee",
+        "Vorbereiten",
+        "Bestellen / Abholen",
+        "Reste sinnvoll nutzen"
+      ]
+    },
+    {
+      "kind": "journal",
+      "title": "Wichtige Erfahrungen für den nächsten Umzug",
+      "intro": "Diese Seite hilft euch, gute Entscheidungen und Fehler festzuhalten, solange die Erfahrungen noch frisch sind.",
+      "prompts": [
+        {
+          "title": "Was hat gut funktioniert?",
+          "text": "Hilfen, Routinen, Reihenfolgen, Material oder Entscheidungen."
+        },
+        {
+          "title": "Was würden wir anders machen?",
+          "text": "Zu spät begonnen, falsch priorisiert, zu viel oder zu wenig vorbereitet."
+        },
+        {
+          "title": "Was möchten wir uns merken?",
+          "text": "Alles, was beim nächsten Umzug sofort wieder hilfreich wäre."
+        }
+      ],
+      "lineCount": 18
+    }
+  ]
+}

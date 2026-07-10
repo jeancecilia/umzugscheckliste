@@ -1,0 +1,583 @@
+{
+  "frontMatter": [
+    {
+      "kind": "titlePage",
+      "title": "Umzugscheckliste für Familien",
+      "subtitle": "Der praktische Umzugsplaner für einen stressfreien Umzug mit Kindern",
+      "promise": "Ein durchdachter Familienplaner für alle Phasen eures Umzugs: klar, praktisch und so aufgebaut, dass ihr euch nicht nur organisiert, sondern auch als Familie gut begleitet fühlt.",
+      "features": [
+        {
+          "title": "Zeitplan",
+          "text": "Von zwölf Wochen vorher bis zum ersten Monat im neuen Zuhause."
+        },
+        {
+          "title": "Familie & Kinder",
+          "text": "Kinder, Schule, Kita, Routinen und emotionale Übergänge bewusst mitdenken."
+        },
+        {
+          "title": "Packen & Kartons",
+          "text": "Zimmerweise packen, Kartons markieren und erste Nacht sowie Notfallbedarf separat planen."
+        },
+        {
+          "title": "Budget & Übergabe",
+          "text": "Kosten, Adressänderungen, Übergabeprotokolle und Nachbereitung an einem Ort bündeln."
+        }
+      ],
+      "benefit": "Mit Wochenplan, Familienseiten, Packlisten, Budgetplaner, Adressänderungen und Übergabeprotokoll für einen wirklich alltagstauglichen Umzug.",
+      "showFooter": false
+    },
+    {
+      "kind": "infoPage",
+      "title": "Nutzungshinweis",
+      "subtitle": "Praktische Hilfe für euren privaten Familienumzug",
+      "cards": [
+        {
+          "title": "Wofür dieser Planer gedacht ist",
+          "text": "Dieser Planer hilft euch dabei, Termine, Aufgaben, Packlisten, Familienabsprachen und wichtige Unterlagen rund um euren Umzug an einem Ort zu sammeln."
+        },
+        {
+          "title": "Wofür er nicht gedacht ist",
+          "text": "Er ersetzt keine rechtliche oder steuerliche Beratung. Fristen, Verträge und amtliche Anforderungen solltet ihr immer mit euren Originalunterlagen prüfen."
+        },
+        {
+          "title": "Was ihr vor dem Start bereithalten solltet",
+          "text": "Mietunterlagen, wichtige Telefonnummern, Terminübersichten, Schul- oder Kita-Infos, Versicherungen und alle bereits bekannten Fristen."
+        },
+        {
+          "title": "Wie ihr ihn am besten nutzt",
+          "text": "Tragt Zuständigkeiten direkt ein, markiert Erledigtes sofort und notiert Rückfragen auf der Seite, auf der sie entstehen."
+        }
+      ],
+      "note": "Nutzt den Planer lieber laufend im Familienalltag als nur an einem einzigen Planungstag. So bleiben Aufgaben, Termine und Kinderbedürfnisse gemeinsam sichtbar.",
+      "showFooter": false
+    },
+    {
+      "kind": "howToUse",
+      "title": "So nutzt ihr diesen Planer",
+      "intro": "Der Planer ist so aufgebaut, dass ihr zuerst Überblick schafft und dann Woche für Woche sicher durch den Umzug kommt.",
+      "steps": [
+        "Startet mit den Kerninfos, Kontakten und Prioritäten eures Umzugs.",
+        "Arbeitet danach den Zeitplan Schritt für Schritt ab und ergänzt Termine sofort.",
+        "Pflegt parallel Familienseiten, Packlisten, Kosten und Adressänderungen, damit alles zusammenpasst."
+      ],
+      "sections": [
+        {
+          "title": "Start & Überblick",
+          "description": "Kerninfos, Kontakte, Prioritäten und Dokumente."
+        },
+        {
+          "title": "Zeitplan",
+          "description": "Alle Phasen vor, während und nach dem Umzug."
+        },
+        {
+          "title": "Familie & Kinder",
+          "description": "Schule, Kita, Routinen, Sorgen und Ankommen."
+        },
+        {
+          "title": "Packen & Kartons",
+          "description": "Packsystem, Raumlisten, Notfalltasche und erste Nacht."
+        },
+        {
+          "title": "Budget & Kosten",
+          "description": "Geplante, echte und offene Kosten sauber im Blick behalten."
+        },
+        {
+          "title": "Adressen & Verträge",
+          "description": "Behörden, Anbieter, Schule, Kita und offene Rückmeldungen."
+        },
+        {
+          "title": "Übergabe & Nachbereitung",
+          "description": "Abnahme, Reinigung, Einkaufsliste und Erfahrungen festhalten."
+        }
+      ],
+      "note": "Nehmt euch lieber regelmäßig kurze Zeitfenster für den Planer als einen einzigen großen Planungstag. Das hält eure Liste realistisch und alltagstauglich.",
+      "showFooter": false
+    },
+    {
+      "kind": "contentsPage",
+      "title": "Inhaltsübersicht",
+      "intro": "So ist dieser Planer aufgebaut.",
+      "note": "Empfohlene Reihenfolge: Startet mit dem Überblick, arbeitet dann durch den Zeitplan und ergänzt Familie, Packen, Kosten und Rückmeldungen immer parallel.",
+      "entries": [
+        {
+          "title": "Start & Überblick",
+          "description": "Grundlagen, Kontakte, Prioritäten und Dokumentenmappe"
+        },
+        {
+          "title": "Zeitplan",
+          "description": "Alle Phasen vor, während und nach dem Umzug"
+        },
+        {
+          "title": "Familie & Kinder",
+          "description": "Vorbereitung, Routinen, Schule, Kita und Ankommen"
+        },
+        {
+          "title": "Packen & Kartons",
+          "description": "Packsystem, Prioritäten und Raum-für-Raum-Packlisten"
+        },
+        {
+          "title": "Budget & Kosten",
+          "description": "Kostenüberblick, Vergleiche und Auswertung"
+        },
+        {
+          "title": "Adressen & Verträge",
+          "description": "Behörden, Anbieter, Schule, Kita und offene Rückmeldungen"
+        },
+        {
+          "title": "Übergabe & Nachbereitung",
+          "description": "Wohnungsübergabe, Reinigung, Einkaufsliste und Erfahrungen"
+        }
+      ],
+      "showFooter": false
+    },
+    {
+      "kind": "snapshot",
+      "title": "Unser Umzug auf einen Blick",
+      "intro": "Hier haltet ihr die wichtigsten Eckdaten fest, damit ihr im Alltag nicht lange suchen müsst.",
+      "fields": [
+        "Umzugstermin",
+        "Neue Adresse",
+        "Alte Adresse",
+        "Nächster wichtiger Schritt",
+        "Schule / Kita / Betreuung",
+        "Unsere drei größten Prioritäten"
+      ],
+      "notesLabel": "Zusätzliche Hinweise",
+      "showFooter": false
+    },
+    {
+      "kind": "snapshot",
+      "title": "Alte Wohnung - Überblick",
+      "intro": "Diese Seite hilft euch, Übergabe, Reparaturen und letzte Aufgaben in der alten Wohnung rechtzeitig im Blick zu behalten.",
+      "fields": [
+        "Übergabetermin",
+        "Offene Reparaturen",
+        "Keller / Abstellraum",
+        "Balkon / Außenbereich",
+        "Was bis zuletzt draußen bleibt",
+        "Was noch besorgt werden muss"
+      ],
+      "notesLabel": "Besonderheiten der alten Wohnung",
+      "showFooter": false
+    },
+    {
+      "kind": "snapshot",
+      "title": "Neue Wohnung - Überblick",
+      "intro": "Notiert hier, was in der neuen Wohnung von Anfang an vorbereitet, geprüft oder schnell erreichbar sein soll.",
+      "fields": [
+        "Einzugstermin",
+        "Schlüssel / Übergabe",
+        "Zählerstände",
+        "Kinderzimmer zuerst",
+        "Erste Einkäufe",
+        "Was am ersten Abend funktionieren muss"
+      ],
+      "notesLabel": "Besonderheiten der neuen Wohnung",
+      "showFooter": false
+    },
+    {
+      "kind": "contacts",
+      "title": "Wichtige Kontakte",
+      "intro": "Sammelt hier Telefonnummern, E-Mails und Ansprechpartner für Familie, Verwaltung, Schule, Kita und Helfer.",
+      "rowCount": 12,
+      "notesLabel": "Zusätzliche Kontakte",
+      "showFooter": false
+    },
+    {
+      "kind": "snapshot",
+      "title": "Familienprioritäten",
+      "intro": "Nicht alles ist gleich wichtig. Haltet fest, was für eure Familie zuerst Ruhe und Stabilität bringt.",
+      "fields": [
+        "Was für uns zuerst geklärt sein muss",
+        "Was die Kinder sofort brauchen",
+        "Was organisatorisch am meisten Druck macht",
+        "Was wir delegieren können",
+        "Was uns im Alltag entlastet",
+        "Worauf wir bewusst verzichten können"
+      ],
+      "notesLabel": "Unsere Familienentscheidung",
+      "showFooter": false
+    },
+    {
+      "kind": "checklist",
+      "title": "Dokumentenmappe",
+      "intro": "Diese Seite hilft euch, die wichtigsten Unterlagen an einem Ort zusammenzuhalten, damit ihr beim Umzug schnell reagieren könnt.",
+      "focusLabel": "Diese Mappe bleibt griffbereit",
+      "focusText": "Legt sie nicht in allgemeine Kartons, sondern bewahrt sie separat und jederzeit erreichbar auf.",
+      "notesLabel": "Welche Unterlagen noch fehlen",
+      "minimumRows": 10,
+      "items": [
+        "Mietvertrag alte Wohnung",
+        "Mietvertrag neue Wohnung",
+        "Übergabeprotokolle",
+        "Ausweise / Reisepässe",
+        "Geburtsurkunden / Familienunterlagen",
+        "Schul- oder Kita-Unterlagen",
+        "Versicherungsunterlagen",
+        "Wichtige Rechnungen / Quittungen",
+        "Meldeunterlagen / Wohnungsgeberbestätigung",
+        "Medizinische Unterlagen"
+      ],
+      "showFooter": false
+    }
+  ],
+  "timeline": [
+    {
+      "kind": "weeklyChecklist",
+      "title": "12 Wochen vorher",
+      "intro": "Jetzt entsteht euer Grundgerüst. In dieser Phase geht es darum, Rahmen, Entscheidungen und erste Fristen sauber zu setzen.",
+      "priority": "Zeitfenster, Budgetrahmen und Verantwortlichkeiten festlegen",
+      "appointments": "Besichtigungen, Vertragsgespräche, erste Rückrufe",
+      "familyReminder": "Sprecht früh über den Umzug und betont, was für die Kinder vertraut bleiben wird.",
+      "items": [
+        "Umzugstermin grob festlegen",
+        "Kündigungsfristen prüfen",
+        "Budgetrahmen für den Umzug festhalten",
+        "Urlaubstage oder freie Tage abstimmen",
+        "Schule oder Kita-Wechsel prüfen",
+        "Neue Wege zur Arbeit, Schule oder Kita grob einschätzen",
+        "Erste Helfer anfragen",
+        "Umzugsunternehmen oder Transportlösung recherchieren",
+        "Offene Fragen zur neuen Wohnung sammeln",
+        "Erste Familienprioritäten notieren",
+        "Wichtige Unterlagen an einem Ort sammeln"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "10 Wochen vorher",
+      "intro": "Die wichtigsten Entscheidungen sollten jetzt konkreter werden, damit in den nächsten Wochen weniger Druck entsteht.",
+      "priority": "Verantwortlichkeiten verteilen und erste Zusagen sichern",
+      "appointments": "Telefonate mit Vermietern, Schule, Kita oder Betreuung",
+      "familyReminder": "Gebt den Kindern Raum für Fragen und sammelt ihre Gedanken, statt alles nur sachlich zu erklären.",
+      "items": [
+        "Kündigung vorbereiten oder absenden",
+        "Kinder altersgerecht über den Umzug informieren",
+        "Aussortieren nach Zimmern beginnen",
+        "Grobe Raumplanung für die neue Wohnung skizzieren",
+        "Umzugsunternehmen vergleichen",
+        "Betreuungsbedarf am Umzugstag einschätzen",
+        "Wichtige Verträge und Fristen notieren",
+        "Mögliche Sperrmülltermine prüfen",
+        "Transporter-Optionen vergleichen",
+        "Dokumentenmappe anlegen",
+        "Familienkalender mit Umzugsmeilensteinen ergänzen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "8 Wochen vorher",
+      "intro": "Jetzt lohnt sich ein konkreter Organisationsplan. Alles, was früh angestoßen wird, entlastet die heißen Wochen vor dem Umzug.",
+      "priority": "Angebote, Betreuung und Material organisieren",
+      "appointments": "Umzugsfirma, Transporter, Betreuung, wichtige Rückfragen",
+      "familyReminder": "Bezieht die Kinder mit kleinen, machbaren Aufgaben ein, damit sie nicht nur zusehen.",
+      "items": [
+        "Umzugsunternehmen buchen oder Transporter reservieren",
+        "Verpackungsmaterial besorgen",
+        "Kinderbetreuung für den Umzugstag anfragen",
+        "Entrümpelung und Spenden planen",
+        "Keller, Abstellraum und selten genutzte Bereiche zuerst angehen",
+        "Schul- oder Kita-Unterlagen anfordern",
+        "Halteverbotszone oder Parkmöglichkeiten prüfen",
+        "Nachsendeauftrag vormerken",
+        "Erste Kartonbeschriftung festlegen",
+        "Empfindliche Gegenstände getrennt planen",
+        "Notfalltasche als eigene Kategorie notieren"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "6 Wochen vorher",
+      "intro": "Die Planung geht jetzt in die konkrete Umsetzungsphase. Verträge, Wege und Packlogik sollten erkennbar werden.",
+      "priority": "Verträge umstellen und Packsystem finalisieren",
+      "appointments": "Internet, Energie, Schule, Kita, Versicherungen",
+      "familyReminder": "Achtet darauf, dass Familienroutine und Packstress nicht komplett ineinander kippen.",
+      "items": [
+        "Internetvertrag ummelden oder neu abschließen",
+        "Stromanbieter informieren",
+        "Gas, Wasser und weitere Versorger prüfen",
+        "Hausrat- und Haftpflichtversicherung kontrollieren",
+        "Schule oder Kita über den Umzug informieren",
+        "Packstrategie pro Zimmer festlegen",
+        "Beschriftung für Kartons testen",
+        "Wichtige Möbelmaße notieren",
+        "Kinderzimmer zuerst planen",
+        "Meldepflichten und Wohnungsgeberbestätigung vormerken",
+        "Helferliste aktualisieren",
+        "Sperrmüll oder Entsorgung buchen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "4 Wochen vorher",
+      "intro": "Jetzt beginnt die konkrete Vorbereitung. Verträge, Adressänderungen und Familientermine sollten ab jetzt sichtbar aufeinander abgestimmt sein.",
+      "priority": "Fristen sichern und die heiße Phase vorbereiten",
+      "appointments": "Übergabetermine, Anbieter, Betreuung, Helfer",
+      "familyReminder": "Kündigt an, welche Dinge sich bald ändern und welche Abläufe bewusst gleich bleiben sollen.",
+      "items": [
+        "Nachsendeauftrag vorbereiten",
+        "Ummeldung oder Meldeamt-Termin prüfen",
+        "Internet- und Stromanbieter informieren",
+        "Schule oder Kita über den Umzug informieren",
+        "Kinderbetreuung für den Umzugstag organisieren",
+        "Umzugskartons beschriften",
+        "Halteverbotszone oder Parkplatz prüfen",
+        "Sperrmüll oder Entsorgung abstimmen",
+        "Wichtige Dokumente separat sammeln",
+        "Erste-Nacht-Box beginnen",
+        "Helfer final anfragen",
+        "Übergabetermine abstimmen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "3 Wochen vorher",
+      "intro": "Jetzt sollte jede Woche spürbar Entlastung bringen. Packt gezielt und sorgt dafür, dass Prioritäten wirklich sichtbar bleiben.",
+      "priority": "Prioritätskisten und sensible Bereiche absichern",
+      "appointments": "Möbelabbau, Helfer, Sonderfahrten",
+      "familyReminder": "Plant bewusste Pausen ein. Kinder erleben den Stress oft stärker, als es auf den ersten Blick wirkt.",
+      "items": [
+        "Selten genutzte Räume weiter packen",
+        "Keller, Balkon oder Garten abschließen",
+        "Kartonnummern-System anwenden",
+        "Dokumente und Wertgegenstände getrennt lagern",
+        "Werkzeug für Möbelabbau zusammenstellen",
+        "Kinderzimmer gemeinsam vorbereiten",
+        "Lieblingssachen-Boxen pro Kind planen",
+        "Erste Nacht in der neuen Wohnung durchdenken",
+        "Transportwege im Haus prüfen",
+        "Offene Vertragsrückmeldungen nachfassen",
+        "Park- oder Einfahrtsprobleme klären"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "2 Wochen vorher",
+      "intro": "Die heiße Phase beginnt. Jetzt zählt klare Übersicht mehr als Perfektion.",
+      "priority": "Alltag, Betreuung und Umzugslogistik zusammenführen",
+      "appointments": "Bestätigungen von Helfern, Übergaben, Betreuung",
+      "familyReminder": "Sprecht darüber, was die Kinder am Umzugstag konkret erwartet und wer dann für sie da ist.",
+      "items": [
+        "Helfer endgültig bestätigen",
+        "Kinderbetreuung final abstimmen",
+        "Erste-Nacht-Box Familie packen",
+        "Notfalltasche vorbereiten",
+        "Kühl- und Vorratsschrank planen",
+        "Arzt, Apotheke und wichtige Wege am neuen Wohnort notieren",
+        "Wohnungszustand fotografieren",
+        "Kaution, Doppelmiete und offene Zahlungen prüfen",
+        "Schul- oder Kita-Unterlagen griffbereit halten",
+        "Empfindliche Gegenstände gesondert kennzeichnen",
+        "Restmüll und Leergut reduzieren"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "1 Woche vorher",
+      "intro": "In der letzten vollen Woche vor dem Umzug sollte alles, was schnell greifbar sein muss, eindeutig markiert und getrennt sein.",
+      "priority": "Ruhe in den Ablauf bringen und wichtige Dinge nicht mehr verlieren",
+      "appointments": "Schlüssel, Transport, Übergabe, Kinderbetreuung",
+      "familyReminder": "Gebt den Kindern Sicherheit durch klare Tagesabläufe, auch wenn drumherum viel in Bewegung ist.",
+      "items": [
+        "Kleidung für mehrere Tage separat bereitlegen",
+        "Dokumentenmappe kontrollieren",
+        "Ladekabel und Technik bündeln",
+        "Schlüsselübergaben bestätigen",
+        "Frühstück und erste Mahlzeiten für die ersten Tage planen",
+        "Kinder über den genauen Ablauf sprechen",
+        "Bad-Grundausstattung separat halten",
+        "Reinigungsmittel für alte und neue Wohnung zurückhalten",
+        "Erste Auspack-Prioritäten festlegen",
+        "Transportwege im Treppenhaus freihalten",
+        "Offene Kosten und Rechnungen notieren"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "3 Tage vorher",
+      "intro": "Jetzt sollte nichts Neues mehr dazukommen. Die letzten Tage dienen nur noch der klaren Vorbereitung.",
+      "priority": "Restaufgaben schließen und Packstatus sichern",
+      "appointments": "Finaler Abgleich mit allen Beteiligten",
+      "familyReminder": "Achtet auf genug Schlaf, Essen und kleine vertraute Momente, damit niemand komplett überdreht.",
+      "items": [
+        "Alle Kartons sichtbar beschriften",
+        "Werkzeugkiste und Kleinteile griffbereit halten",
+        "Putzmittel separat stellen",
+        "Snacks und Getränke organisieren",
+        "Kinderkleidung für drei Tage bereitlegen",
+        "Müll, Leergut und letzte Entsorgung erledigen",
+        "Abbau-Reihenfolge für Möbel festhalten",
+        "Ladegeräte und Powerbanks laden",
+        "Empfindliche Kartons markieren",
+        "Lieblingssachen-Box pro Kind fertigstellen",
+        "Transportfahrzeuge noch einmal bestätigen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "1 Tag vorher",
+      "intro": "Heute zählt nur noch das, was für einen ruhigen Start am nächsten Morgen wichtig ist.",
+      "priority": "Alles griffbereit halten, was nicht im Kartonstapel verschwinden darf",
+      "appointments": "Treffpunkt, Frühstück, Schlüssel, Betreuung",
+      "familyReminder": "Haltet den Abend bewusst ruhig und vermeidet Diskussionen über offene Restaufgaben.",
+      "items": [
+        "Erste-Nacht-Box ins Auto oder an den Ausgang stellen",
+        "Notfalltasche prüfen",
+        "Dokumentenmappe bereitlegen",
+        "Kinderbetreuung noch einmal bestätigen",
+        "Handys und Powerbanks laden",
+        "Frühstück und Getränke vorbereiten",
+        "Schlafplätze für die erste Nacht durchdenken",
+        "Schlüssel an einem festen Ort bereitlegen",
+        "Letzte offene Kartons schließen",
+        "Wichtige Telefonnummern griffbereit halten",
+        "Früh schlafen gehen, soweit möglich"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Umzugstag - Morgen",
+      "intro": "Ein klarer Start nimmt viel Druck aus dem Tag. Sicherheit, Schlüssel und Zuständigkeiten gehen jetzt vor Perfektion.",
+      "priority": "Dokumente, Kinder und Zugänge absichern",
+      "appointments": "Treffpunkt mit Helfern, Übergabe, Transport",
+      "familyReminder": "Sorgt dafür, dass die Kinder wissen, wer heute ihr sicherer Anker ist.",
+      "items": [
+        "Frühstück und Getränke bereitstellen",
+        "Kinder kurz über den Ablauf informieren",
+        "Dokumentenmappe am Körper oder im Handgepäck behalten",
+        "Helfer einweisen",
+        "Wichtige Kartons zuerst kennzeichnen",
+        "Zählerstände in der alten Wohnung notieren",
+        "Schlüssel bereithalten",
+        "Letzten Rundgang durch sensible Räume machen",
+        "Notfalltasche griffbereit halten",
+        "Kinderbetreuung oder Rückzugsort starten",
+        "Fotos von offenen Punkten machen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Umzugstag - Mittag",
+      "intro": "Zur Mitte des Tages hilft ein kurzer Realitätscheck. Lieber ruhig nachsteuern als hektisch improvisieren.",
+      "priority": "Ablauf stabil halten und Prioritäten schützen",
+      "appointments": "Mittagspause, Zwischenstand, Ankunft in neuer Wohnung",
+      "familyReminder": "Denkt daran, Kinder oder Betreuungsperson kurz aktiv einzuchecken und nicht nur nebenbei.",
+      "items": [
+        "Verpflegung für Helfer organisieren",
+        "Empfindliche Kartons kontrollieren",
+        "Kinderkontakt oder Betreuung checken",
+        "Prioritätskisten zuerst entladen",
+        "Beschädigungen sofort notieren",
+        "Schlüssel und Türen an neuer Wohnung prüfen",
+        "Bad- und Küchenkartons separieren",
+        "Möbelaufbau-Reihenfolge kurz abstimmen",
+        "Zählerstände in der neuen Wohnung dokumentieren",
+        "Müll und Verpackungsmaterial bündeln",
+        "Offene Rückfragen an Vermieter oder Verwaltung notieren"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Umzugstag - Abend",
+      "intro": "Am Abend geht es nicht mehr um Vollständigkeit, sondern um einen funktionierenden ersten Abschluss für eure Familie.",
+      "priority": "Schlafen, Essen und Grundversorgung sichern",
+      "appointments": "Erster Abend, kurze Abschlussrunde, offene Schäden dokumentieren",
+      "familyReminder": "Kinder brauchen jetzt vor allem Sicherheit, Nähe und bekannte Abläufe, nicht ein fertiges Zuhause.",
+      "items": [
+        "Betten oder Matratzen vorbereiten",
+        "Bad-Grundausstattung auspacken",
+        "Kleidung für den nächsten Tag bereitlegen",
+        "Frühstück für morgen sichern",
+        "Kinderzimmer-Ecke zuerst einrichten",
+        "Lieblingssachen bereitstellen",
+        "Offene Schäden dokumentieren",
+        "Müllbeutel und Putzmittel griffbereit halten",
+        "Wichtige Geräte testen",
+        "Erste Termine für den nächsten Tag prüfen",
+        "Kurzen Abschluss als Familie machen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Erste Nacht",
+      "intro": "Die erste Nacht prägt viel. Ziel ist nicht Perfektion, sondern ein Gefühl von Sicherheit und Ankommen.",
+      "priority": "Ruhige Abendroutine trotz Kisten schaffen",
+      "appointments": "Abendroutine, Medikamente, Wecker für den nächsten Tag",
+      "familyReminder": "Vertraute Rituale sind heute wichtiger als Ordnung.",
+      "items": [
+        "Lieblingskuscheltiere bereitlegen",
+        "Schlafanzüge und Zahnbürsten griffbereit halten",
+        "Nachtlicht oder vertraute Einschlafhilfe aufbauen",
+        "Medikamente erreichbar lagern",
+        "Wasser am Bett bereitstellen",
+        "Wecker für Schule, Kita oder Termine prüfen",
+        "Kleidung für den Morgen herauslegen",
+        "Kinder auf Fragen oder Sorgen eingehen",
+        "Wichtige Räume nachts sicher begehbar machen",
+        "Dokumentenmappe an festen Ort legen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Erste Woche danach",
+      "intro": "Jetzt geht es darum, wieder Alltag zu gewinnen. Nicht alles muss fertig sein, aber das Wichtigste muss funktionieren.",
+      "priority": "Routinen und wichtige Wege wieder zuverlässig machen",
+      "appointments": "Schule, Kita, Arbeit, Hausverwaltung, Nachbarn",
+      "familyReminder": "Plant bewusst kleine Erholungsmomente ein, auch wenn noch viel offen ist.",
+      "items": [
+        "Kinderzimmer weiter einrichten",
+        "Schulweg oder Kita-Weg testen",
+        "Hausarzt, Apotheke und wichtige Orte sichern",
+        "Internet, Strom und wichtige Anschlüsse prüfen",
+        "Müll- und Wäscheabläufe organisieren",
+        "Offene Kartons nach Priorität sortieren",
+        "Nachbarn oder Hausverwaltung kennenlernen",
+        "Einkaufsliste für fehlende Dinge ergänzen",
+        "Offene Verträge oder Rückmeldungen nachfassen",
+        "Rückzugsorte für Kinder im neuen Zuhause stärken",
+        "Erste Ausgaben zusammenfassen"
+      ]
+    },
+    {
+      "kind": "weeklyChecklist",
+      "title": "Erster Monat danach",
+      "intro": "Nach einigen Wochen zeigt sich, was noch fehlt und wo der neue Alltag noch nachjustiert werden muss.",
+      "priority": "Offene Nacharbeiten sichtbar abschließen",
+      "appointments": "Kaution, Rückmeldungen, Resttermine",
+      "familyReminder": "Achtet darauf, was sich für die Kinder schon gut anfühlt und wo noch Sicherheit fehlt.",
+      "items": [
+        "Adressänderungen vollständig prüfen",
+        "Offene Rechnungen abgleichen",
+        "Keller oder Abstellraum sortieren",
+        "Schäden oder Mängel nachhalten",
+        "Rückzahlung der alten Kaution notieren",
+        "Doppelmiete oder Nebenkosten prüfen",
+        "Familienroutine neu bewerten",
+        "Was im neuen Zuhause noch fehlt ergänzen",
+        "Nicht benötigte Restkartons aussortieren",
+        "Erfahrungen für den nächsten Umzug notieren"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Offene Aufgaben nach dem Umzug",
+      "intro": "Diese Seite ist für alle Punkte, die nicht in die erste Woche passen, aber trotzdem nicht untergehen dürfen.",
+      "focusLabel": "Was jetzt noch abgeschlossen werden muss",
+      "focusText": "Nutzt diese Seite als Resteliste, damit offene Rückmeldungen und Nacharbeiten sichtbar bleiben.",
+      "notesLabel": "Was wir später noch prüfen wollen",
+      "minimumRows": 12,
+      "items": [
+        "Adressänderung bei allen Stellen gegenprüfen",
+        "Kautionsstand nachhalten",
+        "Offene Rechnungen oder Erstattungen prüfen",
+        "Schäden oder Mängel schriftlich dokumentieren",
+        "Möbel oder Lieferungen nachverfolgen",
+        "Kinderzimmer weiter fertigstellen",
+        "Dokumente sauber ablegen",
+        "Restkartons aussortieren",
+        "Neue Routinen im Alltag festhalten",
+        "Erledigte Aufgaben endgültig abhaken"
+      ]
+    }
+  ]
+}

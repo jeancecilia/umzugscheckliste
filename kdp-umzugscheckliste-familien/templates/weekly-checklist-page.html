@@ -1,0 +1,30 @@
+<section class="page checklist-page weekly-page">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="section-label">{{sectionLabel}}</div>
+      <h1>{{title}}</h1>
+      <p class="subtitle">{{intro}}</p>
+    </header>
+    <div class="meta-grid three-up avoid-break">
+      <div class="meta-card">
+        <div class="field-label">Priorität</div>
+        <div class="meta-text">{{priority}}</div>
+      </div>
+      <div class="meta-card">
+        <div class="field-label">Termine / Ansprechpartner</div>
+        <div class="meta-text">{{appointments}}</div>
+      </div>
+      <div class="meta-card">
+        <div class="field-label">Familien-Erinnerung</div>
+        <div class="meta-text">{{familyReminder}}</div>
+      </div>
+    </div>
+    <div class="checklist-table">
+      {{rows}}
+    </div>
+    <div class="notes-box fill">
+      <div class="field-label">Notizen</div>
+    </div>
+  </div>
+  {{footer}}
+</section>

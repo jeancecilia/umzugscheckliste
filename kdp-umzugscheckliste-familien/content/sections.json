@@ -1,0 +1,103 @@
+[
+  {
+    "id": "start",
+    "title": "Start & Überblick",
+    "label": "Start",
+    "footerName": "Start & Überblick",
+    "divider": false,
+    "numbering": "front"
+  },
+  {
+    "id": "timeline",
+    "title": "Zeitplan",
+    "label": "Zeitplan",
+    "footerName": "Zeitplan",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Zeitplan",
+    "description": "Woche für Woche klar sehen, was jetzt wichtig ist, damit euer Umzug planbar und ruhiger bleibt.",
+    "highlights": [
+      "Fristen früh sichern und nichts Wichtiges übersehen",
+      "Helfer, Termine und Verträge rechtzeitig abstimmen",
+      "Kinder, Schule und Alltag von Anfang an mitdenken",
+      "Vor dem Umzug, am Umzugstag und danach strukturiert bleiben"
+    ]
+  },
+  {
+    "id": "family",
+    "title": "Familie & Kinder",
+    "label": "Familie",
+    "footerName": "Familie & Kinder",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Familie",
+    "description": "Dieser Abschnitt hilft euch, den Umzug nicht nur organisatorisch, sondern auch emotional familiengerecht zu planen.",
+    "highlights": [
+      "Kinder auf Veränderungen vorbereiten",
+      "Schule, Kita und Betreuung geordnet vorbereiten",
+      "Routinen und Sicherheit im neuen Zuhause stärken",
+      "Ankommen bewusst familienfreundlich gestalten"
+    ]
+  },
+  {
+    "id": "packing",
+    "title": "Packen & Kartons",
+    "label": "Packen",
+    "footerName": "Packen & Kartons",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Packen",
+    "description": "Hier plant ihr Kartons, Prioritäten und alles, was beim Ein- und Auspacken wirklich funktionieren muss.",
+    "highlights": [
+      "Kisten logisch markieren und priorisieren",
+      "Zimmerweise packen und schneller wiederfinden",
+      "Erste-Nacht- und Notfallbedarf separat sichern",
+      "Eigene Packlogik für euren Haushalt festhalten"
+    ]
+  },
+  {
+    "id": "budget",
+    "title": "Budget & Kosten",
+    "label": "Budget",
+    "footerName": "Budget & Kosten",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Budget",
+    "description": "Ein guter Umzug braucht auch einen klaren Kostenüberblick, damit ihr nicht von vielen kleinen Beträgen überrascht werdet.",
+    "highlights": [
+      "Geplante und echte Kosten vergleichen",
+      "Familienbezogene Zusatzkosten sichtbar machen",
+      "Belege, Referenzen und Zahlungen festhalten"
+    ]
+  },
+  {
+    "id": "address",
+    "title": "Adressen, Verträge & Behörden",
+    "label": "Verträge",
+    "footerName": "Adressen & Verträge",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Verträge",
+    "description": "Von Behörden bis Familienkasse: Hier haltet ihr fest, wen ihr informiert habt und was noch offen ist.",
+    "highlights": [
+      "Behörden und Anbieter vollständig informieren",
+      "Bestätigungen und Rückmeldungen dokumentieren",
+      "Wichtige deutsche Umzugsthemen sichtbar abarbeiten"
+    ]
+  },
+  {
+    "id": "handover",
+    "title": "Übergabe & Nachbereitung",
+    "label": "Übergabe",
+    "footerName": "Übergabe & Nachbereitung",
+    "divider": true,
+    "numbering": "body",
+    "motif": "Übergabe",
+    "description": "Zum Abschluss dokumentiert ihr Übergaben, Mängel, Reinigungspläne und alles, was nach dem Einzug noch wichtig bleibt.",
+    "highlights": [
+      "Alte und neue Wohnung sauber dokumentieren",
+      "Zählerstände, Schäden und Fotos geordnet festhalten",
+      "Nach dem Einzug offen gebliebene Punkte sauber abschließen"
+    ]
+  }
+]

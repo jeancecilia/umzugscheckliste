@@ -1,0 +1,162 @@
+{
+  "pages": [
+    {
+      "kind": "addressChange",
+      "title": "Adressänderungen Übersicht",
+      "intro": "Diese Übersicht hilft euch, keine wichtige Stelle zu vergessen und Rückmeldungen sauber nachzuverfolgen.",
+      "items": [
+        "Behörden",
+        "Banken",
+        "Versicherungen",
+        "Arbeitgeber",
+        "Schule / Kita",
+        "Ärzte / Apotheken",
+        "Versorger",
+        "Familie / Freunde",
+        "Abos / Dienste",
+        "Mitgliedschaften"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Behörden & Ämter",
+      "intro": "Meldepflichten, Wohnungsgeberbestätigung und weitere formale Schritte sollten hier vollständig dokumentiert werden.",
+      "items": [
+        "Einwohnermeldeamt",
+        "Familienkasse / Kindergeld",
+        "Finanzamt",
+        "Kfz-Zulassung / Ummeldung Auto",
+        "Rundfunkbeitrag",
+        "Wahlunterlagen",
+        "Weitere Behörde"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Banken & Versicherungen",
+      "intro": "Zahlungswege und Policen sollen ohne Unterbrechung weiterlaufen. Führt Änderungen lieber gesammelt durch.",
+      "items": [
+        "Hausbank",
+        "Kreditkarte",
+        "Hausratversicherung",
+        "Haftpflichtversicherung",
+        "Krankenversicherung",
+        "Kfz-Versicherung",
+        "Altersvorsorge / Sparvertrag",
+        "Weitere Versicherung"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Arbeitgeber & Schule / Kita",
+      "intro": "Arbeitsplatz und Betreuungseinrichtungen brauchen oft neue Nachweise, Zeiten oder Wegeangaben.",
+      "items": [
+        "Arbeitgeber",
+        "Lohnbuchhaltung",
+        "Schule",
+        "Kita",
+        "Mittagsbetreuung",
+        "Vereine / Kurse",
+        "Elternchat / Klassenkontakt"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Internet, Strom, Gas, Wasser",
+      "intro": "Versorger frühzeitig eintragen, damit es am Einzugstag keine Versorgungslücken gibt.",
+      "items": [
+        "Internet",
+        "Strom",
+        "Gas",
+        "Wasser",
+        "Fernwärme",
+        "Müll / Entsorgung",
+        "Messstellenbetreiber"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Streaming, Abos & Mitgliedschaften",
+      "intro": "Kleine laufende Verträge werden leicht vergessen und verursachen später unnötige Arbeit.",
+      "items": [
+        "Video-Streaming",
+        "Musik- oder Hörbuchdienst",
+        "Fitness / Verein",
+        "Zeitschrift / Abo",
+        "Bibliothek / Ausweis",
+        "Online-Shop-Konto",
+        "Weitere Mitgliedschaft"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Ärzte & Apotheken",
+      "intro": "Gerade mit Kindern ist es hilfreich, medizinische Kontakte vollständig und frühzeitig umzustellen oder neu zu sichern.",
+      "items": [
+        "Kinderarzt",
+        "Hausarzt",
+        "Zahnarzt",
+        "Facharzt",
+        "Apotheke",
+        "Therapie / Frühförderung",
+        "Therapie / Praxis"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Familie & Freunde",
+      "intro": "Diese Seite ist für persönliche Kontakte, bei denen Adresse, Termine oder Hilfe wichtig sind.",
+      "items": [
+        "Großeltern",
+        "Enge Freunde",
+        "Nachbarn",
+        "Babysitter",
+        "Notfallkontakt",
+        "Schulfreunde / Eltern",
+        "Weitere Kontakte"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Nachsendeauftrag",
+      "intro": "Ein Nachsendeauftrag schließt organisatorische Lücken und gibt euch Zeit, alle Stellen sauber umzumelden.",
+      "items": [
+        "Antrag gestellt",
+        "Startdatum",
+        "Laufzeit",
+        "Bestätigung erhalten",
+        "Kosten bezahlt",
+        "Für alle Familienmitglieder geprüft",
+        "Enddatum notiert"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Verträge kündigen / ummelden",
+      "intro": "Nicht jeder Vertrag wird einfach übernommen. Sammelt hier Fristen, Antworten und notwendige Schritte.",
+      "items": [
+        "Kündigung versendet",
+        "Ummeldung beantragt",
+        "Rückmeldung erhalten",
+        "Sonderkündigungsrecht geprüft",
+        "Neuer Tarif bewertet",
+        "Bestätigung abgelegt",
+        "Unterlagen abgelegt"
+      ]
+    },
+    {
+      "kind": "addressChange",
+      "title": "Offene Rückmeldungen",
+      "intro": "Hier sammeln sich alle Stellen, bei denen noch Bestätigungen, Unterlagen oder Termine fehlen.",
+      "items": [
+        "Noch ohne Rückmeldung",
+        "Weitere Unterlagen angefordert",
+        "Erinnerung versendet",
+        "Termin steht aus",
+        "Nächster Rückruf / Nachfassen",
+        "Dokument fehlt noch",
+        "Besonders wichtig"
+      ]
+    }
+  ]
+}

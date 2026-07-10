@@ -1,0 +1,376 @@
+{
+  "pages": [
+    {
+      "kind": "checklist",
+      "title": "Packstrategie",
+      "intro": "Ein gutes Packsystem spart am Umzugstag mehr Zeit als jede spontane Improvisation.",
+      "focusLabel": "Packprinzip",
+      "focusText": "Packt nach Nutzungshäufigkeit, Priorität und Zielraum, nicht nur nach Schrankinhalt.",
+      "notesLabel": "Was wir beim Packen bewusst vereinfachen",
+      "minimumRows": 10,
+      "items": [
+        "Selten genutzte Dinge zuerst packen",
+        "Jeden Karton klar beschriften",
+        "Kartons nach Räumen und Priorität markieren",
+        "Wichtige Dinge separat halten",
+        "Schwere Gegenstände in kleinere Kartons packen",
+        "Zerbrechliches besonders kennzeichnen",
+        "Kinderzimmer nicht komplett zu früh leer räumen",
+        "Werkzeug und Kleinteile separat lagern",
+        "Erste-Nacht-Bedarf nicht im Stapel verschwinden lassen",
+        "Sofort auspacken und später auspacken unterscheiden"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Kartonnummern-System",
+      "intro": "Mit einem klaren Nummernsystem lassen sich Kartons am neuen Wohnort schneller zuordnen und wiederfinden.",
+      "room": "Systemübersicht",
+      "minimumRows": 11,
+      "items": [
+        "Kartons mit höchster Priorität",
+        "Kartons für die erste Nacht",
+        "Küche sofort",
+        "Bad sofort",
+        "Kinderzimmer zuerst",
+        "Dokumente separat",
+        "Zerbrechlich / vorsichtig",
+        "Später auspacken"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Farbcodes nach Zimmern",
+      "intro": "Ein einfaches Farbsystem hilft Helfern und Familie, Kartons schneller in den richtigen Raum zu bringen.",
+      "room": "Farb- und Zielraumplan",
+      "minimumRows": 10,
+      "items": [
+        "Küche",
+        "Bad",
+        "Elternschlafzimmer",
+        "Kinderzimmer 1",
+        "Kinderzimmer 2",
+        "Wohnzimmer",
+        "Arbeitszimmer",
+        "Keller / Abstellraum"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Was bleibt bis zuletzt draußen?",
+      "intro": "Diese Dinge sollten erst sehr spät eingepackt werden, damit der Alltag bis zum Schluss funktioniert.",
+      "focusLabel": "Bis zuletzt griffbereit",
+      "focusText": "Denkt an Essen, Hygiene, Schlafen, Dokumente und vertraute Kinderdinge.",
+      "notesLabel": "Was erst am Ende eingepackt wird",
+      "minimumRows": 10,
+      "items": [
+        "Dokumentenmappe",
+        "Zahnbürsten und Hygieneartikel",
+        "Handtücher",
+        "Frühstückssachen",
+        "Ladekabel",
+        "Medikamente",
+        "Lieblingskuscheltiere",
+        "Reinigungsmittel für die letzte Runde",
+        "Werkzeugkiste",
+        "Schlüssel"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Erste-Nacht-Box Familie",
+      "intro": "Mit dieser Box sichert ihr alles, was eure Familie für den ersten Abend und den ersten Morgen wirklich braucht.",
+      "focusLabel": "Nicht in den Kartonstapel",
+      "focusText": "Diese Box bleibt sichtbar und wird zuletzt geladen oder direkt selbst transportiert.",
+      "notesLabel": "Was wir zusätzlich für die erste Nacht brauchen",
+      "minimumRows": 10,
+      "items": [
+        "Zahnbürsten und Pflegeprodukte",
+        "Schlafsachen",
+        "Handtücher",
+        "Kleidung für den nächsten Tag",
+        "Frühstückssachen",
+        "Ladekabel",
+        "Medikamente",
+        "Kuschelsachen oder Lieblingsdecken",
+        "Toilettenpapier",
+        "Wichtige Unterlagen"
+      ]
+    },
+    {
+      "kind": "checklist",
+      "title": "Notfalltasche Umzugstag",
+      "intro": "Für kleine Verletzungen, Hunger, Müdigkeit oder spontane Planänderungen sollte diese Tasche immer sofort erreichbar sein.",
+      "focusLabel": "Sofort erreichbar",
+      "focusText": "Diese Tasche begleitet euch durch den Tag und gehört nicht in den Möbel- oder Kartonbereich.",
+      "notesLabel": "Was wir in die Notfalltasche ergänzen",
+      "minimumRows": 10,
+      "items": [
+        "Pflaster und kleine Reiseapotheke",
+        "Regelmedikamente",
+        "Snacks",
+        "Wasser",
+        "Powerbank",
+        "Dokumentenmappe oder Notizzettel",
+        "Taschentücher",
+        "Feuchttücher",
+        "Kleingeld oder Karten",
+        "Wichtige Telefonnummern"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Küche",
+      "intro": "Die Küche braucht klare Prioritäten, weil sie im alten Zuhause bis zuletzt und im neuen Zuhause sofort wieder gebraucht wird.",
+      "room": "Küche",
+      "items": [
+        "Teller und Schüsseln",
+        "Gläser und Tassen",
+        "Besteck",
+        "Töpfe und Pfannen",
+        "Gewürze und Vorräte",
+        "Frühstückssachen",
+        "Kinderbecher oder besondere Alltagshelfer"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Bad",
+      "intro": "Im Bad zählen Übersicht und schneller Zugriff. Packt Pflege und Medikamente besonders geordnet.",
+      "room": "Bad",
+      "items": [
+        "Handtücher",
+        "Zahnpflege",
+        "Pflegeprodukte",
+        "Medikamente",
+        "Föhn oder Rasierer",
+        "Toilettenpapier",
+        "Kinderpflege oder Wickelbedarf"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Elternschlafzimmer",
+      "intro": "Mindestens ein Karton sollte alles enthalten, was ihr für die ersten zwei Nächte sicher braucht.",
+      "room": "Elternschlafzimmer",
+      "items": [
+        "Bettwäsche",
+        "Kleidung für drei Tage",
+        "Schlafsachen",
+        "Ladekabel",
+        "Wäschekorb",
+        "Dokumente oder Wertsachen",
+        "Nachtbedarf"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Kinderzimmer 1",
+      "intro": "Im Kinderzimmer helfen klare Kategorien und gut sichtbare Prioritäten besonders stark beim Ankommen.",
+      "room": "Kinderzimmer 1",
+      "items": [
+        "Kleidung",
+        "Bettwäsche",
+        "Bücher",
+        "Spielzeug",
+        "Kuscheltiere",
+        "Schul- oder Kita-Sachen",
+        "Lieblingsgegenstände"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Kinderzimmer 2",
+      "intro": "Wenn mehrere Kinder beteiligt sind, hilft eine getrennte Packlogik pro Kind oder Bereich.",
+      "room": "Kinderzimmer 2",
+      "items": [
+        "Kleidung",
+        "Bettwäsche",
+        "Spielsachen",
+        "Bastelsachen",
+        "Bücher",
+        "Lieblingsgegenstände",
+        "Persönliche Erinnerungsstücke"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Wohnzimmer",
+      "intro": "Das Wohnzimmer enthält oft viele gemischte Dinge. Beschriftung und Priorisierung sind hier besonders wichtig.",
+      "room": "Wohnzimmer",
+      "items": [
+        "Bücher",
+        "Deko",
+        "Elektronik",
+        "Fernbedienungen",
+        "Textilien",
+        "Spiele",
+        "Wichtige Alltagsgegenstände"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Arbeitszimmer",
+      "intro": "Alles, was beruflich, schulisch oder organisatorisch wichtig ist, sollte sicher und schnell auffindbar bleiben.",
+      "room": "Arbeitszimmer",
+      "items": [
+        "Laptop oder Zubehör",
+        "Ordner",
+        "Ladegeräte",
+        "Drucker oder Technik",
+        "Notizbücher",
+        "Schul- oder Arbeitsunterlagen",
+        "Passwörter / Zugänge sicher notieren"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Keller / Abstellraum",
+      "intro": "Hier sammeln sich oft selten genutzte Dinge. Nutzt die Gelegenheit zum Aussortieren und klaren Beschriften.",
+      "room": "Keller / Abstellraum",
+      "items": [
+        "Werkzeug",
+        "Saisonartikel",
+        "Vorräte",
+        "Dekoration",
+        "Sportartikel",
+        "Archivboxen",
+        "Reserve- oder Ersatzmaterial"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Balkon / Garten",
+      "intro": "Außenbereiche brauchen robuste Verpackung und oft eine letzte Reinigung vor der Übergabe.",
+      "room": "Balkon / Garten",
+      "items": [
+        "Pflanzen",
+        "Gartenwerkzeug",
+        "Möbelauflagen",
+        "Spielzeug für draußen",
+        "Grillzubehör",
+        "Dekoration",
+        "Putz- oder Besenmaterial"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Dokumente",
+      "intro": "Dokumente gehören nie in den normalen Umzugsstrom. Sie brauchen eine eigene, geschützte Transportlogik.",
+      "room": "Dokumente",
+      "items": [
+        "Ausweise",
+        "Mietverträge",
+        "Versicherungen",
+        "Geburtsurkunden",
+        "Schul- oder Kita-Unterlagen",
+        "Medizinische Unterlagen",
+        "Kaution / Rechnungen / Quittungen"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Kleidung",
+      "intro": "Plant alltagstaugliche Kleidung für mehrere Tage separat ein, bevor alles in große Kartons wandert.",
+      "room": "Kleidung",
+      "items": [
+        "Alltagskleidung",
+        "Unterwäsche",
+        "Schlafsachen",
+        "Jacken",
+        "Schuhe",
+        "Wetterabhängige Kleidung",
+        "Sport- oder Kita-Wechselkleidung"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Spielzeug",
+      "intro": "Spielzeug muss nicht komplett sofort erreichbar sein, aber einige vertraute Dinge schon.",
+      "room": "Spielzeug",
+      "items": [
+        "Lieblingsspielzeug",
+        "Brettspiele",
+        "Bausteine",
+        "Bastelsachen",
+        "Kuscheltiere",
+        "Reisespielzeug",
+        "Draußenspielzeug"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Technik",
+      "intro": "Technik ist empfindlich und oft sofort nötig. Kabel, Zubehör und Geräte sollten nicht getrennt werden.",
+      "room": "Technik",
+      "items": [
+        "Router",
+        "Ladegeräte",
+        "Steckdosenleisten",
+        "Computer oder Tablet",
+        "Fernsehzubehör",
+        "Kabelbeutel",
+        "Wichtige Adapter oder Zugangsdaten"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Reinigungsmittel",
+      "intro": "Ein Teil der Reinigungsmittel wird bis zuletzt in der alten Wohnung und danach direkt in der neuen Wohnung gebraucht.",
+      "room": "Reinigungsmittel",
+      "items": [
+        "Allzweckreiniger",
+        "Fensterreiniger",
+        "Müllbeutel",
+        "Lappen und Schwämme",
+        "Besen oder Wischer",
+        "Handschuhe",
+        "Papiertücher"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Packliste Haustiere",
+      "intro": "Wenn Haustiere Teil des Haushalts sind, brauchen sie einen eigenen sicheren Ablauf und vertraute Dinge.",
+      "room": "Haustiere",
+      "items": [
+        "Futter",
+        "Leine oder Transportbox",
+        "Wasser- und Futternapf",
+        "Lieblingsdecke",
+        "Medikamente",
+        "Kotbeutel oder Streu",
+        "Notfallkontakt Tierarzt"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Zerbrechliche Gegenstände",
+      "intro": "Empfindliche Dinge brauchen besondere Kennzeichnung, Polsterung und klare Transportwege.",
+      "room": "Zerbrechliche Gegenstände",
+      "items": [
+        "Glas und Porzellan",
+        "Bilderrahmen",
+        "Lampen",
+        "Keramik",
+        "Erinnerungsstücke",
+        "Elektronische Kleinteile",
+        "Spiegel oder empfindliche Dekoration"
+      ]
+    },
+    {
+      "kind": "packlist",
+      "title": "Eigene Packliste",
+      "intro": "Diese Seite ist für alle Sonderbereiche, Hobbys oder Haushaltszonen gedacht, die in euren Umzug zusätzlich hineinspielen.",
+      "room": "Eigener Sonderbereich",
+      "items": [
+        "Weitere Kartons",
+        "Sondermaterial",
+        "Projektkisten",
+        "Kinderprojekte",
+        "Wird separat transportiert",
+        "Zuerst auspacken"
+      ]
+    }
+  ]
+}

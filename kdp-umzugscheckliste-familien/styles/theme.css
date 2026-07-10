@@ -1,0 +1,71 @@
+:root {
+  --paper: #fbf8f2;
+  --panel: #ece6db;
+  --panel-strong: #dfd6c8;
+  --line: #c6bfb3;
+  --line-strong: #92897d;
+  --ink: #212121;
+  --muted: #5f584f;
+  --accent: #756c60;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 10.2pt;
+  color: var(--ink);
+  background: #fff;
+}
+
+h1 {
+  margin: 0 0 0.08in;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-size: 22pt;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 10.3pt;
+  line-height: 1.5;
+}
+
+.section-label,
+.divider-mark,
+.field-label,
+.subheading {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-label,
+.divider-mark {
+  margin-bottom: 0.08in;
+  color: var(--muted);
+  font-size: 8.4pt;
+  font-weight: 700;
+}
+
+.field-label {
+  font-size: 8.2pt;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.subheading {
+  margin-bottom: 0.12in;
+  color: var(--ink);
+  font-size: 8.7pt;
+  font-weight: 700;
+}
