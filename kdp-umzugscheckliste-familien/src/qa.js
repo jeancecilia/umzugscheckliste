@@ -6,6 +6,7 @@ const { getCoverSpec } = require("./generate-cover");
 
 const rootDir = path.resolve(__dirname, "..");
 const outputDir = path.join(rootDir, "output");
+const qaRenderDir = path.join(outputDir, "qa-renders");
 const contentDir = path.join(rootDir, "content");
 const coverDir = path.join(rootDir, "cover");
 const styleDir = path.join(rootDir, "styles");
@@ -33,17 +34,17 @@ const DISALLOWED_STYLE_TOKENS = [
   "highlight"
 ];
 
+const QA_RENDER_PAGES = [5, 6, 7, 9, 31, 45, 46];
+const ALLOWED_WRITING_SURFACE_COLORS = new Set(["250,248,244", "255,255,255"]);
 function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(contentDir, "book-config.json"), "utf8"));
 }
 
 function scanPlaceholders() {
   const placeholders = ["Eintrag 1", "Eintrag 2", "Punkt 1", "Stelle 1", "Eigener Bereich"];
-  const files = fs
-    .readdirSync(contentDir)
-    .filter((fileName) => fileName.endsWith(".json"));
-
+  const files = fs.readdirSync(contentDir).filter((fileName) => fileName.endsWith(".json"));
   const hits = [];
+
   for (const fileName of files) {
     const content = fs.readFileSync(path.join(contentDir, fileName), "utf8");
     for (const token of placeholders) {
@@ -52,6 +53,7 @@ function scanPlaceholders() {
       }
     }
   }
+
   return hits;
 }
 
@@ -59,8 +61,8 @@ function scanSensitiveCopy() {
   const warnings = [];
   const checks = [
     {
-      token: "Passwörter / Zugänge",
-      replacement: "Keine Passwörter in Druckprodukten notieren"
+      token: "Passw\u00f6rter / Zug\u00e4nge",
+      replacement: "Keine Passw\u00f6rter in Druckprodukten notieren"
     },
     {
       token: "Zugangsdaten sicher notieren",
@@ -78,6 +80,13 @@ function scanSensitiveCopy() {
   }
 
   return warnings;
+}
+
+function findUpdatedPdfCopies() {
+  return fs
+    .readdirSync(outputDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith("-updated.pdf"))
+    .map((entry) => entry.name);
 }
 
 function normalizeFontName(fontName) {
@@ -146,7 +155,6 @@ function normalizeRgbColor(match) {
 function inspectInteriorSourceColors() {
   const suspiciousColors = [];
   const suspiciousTokens = [];
-
   const hexColorPattern = /#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})\b/gi;
   const rgbColorPattern =
     /rgba?\(\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)(?:\s*,\s*([0-9.]+%?))?\s*\)/gi;
@@ -246,13 +254,13 @@ for index, page in enumerate(pdf):
             page_max = saturation
         if saturation >= 0.35 and channel_max >= 0.2:
             colored += 1
-    ratio = colored / total
+    color_ratio = colored / total
     if page_max > max_saturation:
         max_saturation = page_max
-    if ratio >= 0.0005:
+    if color_ratio >= 0.0005:
         saturated_pages.append({
             "page": index + 1,
-            "ratio": round(ratio, 6),
+            "ratio": round(color_ratio, 6),
             "maxSaturation": round(page_max, 4)
         })
 
@@ -262,13 +270,13 @@ for size in sizes:
         unique_sizes.append(size)
 
 print(json.dumps({
-  "pageCount": pdf.page_count,
-  "pageSizes": unique_sizes,
-  "blankPages": blank,
-  "visualBlankPages": visual_blank,
-  "fonts": fonts,
-  "saturatedPages": saturated_pages,
-  "maxSaturation": round(max_saturation, 4)
+    "pageCount": pdf.page_count,
+    "pageSizes": unique_sizes,
+    "blankPages": blank,
+    "visualBlankPages": visual_blank,
+    "fonts": fonts,
+    "saturatedPages": saturated_pages,
+    "maxSaturation": round(max_saturation, 4)
 }))
 `;
 
@@ -278,6 +286,145 @@ print(json.dumps({
   });
 
   return JSON.parse(raw);
+}
+
+function renderQaPagesAndInspectNotesBox(pdfFilePath) {
+  const script = `
+import fitz, json, os, sys
+from collections import Counter
+
+pdf = fitz.open(sys.argv[1])
+output_dir = sys.argv[2]
+pages_to_render = [5, 6, 7, 9, 31, 45, 46]
+allowed = {(250, 248, 244), (255, 255, 255)}
+
+os.makedirs(output_dir, exist_ok=True)
+rendered = []
+
+def saturation(rgb):
+    r, g, b = [value / 255 for value in rgb]
+    channel_max = max(r, g, b)
+    channel_min = min(r, g, b)
+    return 0.0 if channel_max == 0 else (channel_max - channel_min) / channel_max
+
+def quantize(rgb, step=1):
+    return tuple(max(0, min(255, int(round(value / step) * step))) for value in rgb)
+
+def is_magenta_like(rgb):
+    r, g, b = rgb
+    return r >= 150 and b >= 150 and (r - g) >= 25 and (b - g) >= 25
+
+for page_number in pages_to_render:
+    page = pdf[page_number - 1]
+    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2), colorspace=fitz.csRGB, alpha=False)
+    file_name = f"page-{page_number:03d}.png"
+    file_path = os.path.join(output_dir, file_name)
+    pix.save(file_path)
+    rendered.append({
+        "page": page_number,
+        "file": file_name,
+        "width": pix.width,
+        "height": pix.height
+    })
+
+page5 = pdf[4]
+matches = page5.search_for("HINWEISE")
+if not matches:
+    matches = page5.search_for("Hinweise")
+if not matches:
+    words = page5.get_text("words")
+    hint_words = [word for word in words if str(word[4]).upper().startswith("HINWEIS")]
+    if hint_words:
+        x0 = min(word[0] for word in hint_words)
+        y0 = min(word[1] for word in hint_words)
+        x1 = max(word[2] for word in hint_words)
+        y1 = max(word[3] for word in hint_words)
+        matches = [fitz.Rect(x0, y0, x1, y1)]
+if not matches:
+    raise RuntimeError("Notes-box label on page 5 not found.")
+
+label = matches[0]
+outer_left = max(0, label.x0 - 12)
+outer_right = min(page5.rect.width, page5.rect.width - outer_left)
+sample_region = fitz.Rect(
+    outer_left + 14,
+    label.y1 + 10,
+    outer_right - 14,
+    min(page5.rect.height - 55, label.y1 + 110)
+)
+
+crop_pix = page5.get_pixmap(matrix=fitz.Matrix(2, 2), clip=sample_region, colorspace=fitz.csRGB, alpha=False)
+crop_path = os.path.join(output_dir, "page-005-notes-box-crop.png")
+crop_pix.save(crop_path)
+
+samples = crop_pix.samples
+background_counter = Counter()
+background_pixels = 0
+max_saturation = 0.0
+max_channel_diff = 0
+magenta_pixels = 0
+high_saturation_pixels = 0
+
+for offset in range(0, len(samples), 3):
+    rgb = (samples[offset], samples[offset + 1], samples[offset + 2])
+    if sum(rgb) / 3 < 180:
+        continue
+    background_pixels += 1
+    bucket = quantize(rgb)
+    background_counter[bucket] += 1
+    sat = saturation(rgb)
+    diff = max(rgb) - min(rgb)
+    if sat > max_saturation:
+        max_saturation = sat
+    if diff > max_channel_diff:
+        max_channel_diff = diff
+    if is_magenta_like(rgb):
+        magenta_pixels += 1
+    if sat >= 0.15 or diff > 25:
+        high_saturation_pixels += 1
+
+dominant_colors = []
+for rgb, count in background_counter.most_common(8):
+    dominant_colors.append({
+        "rgb": list(rgb),
+        "count": count,
+        "ratio": round(count / max(1, background_pixels), 6),
+        "saturation": round(saturation(rgb), 4),
+        "channelDiff": max(rgb) - min(rgb),
+        "allowedFill": rgb in allowed
+    })
+
+allowed_fill_only = all(entry["allowedFill"] for entry in dominant_colors[:3]) if dominant_colors else False
+
+print(json.dumps({
+    "renderedPages": rendered,
+    "notesBox": {
+        "labelRect": [round(label.x0, 2), round(label.y0, 2), round(label.x1, 2), round(label.y1, 2)],
+        "sampleRegion": [round(sample_region.x0, 2), round(sample_region.y0, 2), round(sample_region.x1, 2), round(sample_region.y1, 2)],
+        "cropFile": "page-005-notes-box-crop.png",
+        "backgroundPixelCount": background_pixels,
+        "dominantColors": dominant_colors,
+        "maxSaturation": round(max_saturation, 4),
+        "maxChannelDiff": int(max_channel_diff),
+        "magentaPixelCount": magenta_pixels,
+        "highSaturationPixelCount": high_saturation_pixels,
+        "allowedFillOnly": allowed_fill_only
+    }
+}))
+`;
+
+  const raw = execFileSync("python", ["-c", script, pdfFilePath, qaRenderDir], {
+    cwd: rootDir,
+    encoding: "utf8"
+  });
+
+  const result = JSON.parse(raw);
+  fs.writeFileSync(
+    path.join(qaRenderDir, "qa-render-report.json"),
+    JSON.stringify(result, null, 2),
+    "utf8"
+  );
+  return result;
 }
 
 function inspectContentsCoverage(pages) {
@@ -311,6 +458,10 @@ function inspectCover() {
   };
 }
 
+function renderList(items) {
+  return items.map((item) => `- ${item}`).join("\n");
+}
+
 function generateQaReport() {
   const config = loadConfig();
   const pages = buildPageList();
@@ -318,10 +469,12 @@ function generateQaReport() {
   const weeklyPages = pages.filter((page) => page.kind === "weeklyChecklist");
   const placeholderHits = scanPlaceholders();
   const sensitiveHits = scanSensitiveCopy();
+  const updatedPdfCopies = findUpdatedPdfCopies();
+  const interiorSourceScan = inspectInteriorSourceColors();
   const interiorPdf = inspectPdf(pdfPath);
+  const qaRenderData = renderQaPagesAndInspectNotesBox(pdfPath);
   const cover = inspectCover();
   const contentsCoverage = inspectContentsCoverage(pages);
-  const interiorSourceScan = inspectInteriorSourceColors();
   const interiorHasProjectFonts =
     hasFontFamily(interiorPdf.fonts, "montserrat") &&
     hasFontFamily(interiorPdf.fonts, "sourcesans3");
@@ -332,6 +485,13 @@ function generateQaReport() {
     interiorSourceScan.suspiciousColors.length === 0 &&
     interiorSourceScan.suspiciousTokens.length === 0;
   const noSaturatedInteriorPdf = interiorPdf.saturatedPages.length === 0;
+  const notesBox = qaRenderData.notesBox;
+  const notesBoxPass =
+    notesBox.backgroundPixelCount > 0 &&
+    notesBox.magentaPixelCount === 0 &&
+    notesBox.highSaturationPixelCount === 0 &&
+    notesBox.maxChannelDiff <= 25 &&
+    notesBox.allowedFillOnly;
 
   const weeklyRanges = weeklyPages.map(
     (page) => `${page.title}: ${page.items.length} Aufgaben`
@@ -357,35 +517,42 @@ function generateQaReport() {
 - PDF-Datei: \`output/umzugscheckliste-familien-interior-premium.pdf\`
 - Preview-Datei: \`output/umzugscheckliste-familien-interior-preview.html\`
 - Cover-Datei: \`output/umzugscheckliste-familien-cover.pdf\`
+- QA-Renders: \`output/qa-renders/\`
 - Geplante Seiten aus JSON/Generator: \`${pages.length}\`
 - Ziel-Seitenzahl aus Config: \`${exactPageTarget}\`
-- Tatsächliche Innen-PDF-Seiten: \`${interiorPdf.pageCount}\`
+- Tatsaechliche Innen-PDF-Seiten: \`${interiorPdf.pageCount}\`
 - Innen-PDF-Formate: \`${interiorPdf.pageSizes.map((size) => size.join(" x ")).join(", ")} inch\`
-- Leerseiten per Textprüfung: \`${interiorPdf.blankPages.length}\`
-- Leerseiten per Bildprüfung: \`${interiorPdf.visualBlankPages.length}\`
+- Leerseiten per Textpruefung: \`${interiorPdf.blankPages.length}\`
+- Leerseiten per Bildpruefung: \`${interiorPdf.visualBlankPages.length}\`
 - Unterschiedliche Seitentypen: \`${pageKinds.size}\`
 - Platzhaltertreffer: \`${placeholderHits.length}\`
 - Sensible Formulierungen: \`${sensitiveHits.length}\`
 - Verdaechtige Innenraum-Farbtreffer im HTML/CSS: \`${interiorSourceScan.suspiciousColors.length + interiorSourceScan.suspiciousTokens.length}\`
 - Maximale gemessene Saettigung im Innen-PDF: \`${interiorPdf.maxSaturation}\`
+- Seite-5-Notes-Box dominante Farben: \`${notesBox.dominantColors
+    .slice(0, 3)
+    .map((entry) => `${entry.rgb.join("/")}:${entry.ratio}`)
+    .join(", ")}\`
+- Gerenderte QA-Seiten: \`${qaRenderData.renderedPages.map((entry) => entry.page).join(", ")}\`
+- Verbotene *-updated.pdf-Dateien: \`${updatedPdfCopies.length}\`
 - Innen-PDF-Schriften: \`${interiorPdf.fonts.join(", ")}\`
 - Cover-PDF-Schriften: \`${cover.outputPdf.fonts.join(", ")}\`
 
-## Wöchentliche Checklisten
+## Woechentliche Checklisten
 
-${weeklyRanges.map((line) => `- ${line}`).join("\n")}
+${renderList(weeklyRanges)}
 
 ## Cover-Geometrie
 
-- Innen-Seitenzahl für das Cover: \`${cover.spec.pageCount}\`
-- Rückenbreite: \`${cover.spec.spineWidthIn.toFixed(6)} inch\`
-- Cover-Gesamtgröße: \`${cover.spec.totalWidthIn.toFixed(6)} x ${cover.spec.totalHeightIn.toFixed(2)} inch\`
-- Rücken-Text aktiviert: \`${cover.spec.includeSpineText ? "ja" : "nein"}\`
+- Innen-Seitenzahl fuer das Cover: \`${cover.spec.pageCount}\`
+- Rueckenbreite: \`${cover.spec.spineWidthIn.toFixed(6)} inch\`
+- Cover-Gesamtgroesse: \`${cover.spec.totalWidthIn.toFixed(6)} x ${cover.spec.totalHeightIn.toFixed(2)} inch\`
+- Ruecken-Text aktiviert: \`${cover.spec.includeSpineText ? "ja" : "nein"}\`
 
-## Prüfungen
+## Pruefungen
 
 - Exakte Seitenzahl erreicht: ${interiorPdf.pageCount === exactPageTarget ? "ja" : "nein"}
-- Geplante DOM-Seitenzahl stimmt mit PDF überein: ${plannedMatchesPdf ? "ja" : "nein"}
+- Geplante DOM-Seitenzahl stimmt mit PDF ueberein: ${plannedMatchesPdf ? "ja" : "nein"}
 - Keine versehentlichen Leerseiten: ${
     interiorPdf.blankPages.length === 0 && interiorPdf.visualBlankPages.length === 0
       ? "ja"
@@ -393,12 +560,12 @@ ${weeklyRanges.map((line) => `- ${line}`).join("\n")}
   }
 - Alle Innen-PDF-Seiten haben dasselbe Format: ${interiorPdf.pageSizes.length === 1 ? "ja" : "nein"}
 - Innen-PDF entspricht 8.5 x 11 inch: ${trimMatches ? "ja" : "nein"}
-- Cover-PDF entspricht berechneter KDP-Größe: ${coverSizeMatches ? "ja" : "nein"}
-- Cover-Template entspricht berechneter KDP-Größe: ${templateSizeMatches ? "ja" : "nein"}
+- Cover-PDF entspricht berechneter KDP-Groesse: ${coverSizeMatches ? "ja" : "nein"}
+- Cover-Template entspricht berechneter KDP-Groesse: ${templateSizeMatches ? "ja" : "nein"}
 - Cover nutzt dieselbe Seitenzahl wie der Innenraum: ${cover.spec.pageCount === exactPageTarget ? "ja" : "nein"}
-- Rücken-Text bei dünnem Rücken deaktiviert: ${!cover.spec.includeSpineText ? "ja" : "nein"}
-- Innen-PDF enthält die Projektfonts Montserrat und Source Sans 3: ${interiorHasProjectFonts ? "ja" : "nein"}
-- Cover-PDF enthält die eingebettete Projektfont Montserrat: ${coverHasProjectFonts ? "ja" : "nein"}
+- Ruecken-Text bei duennem Ruecken deaktiviert: ${!cover.spec.includeSpineText ? "ja" : "nein"}
+- Innen-PDF enthaelt die Projektfonts Montserrat und Source Sans 3: ${interiorHasProjectFonts ? "ja" : "nein"}
+- Cover-PDF enthaelt die eingebettete Projektfont Montserrat: ${coverHasProjectFonts ? "ja" : "nein"}
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Innen-PDF: ${interiorFallbackFonts.length === 0 ? "ja" : `nein (${interiorFallbackFonts.join(", ")})`}
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ${coverFallbackFonts.length === 0 ? "ja" : `nein (${coverFallbackFonts.join(", ")})`}
 - Keine verdaechtigen Magenta-/Pink-/Debug-Stile im Innenraum-HTML/CSS: ${
@@ -413,39 +580,54 @@ ${weeklyRanges.map((line) => `- ${line}`).join("\n")}
           .map((entry) => `S. ${entry.page}: Anteil ${entry.ratio}, max. Saettigung ${entry.maxSaturation}`)
           .join(" | ")})`
   }
+- Seite-5-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ${
+    notesBoxPass
+      ? "ja"
+      : `nein (Diff ${notesBox.maxChannelDiff}, Saettigung ${notesBox.maxSaturation}, Magenta-Pixel ${notesBox.magentaPixelCount}, High-Sat-Pixel ${notesBox.highSaturationPixelCount})`
+  }
+- Keine manuellen *-updated.pdf-Dateien mehr vorhanden: ${updatedPdfCopies.length === 0 ? "ja" : `nein (${updatedPdfCopies.join(", ")})`}
 - Mindestens 8 Seitentypen: ${pageKinds.size >= 8 ? "ja" : "nein"}
 - Platzhaltertext entfernt: ${placeholderHits.length === 0 ? "ja" : "nein"}
 - Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ${sensitiveHits.length === 0 ? "ja" : "nein"}
-- Wöchentliche Seiten mit 10-14 Aufgaben: ${weeklyPages.every((page) => page.items.length >= 10 && page.items.length <= 14) ? "ja" : "nein"}
-- Inhaltsübersicht hat Seitenbereiche für alle nummerierten Abschnitte: ${
+- Woechentliche Seiten mit 10-14 Aufgaben: ${weeklyPages.every((page) => page.items.length >= 10 && page.items.length <= 14) ? "ja" : "nein"}
+- Inhaltsuebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ${
     contentsCoverage.contentsMarkers === contentsCoverage.expectedContentsMarkers ? "ja" : "nein"
   }
-- How-to-Übersicht hat Seitenbereiche für alle nummerierten Abschnitte: ${
+- How-to-Uebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ${
     contentsCoverage.howToMarkers === contentsCoverage.expectedHowToMarkers ? "ja" : "nein"
   }
 
 ## Hinweise
 
-${placeholderHits.length === 0 ? "- Keine Roh-Platzhalter in den JSON-Dateien gefunden." : placeholderHits.map((line) => `- ${line}`).join("\n")}
-${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden." : sensitiveHits.map((line) => `- ${line}`).join("\n")}
+${placeholderHits.length === 0 ? "- Keine Roh-Platzhalter in den JSON-Dateien gefunden." : renderList(placeholderHits)}
+${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden." : renderList(sensitiveHits)}
 - ${
     noSaturatedInteriorSource
-      ? "Keine verdächtigen Magenta-/Pink-/Debug-Tokens in `styles/*.css` oder `dist/interior.html` gefunden."
-      : [...interiorSourceScan.suspiciousTokens, ...interiorSourceScan.suspiciousColors]
-          .map((line) => `- ${line}`)
-          .join("\n")
+      ? "Keine verdaechtigen Magenta-/Pink-/Debug-Tokens in styles/*.css oder dist/interior.html gefunden."
+      : renderList([...interiorSourceScan.suspiciousTokens, ...interiorSourceScan.suspiciousColors])
   }
 - ${
     noSaturatedInteriorPdf
-      ? "Keine hochgesättigten Farbflächen im gerenderten Innen-PDF erkannt."
-      : interiorPdf.saturatedPages
-          .map(
+      ? "Keine hochgesaettigten Farbflaechen im gerenderten Innen-PDF erkannt."
+      : renderList(
+          interiorPdf.saturatedPages.map(
             (entry) =>
-              `- Innen-PDF Seite ${entry.page}: Anteil farbiger Pixel ${entry.ratio}, maximale Sättigung ${entry.maxSaturation}`
+              `Innen-PDF Seite ${entry.page}: Anteil farbiger Pixel ${entry.ratio}, maximale Saettigung ${entry.maxSaturation}`
           )
-          .join("\n")
+        )
   }
-- Manuelle Sichtprüfung bleibt erforderlich für Titel-, Divider-, Budget-, Prozess- und Coverseiten.
+- ${
+    notesBoxPass
+      ? `Die analysierte Seite-5-Notes-Box nutzt nur erlaubte Fuellfarben (${[...ALLOWED_WRITING_SURFACE_COLORS].join(" | ")}).`
+      : renderList(
+          notesBox.dominantColors.map(
+            (entry) =>
+              `Dominante Farbe ${entry.rgb.join("/")}, Ratio ${entry.ratio}, allowedFill=${entry.allowedFill}`
+          )
+        )
+  }
+- Die PNG-QA-Renders fuer Seite 5, 6, 7, 9, 31, 45 und 46 liegen in \`output/qa-renders/\`.
+- Manuelle Sichtpruefung bleibt erforderlich fuer Titel-, Divider-, Budget-, Prozess- und Coverseiten.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.
 `;
 
@@ -453,8 +635,22 @@ ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-H
   fs.writeFileSync(qaPath, report, "utf8");
   console.log(`Generated ${qaPath}`);
 
-  if (!noSaturatedInteriorSource || !noSaturatedInteriorPdf) {
-    console.error("QA failed: saturated or debug-like interior colors detected.");
+  const failures = [];
+  if (!noSaturatedInteriorSource) {
+    failures.push("suspicious interior CSS/HTML colors");
+  }
+  if (!noSaturatedInteriorPdf) {
+    failures.push("saturated colors in rendered interior PDF");
+  }
+  if (!notesBoxPass) {
+    failures.push("page 5 notes box is not neutral");
+  }
+  if (updatedPdfCopies.length > 0) {
+    failures.push("stale *-updated.pdf copies still exist");
+  }
+
+  if (failures.length) {
+    console.error(`QA failed: ${failures.join("; ")}.`);
     process.exitCode = 1;
   }
 }

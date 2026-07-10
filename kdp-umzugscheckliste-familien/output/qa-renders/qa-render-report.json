@@ -1,0 +1,81 @@
+{
+  "renderedPages": [
+    {
+      "page": 5,
+      "file": "page-005.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 6,
+      "file": "page-006.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 7,
+      "file": "page-007.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 9,
+      "file": "page-009.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 31,
+      "file": "page-031.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 45,
+      "file": "page-045.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 46,
+      "file": "page-046.png",
+      "width": 1224,
+      "height": 1584
+    }
+  ],
+  "notesBox": {
+    "labelRect": [
+      104.83,
+      411.9,
+      144.15,
+      423.02
+    ],
+    "sampleRegion": [
+      106.83,
+      433.02,
+      505.17,
+      533.02
+    ],
+    "cropFile": "page-005-notes-box-crop.png",
+    "backgroundPixelCount": 160398,
+    "dominantColors": [
+      {
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "count": 160398,
+        "ratio": 1,
+        "saturation": 0,
+        "channelDiff": 0,
+        "allowedFill": true
+      }
+    ],
+    "maxSaturation": 0,
+    "maxChannelDiff": 0,
+    "magentaPixelCount": 0,
+    "highSaturationPixelCount": 0,
+    "allowedFillOnly": true
+  }
+}

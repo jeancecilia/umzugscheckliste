@@ -24,3 +24,13 @@
   break-inside: avoid;
   page-break-inside: avoid;
 }
+
+.snapshot-page .notes-box,
+.notes-box,
+.notes-box.fill,
+.notes-box.lined {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}

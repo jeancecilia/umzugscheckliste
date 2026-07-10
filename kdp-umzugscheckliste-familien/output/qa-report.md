@@ -3,21 +3,25 @@
 - PDF-Datei: `output/umzugscheckliste-familien-interior-premium.pdf`
 - Preview-Datei: `output/umzugscheckliste-familien-interior-preview.html`
 - Cover-Datei: `output/umzugscheckliste-familien-cover.pdf`
+- QA-Renders: `output/qa-renders/`
 - Geplante Seiten aus JSON/Generator: `106`
 - Ziel-Seitenzahl aus Config: `106`
-- Tatsächliche Innen-PDF-Seiten: `106`
+- Tatsaechliche Innen-PDF-Seiten: `106`
 - Innen-PDF-Formate: `8.5 x 11 inch`
-- Leerseiten per Textprüfung: `0`
-- Leerseiten per Bildprüfung: `0`
+- Leerseiten per Textpruefung: `0`
+- Leerseiten per Bildpruefung: `0`
 - Unterschiedliche Seitentypen: `17`
 - Platzhaltertreffer: `0`
 - Sensible Formulierungen: `0`
 - Verdaechtige Innenraum-Farbtreffer im HTML/CSS: `0`
 - Maximale gemessene Saettigung im Innen-PDF: `0.225`
+- Seite-5-Notes-Box dominante Farben: `255/255/255:1`
+- Gerenderte QA-Seiten: `5, 6, 7, 9, 31, 45, 46`
+- Verbotene *-updated.pdf-Dateien: `0`
 - Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular, DAAAAA+SourceSans3ExtraLight-SemiBold, EAAAAA+MontserratThin-SemiBold`
 - Cover-PDF-Schriften: `AAAAAA+MontserratThin-Bold, BAAAAA+MontserratThin-SemiBold`
 
-## Wöchentliche Checklisten
+## Woechentliche Checklisten
 
 - 12 Wochen vorher: 11 Aufgaben
 - 10 Wochen vorher: 11 Aufgaben
@@ -38,40 +42,44 @@
 
 ## Cover-Geometrie
 
-- Innen-Seitenzahl für das Cover: `106`
-- Rückenbreite: `0.238712 inch`
-- Cover-Gesamtgröße: `17.488712 x 11.25 inch`
-- Rücken-Text aktiviert: `nein`
+- Innen-Seitenzahl fuer das Cover: `106`
+- Rueckenbreite: `0.238712 inch`
+- Cover-Gesamtgroesse: `17.488712 x 11.25 inch`
+- Ruecken-Text aktiviert: `nein`
 
-## Prüfungen
+## Pruefungen
 
 - Exakte Seitenzahl erreicht: ja
-- Geplante DOM-Seitenzahl stimmt mit PDF überein: ja
+- Geplante DOM-Seitenzahl stimmt mit PDF ueberein: ja
 - Keine versehentlichen Leerseiten: ja
 - Alle Innen-PDF-Seiten haben dasselbe Format: ja
 - Innen-PDF entspricht 8.5 x 11 inch: ja
-- Cover-PDF entspricht berechneter KDP-Größe: ja
-- Cover-Template entspricht berechneter KDP-Größe: ja
+- Cover-PDF entspricht berechneter KDP-Groesse: ja
+- Cover-Template entspricht berechneter KDP-Groesse: ja
 - Cover nutzt dieselbe Seitenzahl wie der Innenraum: ja
-- Rücken-Text bei dünnem Rücken deaktiviert: ja
-- Innen-PDF enthält die Projektfonts Montserrat und Source Sans 3: ja
-- Cover-PDF enthält die eingebettete Projektfont Montserrat: ja
+- Ruecken-Text bei duennem Ruecken deaktiviert: ja
+- Innen-PDF enthaelt die Projektfonts Montserrat und Source Sans 3: ja
+- Cover-PDF enthaelt die eingebettete Projektfont Montserrat: ja
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Innen-PDF: ja
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ja
 - Keine verdaechtigen Magenta-/Pink-/Debug-Stile im Innenraum-HTML/CSS: ja
 - Keine hochgesaettigten Farben im Innen-PDF: ja
+- Seite-5-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ja
+- Keine manuellen *-updated.pdf-Dateien mehr vorhanden: ja
 - Mindestens 8 Seitentypen: ja
 - Platzhaltertext entfernt: ja
 - Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ja
-- Wöchentliche Seiten mit 10-14 Aufgaben: ja
-- Inhaltsübersicht hat Seitenbereiche für alle nummerierten Abschnitte: ja
-- How-to-Übersicht hat Seitenbereiche für alle nummerierten Abschnitte: ja
+- Woechentliche Seiten mit 10-14 Aufgaben: ja
+- Inhaltsuebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ja
+- How-to-Uebersicht hat Seitenbereiche fuer alle nummerierten Abschnitte: ja
 
 ## Hinweise
 
 - Keine Roh-Platzhalter in den JSON-Dateien gefunden.
 - Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden.
-- Keine verdächtigen Magenta-/Pink-/Debug-Tokens in `styles/*.css` oder `dist/interior.html` gefunden.
-- Keine hochgesättigten Farbflächen im gerenderten Innen-PDF erkannt.
-- Manuelle Sichtprüfung bleibt erforderlich für Titel-, Divider-, Budget-, Prozess- und Coverseiten.
+- Keine verdaechtigen Magenta-/Pink-/Debug-Tokens in styles/*.css oder dist/interior.html gefunden.
+- Keine hochgesaettigten Farbflaechen im gerenderten Innen-PDF erkannt.
+- Die analysierte Seite-5-Notes-Box nutzt nur erlaubte Fuellfarben (250,248,244 | 255,255,255).
+- Die PNG-QA-Renders fuer Seite 5, 6, 7, 9, 31, 45 und 46 liegen in `output/qa-renders/`.
+- Manuelle Sichtpruefung bleibt erforderlich fuer Titel-, Divider-, Budget-, Prozess- und Coverseiten.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.

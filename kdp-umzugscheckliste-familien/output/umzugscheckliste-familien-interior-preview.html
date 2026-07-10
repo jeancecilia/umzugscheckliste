@@ -935,7 +935,7 @@ p {
 .notes-box {
   margin-top: 0.18in;
   border: 1px solid var(--line);
-  background: var(--writing-surface);
+  background: var(--writing-surface-alt);
   min-height: 2in;
   padding: 0.12in;
 }
@@ -953,14 +953,7 @@ p {
 }
 
 .notes-box.lined {
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      var(--writing-surface) 0,
-      var(--writing-surface) 0.31in,
-      #d5cdc0 0.31in,
-      #d5cdc0 0.315in
-    );
+  background: var(--writing-surface-alt);
 }
 
 .prompt-grid {
@@ -1373,6 +1366,16 @@ p {
 .avoid-break {
   break-inside: avoid;
   page-break-inside: avoid;
+}
+
+.snapshot-page .notes-box,
+.notes-box,
+.notes-box.fill,
+.notes-box.lined {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
 }
 
     </style>
