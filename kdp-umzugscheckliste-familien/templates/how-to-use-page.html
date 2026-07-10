@@ -1,23 +1,32 @@
-<section class="page howto-page">
+<section class="page howto-page howto-editorial-page">
   <div class="page-content">
-    <header class="page-header">
-      <div class="section-label">{{sectionLabel}}</div>
-      <h1>{{title}}</h1>
-      <p class="subtitle">{{intro}}</p>
+    <header class="howto-editorial-header">
+      <div class="howto-editorial-titleblock">
+        <div class="section-label">{{sectionLabel}}</div>
+        <h1>{{title}}</h1>
+      </div>
+      <div class="howto-editorial-counter">{{pageCounter}}</div>
     </header>
-    <div class="howto-steps-block avoid-break">
+    <div class="howto-editorial-subtitle">
+      <p class="subtitle">{{intro}}</p>
+    </div>
+    <div class="howto-editorial-rule"></div>
+    <section class="howto-editorial-steps-block avoid-break">
       <div class="subheading">So nutzt ihr den Planer</div>
-      <div class="steps-list wide">
+      <div class="howto-editorial-steps-grid">
         {{steps}}
       </div>
-    </div>
-    <div class="howto-structure-block avoid-break">
+    </section>
+    <section class="howto-editorial-structure-block avoid-break">
       <div class="subheading">So ist der Planer aufgebaut</div>
-      <div class="contents-grid howto-sections">
+      <div class="howto-editorial-sections-grid">
         {{sections}}
       </div>
-    </div>
-    <div class="tip-box">{{note}}</div>
+    </section>
+    <div class="howto-editorial-note">{{note}}</div>
+    <footer class="howto-editorial-footer">
+      <div class="howto-editorial-footer-left">Journal f&uuml;r den Familienumzug</div>
+      <div class="howto-editorial-footer-right">&copy; {{brandName}}</div>
+    </footer>
   </div>
-  {{footer}}
 </section>

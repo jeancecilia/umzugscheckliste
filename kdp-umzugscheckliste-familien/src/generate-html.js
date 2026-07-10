@@ -65,6 +65,11 @@ function renderFooter(page) {
 
 function renderSvgIcon(iconName, className = "planner-icon") {
   const paths = {
+    "house-heart": `
+      <path d="M5.5 14.5L16 6l10.5 8.5"></path>
+      <path d="M8 13.5V27h16V13.5"></path>
+      <path d="M13 27v-7h6v7"></path>
+      <path d="M16 14.2c-1.1-1.6-4-1.1-4 1.3c0 2.8 4 4.8 4 4.8s4-2 4-4.8c0-2.4-2.9-2.9-4-1.3z"></path>`,
     "calendar-check": `
       <rect x="5" y="7" width="22" height="20" rx="4"></rect>
       <path d="M10 4v6"></path>
@@ -157,6 +162,30 @@ function renderFeatureCards(items = []) {
     .join("");
 }
 
+function renderTitlePillars(items = []) {
+  return items
+    .map(
+      (item, index) => `
+        <div class="title-pillar">
+          <div class="title-pillar-index">${index + 1}</div>
+          <div class="title-pillar-copy">
+            <strong>${escapeHtml(item.title)}</strong>
+            <span>${escapeHtml(item.text)}</span>
+          </div>
+        </div>`
+    )
+    .join("");
+}
+
+function renderTitleTags(items = []) {
+  return items
+    .map(
+      (item) => `
+        <span class="title-tag">${escapeHtml(item.title)}</span>`
+    )
+    .join("");
+}
+
 function renderInfoCards(items = []) {
   return items
     .map(
@@ -175,6 +204,18 @@ function renderStepCards(items = []) {
       (item, index) => `
         <div class="step-card">
           <span>${index + 1}</span>
+          <p>${escapeHtml(item)}</p>
+        </div>`
+    )
+    .join("");
+}
+
+function renderHowToStepCards(items = []) {
+  return items
+    .map(
+      (item, index) => `
+        <div class="howto-editorial-step">
+          <div class="howto-editorial-step-number">${index + 1}</div>
           <p>${escapeHtml(item)}</p>
         </div>`
     )
@@ -203,6 +244,23 @@ function renderContentsCards(items = []) {
             <strong>${escapeHtml(item.title)}</strong>
             <span>${escapeHtml(item.description)}</span>
           </div>
+        </div>`;
+    })
+    .join("");
+}
+
+function renderHowToSectionCards(items = []) {
+  return items
+    .map((item) => {
+      const marker = item.absoluteMarker || item.marker || "Vorne";
+
+      return `
+        <div class="howto-editorial-section-card">
+          <div class="howto-editorial-section-head">
+            <span class="howto-editorial-section-range">${escapeHtml(marker)}</span>
+            <strong>${escapeHtml(item.title)}</strong>
+          </div>
+          <p>${escapeHtml(item.description)}</p>
         </div>`;
     })
     .join("");
@@ -421,13 +479,19 @@ function decoratePageMarkup(markup, page) {
   return markup.replace(/class="page([^"]*)"/, `class="page ${classes}$1"`);
 }
 
+function formatPageCounter(current, total) {
+  return `${String(current || "").padStart(2, "0")} / ${String(total || "").padStart(2, "0")}`;
+}
+
 function renderPage(page) {
   const shared = {
     sectionLabel: escapeHtml(page.sectionLabel || ""),
     title: escapeHtml(page.title || ""),
     subtitle: escapeHtml(page.subtitle || ""),
     intro: escapeHtml(page.intro || ""),
-    footer: renderFooter(page)
+    footer: renderFooter(page),
+    pageCounter: escapeHtml(formatPageCounter(page.sequenceNumber, page.totalPageCount)),
+    brandName: escapeHtml(page.brandName || "")
   };
 
   switch (page.kind) {
@@ -435,8 +499,11 @@ function renderPage(page) {
       return replaceTokens(loadTemplate("title-page.html"), {
         ...shared,
         promise: escapeHtml(page.promise || ""),
-        features: renderFeatureCards(page.features || []),
-        benefit: escapeHtml(page.benefit || "")
+        features: renderTitlePillars(page.features || []),
+        benefit: escapeHtml(page.benefit || ""),
+        tags: renderTitleTags(page.features || []),
+        heroIcon: renderSvgIcon("house-heart", "planner-icon title-visual-icon"),
+        focusIcon: renderSvgIcon("house-heart", "planner-icon title-focus-icon")
       });
     case "infoPage":
       return replaceTokens(loadTemplate("info-page.html"), {
@@ -447,8 +514,8 @@ function renderPage(page) {
     case "howToUse":
       return replaceTokens(loadTemplate("how-to-use-page.html"), {
         ...shared,
-        steps: renderStepCards(page.steps || []),
-        sections: renderContentsCards(page.sections || []),
+        steps: renderHowToStepCards(page.steps || []),
+        sections: renderHowToSectionCards(page.sections || []),
         note: escapeHtml(page.note || "")
       });
     case "contentsPage":
@@ -569,11 +636,26 @@ function renderPage(page) {
 
 function addSectionRanges(pages, sections) {
   const rangeBySectionTitle = new Map();
+  const absoluteRangeBySectionTitle = new Map();
 
   for (const section of sections) {
+    const sectionPages = pages.filter((page) => page.sectionId === section.id && page.sequenceNumber);
     const numberedPages = pages.filter(
       (page) => page.sectionId === section.id && page.numbering === "body" && page.printNumber
     );
+
+    if (sectionPages.length) {
+      const firstAbsolute = sectionPages[0].sequenceNumber;
+      const lastAbsolute = sectionPages[sectionPages.length - 1].sequenceNumber;
+      const absoluteMarker = `S. ${firstAbsolute}-${lastAbsolute}`;
+      absoluteRangeBySectionTitle.set(normalizeLookupKey(section.title), absoluteMarker);
+      if (section.footerName) {
+        absoluteRangeBySectionTitle.set(normalizeLookupKey(section.footerName), absoluteMarker);
+      }
+      if (section.label) {
+        absoluteRangeBySectionTitle.set(normalizeLookupKey(section.label), absoluteMarker);
+      }
+    }
 
     if (!numberedPages.length) {
       continue;
@@ -598,14 +680,24 @@ function addSectionRanges(pages, sections) {
     if (page.kind === "howToUse" && Array.isArray(page.sections)) {
       page.sections = page.sections.map((entry) => {
         const marker = rangeBySectionTitle.get(normalizeLookupKey(entry.title));
-        return marker ? { ...entry, marker } : entry;
+        const absoluteMarker = absoluteRangeBySectionTitle.get(normalizeLookupKey(entry.title));
+        return {
+          ...entry,
+          ...(marker ? { marker } : {}),
+          ...(absoluteMarker ? { absoluteMarker } : {})
+        };
       });
     }
 
     if (page.kind === "contentsPage" && Array.isArray(page.entries)) {
       page.entries = page.entries.map((entry) => {
         const marker = rangeBySectionTitle.get(normalizeLookupKey(entry.title));
-        return marker ? { ...entry, marker } : entry;
+        const absoluteMarker = absoluteRangeBySectionTitle.get(normalizeLookupKey(entry.title));
+        return {
+          ...entry,
+          ...(marker ? { marker } : {}),
+          ...(absoluteMarker ? { absoluteMarker } : {})
+        };
       });
       page.note = page.note ? `${page.note} ${rangeNote}` : rangeNote;
     }
@@ -613,6 +705,7 @@ function addSectionRanges(pages, sections) {
 }
 
 function buildPageList() {
+  const config = loadJson("book-config.json");
   const sections = loadJson("sections.json");
   const checklists = loadJson("checklists.json");
   const familyPages = loadJson("family-pages.json");
@@ -660,13 +753,15 @@ function buildPageList() {
         sectionLabel: page.sectionLabel || section.label,
         footerSection: section.footerName || section.title,
         showFooter: page.showFooter !== undefined ? page.showFooter : section.numbering === "body",
-        numbering: section.numbering
+        numbering: section.numbering,
+        brandName: config.book.authorPlaceholder || ""
       });
     }
   }
 
   let printedNumber = 0;
   for (const [index, page] of pages.entries()) {
+    page.sequenceNumber = index + 1;
     page.bookSide = (index + 1) % 2 === 0 ? "left" : "right";
     if (page.numbering === "body") {
       printedNumber += 1;
@@ -674,6 +769,10 @@ function buildPageList() {
     } else {
       page.printNumber = "";
     }
+  }
+
+  for (const page of pages) {
+    page.totalPageCount = pages.length;
   }
 
   addSectionRanges(pages, sections);

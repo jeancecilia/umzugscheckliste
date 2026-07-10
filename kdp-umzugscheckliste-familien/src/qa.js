@@ -8,10 +8,30 @@ const rootDir = path.resolve(__dirname, "..");
 const outputDir = path.join(rootDir, "output");
 const contentDir = path.join(rootDir, "content");
 const coverDir = path.join(rootDir, "cover");
+const styleDir = path.join(rootDir, "styles");
+const distDir = path.join(rootDir, "dist");
 const qaPath = path.join(outputDir, "qa-report.md");
 const pdfPath = path.join(outputDir, "umzugscheckliste-familien-interior-premium.pdf");
 const coverPdfPath = path.join(outputDir, "umzugscheckliste-familien-cover.pdf");
 const templatePdfPath = path.join(coverDir, "kdp-cover-template.pdf");
+const interiorHtmlPath = path.join(distDir, "interior.html");
+
+const INTERIOR_SOURCE_FILES = [
+  path.join(styleDir, "theme.css"),
+  path.join(styleDir, "components.css"),
+  path.join(styleDir, "print.css"),
+  interiorHtmlPath
+];
+
+const DISALLOWED_STYLE_TOKENS = [
+  "magenta",
+  "hotpink",
+  "deeppink",
+  "fuchsia",
+  "pink",
+  "debug",
+  "highlight"
+];
 
 function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(contentDir, "book-config.json"), "utf8"));
@@ -76,6 +96,114 @@ function findFallbackFonts(fonts) {
   return fonts.filter((font) => /timesnewroman/i.test(font));
 }
 
+function clampChannel(value) {
+  return Math.max(0, Math.min(255, Math.round(value)));
+}
+
+function getColorSaturation(rgb) {
+  const [r, g, b] = rgb.map((value) => value / 255);
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  return max === 0 ? 0 : (max - min) / max;
+}
+
+function normalizeHexColor(hex) {
+  const raw = hex.slice(1).toLowerCase();
+
+  if (raw.length === 3 || raw.length === 4) {
+    return [
+      parseInt(raw[0] + raw[0], 16),
+      parseInt(raw[1] + raw[1], 16),
+      parseInt(raw[2] + raw[2], 16)
+    ];
+  }
+
+  if (raw.length === 6 || raw.length === 8) {
+    return [
+      parseInt(raw.slice(0, 2), 16),
+      parseInt(raw.slice(2, 4), 16),
+      parseInt(raw.slice(4, 6), 16)
+    ];
+  }
+
+  return null;
+}
+
+function normalizeRgbColor(match) {
+  const channels = [match[1], match[2], match[3]].map((value) =>
+    value.trim().endsWith("%")
+      ? clampChannel((parseFloat(value) / 100) * 255)
+      : clampChannel(parseFloat(value))
+  );
+
+  if (channels.some((value) => Number.isNaN(value))) {
+    return null;
+  }
+
+  return channels;
+}
+
+function inspectInteriorSourceColors() {
+  const suspiciousColors = [];
+  const suspiciousTokens = [];
+
+  const hexColorPattern = /#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})\b/gi;
+  const rgbColorPattern =
+    /rgba?\(\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)(?:\s*,\s*([0-9.]+%?))?\s*\)/gi;
+
+  for (const filePath of INTERIOR_SOURCE_FILES) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const content = fs.readFileSync(filePath, "utf8");
+    const scanContent = content.replace(/data:font\/woff2;base64,[A-Za-z0-9+/=]+/g, "");
+    const relativePath = path.relative(rootDir, filePath);
+    const lowerContent = scanContent.toLowerCase();
+
+    for (const token of DISALLOWED_STYLE_TOKENS) {
+      if (lowerContent.includes(token)) {
+        suspiciousTokens.push(`${relativePath}: token "${token}" gefunden`);
+      }
+    }
+
+    let hexMatch;
+    while ((hexMatch = hexColorPattern.exec(scanContent)) !== null) {
+      const rgb = normalizeHexColor(hexMatch[0]);
+      if (!rgb) {
+        continue;
+      }
+
+      const saturation = getColorSaturation(rgb);
+      if (saturation >= 0.35) {
+        suspiciousColors.push(
+          `${relativePath}: ${hexMatch[0]} (Saettigung ${saturation.toFixed(2)})`
+        );
+      }
+    }
+
+    let rgbMatch;
+    while ((rgbMatch = rgbColorPattern.exec(scanContent)) !== null) {
+      const rgb = normalizeRgbColor(rgbMatch);
+      if (!rgb) {
+        continue;
+      }
+
+      const saturation = getColorSaturation(rgb);
+      if (saturation >= 0.35) {
+        suspiciousColors.push(
+          `${relativePath}: ${rgbMatch[0]} (Saettigung ${saturation.toFixed(2)})`
+        );
+      }
+    }
+  }
+
+  return {
+    suspiciousColors: [...new Set(suspiciousColors)],
+    suspiciousTokens: [...new Set(suspiciousTokens)]
+  };
+}
+
 function inspectPdf(pdfFilePath) {
   const script = `
 import fitz, json, sys
@@ -84,6 +212,8 @@ blank = []
 visual_blank = []
 sizes = []
 fonts = []
+saturated_pages = []
+max_saturation = 0.0
 for index, page in enumerate(pdf):
     text = page.get_text("text").strip().replace("\\n", " ").strip()
     if len(text) <= 5:
@@ -100,6 +230,31 @@ for index, page in enumerate(pdf):
         base_font = font[3]
         if base_font not in fonts:
             fonts.append(base_font)
+    color_pix = page.get_pixmap(matrix=fitz.Matrix(0.22, 0.22), colorspace=fitz.csRGB, alpha=False)
+    samples = color_pix.samples
+    colored = 0
+    total = max(1, len(samples) // 3)
+    page_max = 0.0
+    for offset in range(0, len(samples), 3):
+        r = samples[offset] / 255
+        g = samples[offset + 1] / 255
+        b = samples[offset + 2] / 255
+        channel_max = max(r, g, b)
+        channel_min = min(r, g, b)
+        saturation = 0 if channel_max == 0 else (channel_max - channel_min) / channel_max
+        if saturation > page_max:
+            page_max = saturation
+        if saturation >= 0.35 and channel_max >= 0.2:
+            colored += 1
+    ratio = colored / total
+    if page_max > max_saturation:
+        max_saturation = page_max
+    if ratio >= 0.0005:
+        saturated_pages.append({
+            "page": index + 1,
+            "ratio": round(ratio, 6),
+            "maxSaturation": round(page_max, 4)
+        })
 
 unique_sizes = []
 for size in sizes:
@@ -111,7 +266,9 @@ print(json.dumps({
   "pageSizes": unique_sizes,
   "blankPages": blank,
   "visualBlankPages": visual_blank,
-  "fonts": fonts
+  "fonts": fonts,
+  "saturatedPages": saturated_pages,
+  "maxSaturation": round(max_saturation, 4)
 }))
 `;
 
@@ -164,12 +321,17 @@ function generateQaReport() {
   const interiorPdf = inspectPdf(pdfPath);
   const cover = inspectCover();
   const contentsCoverage = inspectContentsCoverage(pages);
+  const interiorSourceScan = inspectInteriorSourceColors();
   const interiorHasProjectFonts =
     hasFontFamily(interiorPdf.fonts, "montserrat") &&
     hasFontFamily(interiorPdf.fonts, "sourcesans3");
   const coverHasProjectFonts = hasFontFamily(cover.outputPdf.fonts, "montserrat");
   const interiorFallbackFonts = findFallbackFonts(interiorPdf.fonts);
   const coverFallbackFonts = findFallbackFonts(cover.outputPdf.fonts);
+  const noSaturatedInteriorSource =
+    interiorSourceScan.suspiciousColors.length === 0 &&
+    interiorSourceScan.suspiciousTokens.length === 0;
+  const noSaturatedInteriorPdf = interiorPdf.saturatedPages.length === 0;
 
   const weeklyRanges = weeklyPages.map(
     (page) => `${page.title}: ${page.items.length} Aufgaben`
@@ -204,6 +366,8 @@ function generateQaReport() {
 - Unterschiedliche Seitentypen: \`${pageKinds.size}\`
 - Platzhaltertreffer: \`${placeholderHits.length}\`
 - Sensible Formulierungen: \`${sensitiveHits.length}\`
+- Verdaechtige Innenraum-Farbtreffer im HTML/CSS: \`${interiorSourceScan.suspiciousColors.length + interiorSourceScan.suspiciousTokens.length}\`
+- Maximale gemessene Saettigung im Innen-PDF: \`${interiorPdf.maxSaturation}\`
 - Innen-PDF-Schriften: \`${interiorPdf.fonts.join(", ")}\`
 - Cover-PDF-Schriften: \`${cover.outputPdf.fonts.join(", ")}\`
 
@@ -237,6 +401,18 @@ ${weeklyRanges.map((line) => `- ${line}`).join("\n")}
 - Cover-PDF enthält die eingebettete Projektfont Montserrat: ${coverHasProjectFonts ? "ja" : "nein"}
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Innen-PDF: ${interiorFallbackFonts.length === 0 ? "ja" : `nein (${interiorFallbackFonts.join(", ")})`}
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ${coverFallbackFonts.length === 0 ? "ja" : `nein (${coverFallbackFonts.join(", ")})`}
+- Keine verdaechtigen Magenta-/Pink-/Debug-Stile im Innenraum-HTML/CSS: ${
+    noSaturatedInteriorSource
+      ? "ja"
+      : `nein (${[...interiorSourceScan.suspiciousTokens, ...interiorSourceScan.suspiciousColors].join(" | ")})`
+  }
+- Keine hochgesaettigten Farben im Innen-PDF: ${
+    noSaturatedInteriorPdf
+      ? "ja"
+      : `nein (${interiorPdf.saturatedPages
+          .map((entry) => `S. ${entry.page}: Anteil ${entry.ratio}, max. Saettigung ${entry.maxSaturation}`)
+          .join(" | ")})`
+  }
 - Mindestens 8 Seitentypen: ${pageKinds.size >= 8 ? "ja" : "nein"}
 - Platzhaltertext entfernt: ${placeholderHits.length === 0 ? "ja" : "nein"}
 - Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ${sensitiveHits.length === 0 ? "ja" : "nein"}
@@ -252,6 +428,23 @@ ${weeklyRanges.map((line) => `- ${line}`).join("\n")}
 
 ${placeholderHits.length === 0 ? "- Keine Roh-Platzhalter in den JSON-Dateien gefunden." : placeholderHits.map((line) => `- ${line}`).join("\n")}
 ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden." : sensitiveHits.map((line) => `- ${line}`).join("\n")}
+- ${
+    noSaturatedInteriorSource
+      ? "Keine verdächtigen Magenta-/Pink-/Debug-Tokens in `styles/*.css` oder `dist/interior.html` gefunden."
+      : [...interiorSourceScan.suspiciousTokens, ...interiorSourceScan.suspiciousColors]
+          .map((line) => `- ${line}`)
+          .join("\n")
+  }
+- ${
+    noSaturatedInteriorPdf
+      ? "Keine hochgesättigten Farbflächen im gerenderten Innen-PDF erkannt."
+      : interiorPdf.saturatedPages
+          .map(
+            (entry) =>
+              `- Innen-PDF Seite ${entry.page}: Anteil farbiger Pixel ${entry.ratio}, maximale Sättigung ${entry.maxSaturation}`
+          )
+          .join("\n")
+  }
 - Manuelle Sichtprüfung bleibt erforderlich für Titel-, Divider-, Budget-, Prozess- und Coverseiten.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.
 `;
@@ -259,6 +452,11 @@ ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-H
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(qaPath, report, "utf8");
   console.log(`Generated ${qaPath}`);
+
+  if (!noSaturatedInteriorSource || !noSaturatedInteriorPdf) {
+    console.error("QA failed: saturated or debug-like interior colors detected.");
+    process.exitCode = 1;
+  }
 }
 
 generateQaReport();

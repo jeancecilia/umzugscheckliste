@@ -12,7 +12,9 @@
 - Unterschiedliche Seitentypen: `17`
 - Platzhaltertreffer: `0`
 - Sensible Formulierungen: `0`
-- Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular`
+- Verdaechtige Innenraum-Farbtreffer im HTML/CSS: `0`
+- Maximale gemessene Saettigung im Innen-PDF: `0.225`
+- Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular, DAAAAA+SourceSans3ExtraLight-SemiBold, EAAAAA+MontserratThin-SemiBold`
 - Cover-PDF-Schriften: `AAAAAA+MontserratThin-Bold, BAAAAA+MontserratThin-SemiBold`
 
 ## Wöchentliche Checklisten
@@ -56,6 +58,8 @@
 - Cover-PDF enthält die eingebettete Projektfont Montserrat: ja
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Innen-PDF: ja
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ja
+- Keine verdaechtigen Magenta-/Pink-/Debug-Stile im Innenraum-HTML/CSS: ja
+- Keine hochgesaettigten Farben im Innen-PDF: ja
 - Mindestens 8 Seitentypen: ja
 - Platzhaltertext entfernt: ja
 - Keine Passwort-/Zugangsdaten-Aufforderung im Druckprodukt: ja
@@ -67,5 +71,7 @@
 
 - Keine Roh-Platzhalter in den JSON-Dateien gefunden.
 - Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden.
+- Keine verdächtigen Magenta-/Pink-/Debug-Tokens in `styles/*.css` oder `dist/interior.html` gefunden.
+- Keine hochgesättigten Farbflächen im gerenderten Innen-PDF erkannt.
 - Manuelle Sichtprüfung bleibt erforderlich für Titel-, Divider-, Budget-, Prozess- und Coverseiten.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.

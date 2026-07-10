@@ -1,18 +1,46 @@
 <section class="page title-page">
   <div class="page-content">
-    <header class="page-header spacious">
+    <header class="page-header spacious editorial-header">
       <div class="section-label">{{sectionLabel}}</div>
       <h1>{{title}}</h1>
       <p class="subtitle">{{subtitle}}</p>
       <p class="title-promise">{{promise}}</p>
-    </header>
-    <div class="hero-panel">
-      <div class="subheading">Was dieser Planer f&uuml;r euch b&uuml;ndelt</div>
-      <div class="feature-grid">
-        {{features}}
+      <div class="editorial-rules">
+        <span class="is-soft"></span>
+        <span class="is-strong"></span>
       </div>
-      <div class="benefit-strip">
-        {{benefit}}
+    </header>
+    <div class="title-main">
+      <div class="title-visual-panel">
+        <div class="title-visual-frame">
+          <div class="title-visual-icon-wrap">{{heroIcon}}</div>
+          <div class="title-visual-copy">
+            <div class="section-label title-visual-label">Ein neues Zuhause</div>
+            <p class="title-visual-caption">F&uuml;r eure Geschichte, eure Routinen und einen Umzug, der sich auch als Familie tragbar anf&uuml;hlt.</p>
+          </div>
+        </div>
+      </div>
+      <div class="title-pillars">
+        <div>
+          <div class="subheading">Was dieser Planer b&uuml;ndelt</div>
+          <p class="title-pillars-intro">Die Aufgaben eines Familienumzugs sind hier in vier klare Bereiche gegliedert, damit Planung, Alltag und &Uuml;berg&auml;nge zusammenlaufen.</p>
+        </div>
+        <div class="title-pillars-list">
+        {{features}}
+        </div>
+      </div>
+    </div>
+    <div class="title-focus-panel">
+      <div class="title-focus-art">
+        <div class="title-focus-emblem">{{focusIcon}}</div>
+        <div class="title-focus-art-copy">Checklisten, Familienseiten, Packlisten und Raum f&uuml;r Notizen.</div>
+      </div>
+      <div class="title-focus-copy">
+        <div class="subheading">Euer Begleiter im Wandel</div>
+        <p class="title-focus-quote">&bdquo;{{benefit}}&ldquo;</p>
+        <div class="title-tag-list">
+          {{tags}}
+        </div>
       </div>
     </div>
   </div>
