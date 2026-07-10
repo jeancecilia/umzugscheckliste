@@ -63,13 +63,95 @@ function renderFooter(page) {
     </div>`;
 }
 
+function renderSvgIcon(iconName, className = "planner-icon") {
+  const paths = {
+    "calendar-check": `
+      <rect x="5" y="7" width="22" height="20" rx="4"></rect>
+      <path d="M10 4v6"></path>
+      <path d="M22 4v6"></path>
+      <path d="M5 12h22"></path>
+      <path d="M11 19l3 3l7-8"></path>`,
+    "users-round": `
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="22" cy="13" r="3.5"></circle>
+      <path d="M5 26c1.5-4 4.6-6 7-6c2.8 0 5.5 2.1 7 6"></path>
+      <path d="M18 26c0.8-2.7 2.7-4.4 5.3-4.4c2 0 3.6 1 4.7 4.4"></path>`,
+    boxes: `
+      <path d="M5 13l7-4l7 4l-7 4l-7-4z"></path>
+      <path d="M12 17v10"></path>
+      <path d="M5 13v10l7 4l7-4V13"></path>
+      <path d="M19 17l6-3.5l-6-3.5l-6 3.5"></path>
+      <path d="M20 18.5l6-3.5v8l-6 3.5"></path>
+      <path d="M20 27v-8.5"></path>`,
+    "wallet-cards": `
+      <rect x="5" y="10" width="22" height="14" rx="4"></rect>
+      <path d="M9 10V8c0-1.7 1.3-3 3-3h8"></path>
+      <path d="M17 16h7"></path>
+      <path d="M10 19h4"></path>
+      <path d="M22 10V7"></path>`,
+    "file-text": `
+      <path d="M9 4h10l4 4v20H9z"></path>
+      <path d="M19 4v5h5"></path>
+      <path d="M12 14h8"></path>
+      <path d="M12 18h8"></path>
+      <path d="M12 22h5"></path>`,
+    "clipboard-check": `
+      <rect x="8" y="6" width="16" height="22" rx="3"></rect>
+      <path d="M12 6h8v3h-8z"></path>
+      <path d="M12 17l3 3l5-6"></path>
+      <path d="M12 24h8"></path>`
+  };
+
+  const iconMarkup = paths[iconName] || paths["file-text"];
+
+  return `
+    <svg class="${className}" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      ${iconMarkup}
+    </svg>`;
+}
+
+function resolveFeatureIcon(title) {
+  const key = normalizeLookupKey(title);
+
+  if (key.includes("zeitplan")) {
+    return "calendar-check";
+  }
+  if (key.includes("familie") || key.includes("kinder")) {
+    return "users-round";
+  }
+  if (key.includes("packen") || key.includes("kartons")) {
+    return "boxes";
+  }
+  if (key.includes("budget") || key.includes("ubergabe")) {
+    return "wallet-cards";
+  }
+
+  return "file-text";
+}
+
+function resolveSectionIcon(sectionId) {
+  const iconBySection = {
+    timeline: "calendar-check",
+    family: "users-round",
+    packing: "boxes",
+    budget: "wallet-cards",
+    address: "file-text",
+    handover: "clipboard-check"
+  };
+
+  return iconBySection[sectionId] || "file-text";
+}
+
 function renderFeatureCards(items = []) {
   return items
     .map(
       (item) => `
         <div class="feature-card">
-          <strong>${escapeHtml(item.title)}</strong>
-          <span>${escapeHtml(item.text)}</span>
+          <div class="feature-icon-wrap">${renderSvgIcon(resolveFeatureIcon(item.title), "planner-icon feature-icon")}</div>
+          <div class="feature-copy">
+            <strong>${escapeHtml(item.title)}</strong>
+            <span>${escapeHtml(item.text)}</span>
+          </div>
         </div>`
     )
     .join("");
@@ -393,6 +475,7 @@ function renderPage(page) {
         description: escapeHtml(page.description || ""),
         motif: escapeHtml(page.motif || ""),
         sectionTag: escapeHtml(page.sectionTag || ""),
+        icon: renderSvgIcon(resolveSectionIcon(page.sectionId), "planner-icon divider-icon"),
         highlights: renderDividerHighlights(page.highlights || [])
       });
     case "weeklyChecklist":

@@ -18,7 +18,6 @@ const pt = (inches) => inches * 72;
 const palette = {
   paper: "#f4eee6",
   sand: "#e8dccb",
-  terracotta: "#c97d64",
   sage: "#97a793",
   blue: "#7f95a6",
   ink: "#23303a",
@@ -33,7 +32,9 @@ const bodyFontFamily = headingFontFamily;
 function getCoverSpec() {
   const pageCount = buildPageList().length;
   const spineWidthIn = Number((pageCount * 0.002252).toFixed(6));
-  const totalWidthIn = Number((bleedIn + trimWidthIn + spineWidthIn + trimWidthIn + bleedIn).toFixed(6));
+  const totalWidthIn = Number(
+    (bleedIn + trimWidthIn + spineWidthIn + trimWidthIn + bleedIn).toFixed(6)
+  );
   const totalHeightIn = trimHeightIn + bleedIn + bleedIn;
   const includeSpineText = spineWidthIn >= 0.35;
 
@@ -96,6 +97,7 @@ function wrapText(text, maxChars) {
 function textBlock({ x, y, width, text, fontSize, lineHeight, fill, fontWeight = 400, family }) {
   const maxChars = Math.max(18, Math.floor(width / (fontSize * 0.56)));
   const lines = wrapText(text, maxChars);
+
   return `
     <text x="${x}" y="${y}" font-size="${fontSize}" fill="${fill}" font-family="${family}" font-weight="${fontWeight}">
       ${lines
@@ -129,6 +131,24 @@ function paragraphBlock({ x, y, width, paragraphs, fontSize, lineHeight, gap, fi
   return blocks.join("");
 }
 
+function buildMovingScene({ x, y, scale = 1, stroke = palette.blue, strokeWidth = 4.1 }) {
+  return `
+    <g transform="translate(${x} ${y}) scale(${scale})" fill="none" stroke="${stroke}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 110L124 44L204 110V232H44Z"></path>
+      <path d="M104 232V156H144V232"></path>
+      <path d="M26 246C72 236 178 236 226 246"></path>
+      <rect x="112" y="170" width="58" height="46" rx="6"></rect>
+      <path d="M112 184H170"></path>
+      <path d="M141 170V216"></path>
+      <rect x="68" y="190" width="44" height="34" rx="5"></rect>
+      <path d="M68 201H112"></path>
+      <path d="M90 190V224"></path>
+      <path d="M176 152H206"></path>
+      <path d="M198 152V214"></path>
+      <path d="M182 214H214"></path>
+    </g>`;
+}
+
 function buildCoverSvg(spec) {
   const { geometry } = spec;
   const {
@@ -153,9 +173,9 @@ function buildCoverSvg(spec) {
 
   const safeInset = pt(0.25);
   const backTextX = backX + 44;
-  const backTextWidth = 336;
-  const frontTextX = frontX + 50;
-  const frontTextWidth = 428;
+  const backTextWidth = 332;
+  const frontTextX = frontX + 48;
+  const frontTextWidth = 334;
 
   const titleLines = ["Umzugscheckliste", "für Familien"];
   const benefitText =
@@ -175,45 +195,19 @@ function buildCoverSvg(spec) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}pt" height="${totalHeight}pt" viewBox="0 0 ${totalWidth} ${totalHeight}">
   <rect x="0" y="0" width="${totalWidth}" height="${totalHeight}" fill="${palette.paper}" />
-
   <rect x="${spineX}" y="${backY}" width="${spineWidth}" height="${trimHeight}" fill="${palette.sage}" />
 
-  <path d="M ${frontX + 92} ${frontY + 94} C ${frontX + 274} ${frontY + 8}, ${frontX + 500} ${frontY + 36}, ${frontX + 566} ${frontY + 178} L ${frontX + 566} ${frontY + 304} C ${frontX + 452} ${frontY + 276}, ${frontX + 320} ${frontY + 286}, ${frontX + 176} ${frontY + 352} C ${frontX + 72} ${frontY + 304}, ${frontX + 38} ${frontY + 210}, ${frontX + 92} ${frontY + 94} Z" fill="${palette.sand}" />
-  <circle cx="${frontX + 508}" cy="${frontY + 132}" r="56" fill="${palette.terracotta}" opacity="0.18" />
-  <circle cx="${frontX + 148}" cy="${frontY + 172}" r="42" fill="${palette.blue}" opacity="0.16" />
+  <path d="M ${backX + 84} ${backY + 106} C ${backX + 194} ${backY + 54}, ${backX + 338} ${backY + 64}, ${backX + 424} ${backY + 158} L ${backX + 424} ${backY + 236} C ${backX + 332} ${backY + 220}, ${backX + 220} ${backY + 224}, ${backX + 118} ${backY + 204} C ${backX + 74} ${backY + 180}, ${backX + 62} ${backY + 136}, ${backX + 84} ${backY + 106} Z" fill="${palette.sand}" opacity="0.66" />
+  <path d="M ${frontX + 112} ${frontY + 88} C ${frontX + 252} ${frontY + 26}, ${frontX + 452} ${frontY + 48}, ${frontX + 556} ${frontY + 174} L ${frontX + 556} ${frontY + 314} C ${frontX + 446} ${frontY + 280}, ${frontX + 270} ${frontY + 292}, ${frontX + 132} ${frontY + 348} C ${frontX + 78} ${frontY + 286}, ${frontX + 70} ${frontY + 176}, ${frontX + 112} ${frontY + 88} Z" fill="${palette.sand}" opacity="0.76" />
 
-  <path d="M ${frontX + 344} ${frontY + 142} L ${frontX + 434} ${frontY + 84} L ${frontX + 524} ${frontY + 142} L ${frontX + 524} ${frontY + 328} L ${frontX + 344} ${frontY + 328} Z" fill="none" stroke="${palette.blue}" stroke-width="4" stroke-linejoin="round" />
-  <path d="M ${frontX + 392} ${frontY + 328} L ${frontX + 392} ${frontY + 240} L ${frontX + 478} ${frontY + 240} L ${frontX + 478} ${frontY + 328}" fill="none" stroke="${palette.blue}" stroke-width="4" stroke-linejoin="round" />
-  <rect x="${frontX + 116}" y="${frontY + 432}" width="94" height="76" rx="8" fill="${palette.terracotta}" opacity="0.66" />
-  <rect x="${frontX + 188}" y="${frontY + 392}" width="122" height="98" rx="8" fill="${palette.white}" stroke="${palette.line}" stroke-width="1.5" />
-  <path d="M ${frontX + 188} ${frontY + 424} H ${frontX + 310}" stroke="${palette.line}" stroke-width="1.5" />
-  <path d="M ${frontX + 248} ${frontY + 392} V ${frontY + 490}" stroke="${palette.line}" stroke-width="1.5" />
-
-  <rect x="${frontX + 386}" y="${frontY + 418}" width="138" height="116" rx="10" fill="${palette.white}" stroke="${palette.blue}" stroke-width="2" />
-  <path d="M ${frontX + 412} ${frontY + 454} l 10 10 l 18 -22" fill="none" stroke="${palette.sage}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M ${frontX + 440} ${frontY + 450} H ${frontX + 498}" stroke="${palette.ink}" stroke-width="2" stroke-linecap="round" />
-  <path d="M ${frontX + 412} ${frontY + 488} l 10 10 l 18 -22" fill="none" stroke="${palette.sage}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M ${frontX + 440} ${frontY + 484} H ${frontX + 498}" stroke="${palette.ink}" stroke-width="2" stroke-linecap="round" />
-
-  <circle cx="${frontX + 442}" cy="${frontY + 612}" r="16" fill="${palette.blue}" />
-  <circle cx="${frontX + 486}" cy="${frontY + 602}" r="20" fill="${palette.sage}" />
-  <circle cx="${frontX + 532}" cy="${frontY + 614}" r="16" fill="${palette.terracotta}" />
-  <path d="M ${frontX + 426} ${frontY + 658} C ${frontX + 432} ${frontY + 626}, ${frontX + 452} ${frontY + 620}, ${frontX + 466} ${frontY + 636}" fill="none" stroke="${palette.blue}" stroke-width="6" stroke-linecap="round" />
-  <path d="M ${frontX + 464} ${frontY + 660} C ${frontX + 472} ${frontY + 620}, ${frontX + 500} ${frontY + 616}, ${frontX + 516} ${frontY + 644}" fill="none" stroke="${palette.sage}" stroke-width="7" stroke-linecap="round" />
-  <path d="M ${frontX + 512} ${frontY + 658} C ${frontX + 520} ${frontY + 628}, ${frontX + 540} ${frontY + 624}, ${frontX + 550} ${frontY + 642}" fill="none" stroke="${palette.terracotta}" stroke-width="6" stroke-linecap="round" />
-
-  <path d="M ${backX + 62} ${backY + 124} C ${backX + 154} ${backY + 36}, ${backX + 328} ${backY + 52}, ${backX + 412} ${backY + 144} C ${backX + 370} ${backY + 198}, ${backX + 254} ${backY + 208}, ${backX + 126} ${backY + 196} C ${backX + 82} ${backY + 176}, ${backX + 56} ${backY + 152}, ${backX + 62} ${backY + 124} Z" fill="${palette.sand}" />
-  <circle cx="${backX + 484}" cy="${backY + 174}" r="44" fill="${palette.sage}" opacity="0.2" />
-  <rect x="${backX + 48}" y="${backY + 556}" width="126" height="96" rx="8" fill="${palette.terracotta}" opacity="0.58" />
-  <rect x="${backX + 126}" y="${backY + 508}" width="150" height="112" rx="8" fill="${palette.white}" stroke="${palette.line}" stroke-width="1.5" />
-  <path d="M ${backX + 126} ${backY + 544} H ${backX + 276}" stroke="${palette.line}" stroke-width="1.5" />
-  <path d="M ${backX + 200} ${backY + 508} V ${backY + 620}" stroke="${palette.line}" stroke-width="1.5" />
+  ${buildMovingScene({ x: backX + 58, y: backY + 488, scale: 0.66, stroke: palette.blue, strokeWidth: 4.1 })}
+  ${buildMovingScene({ x: frontX + 304, y: frontY + 104, scale: 1.02, stroke: palette.blue, strokeWidth: 4.1 })}
 
   <rect x="${barcode.x}" y="${barcode.y}" width="${barcode.width}" height="${barcode.height}" fill="${palette.white}" />
 
   ${textBlock({
     x: backTextX,
-    y: backY + 256,
+    y: backY + 252,
     width: backTextWidth,
     text: "Ein Umzug mit Kindern muss nicht chaotisch sein.",
     fontSize: 20,
@@ -224,7 +218,7 @@ function buildCoverSvg(spec) {
   })}
   ${paragraphBlock({
     x: backTextX,
-    y: backY + 304,
+    y: backY + 300,
     width: backTextWidth,
     paragraphs: backParagraphs,
     fontSize: 13.8,
@@ -249,11 +243,11 @@ function buildCoverSvg(spec) {
     family: bodyFontFamily
   })}
 
-  <rect x="${frontTextX}" y="${frontY + 668}" width="438" height="84" rx="12" fill="${palette.white}" stroke="${palette.line}" stroke-width="1.5" />
+  <rect x="${frontTextX}" y="${frontY + 668}" width="446" height="84" rx="12" fill="${palette.white}" stroke="${palette.line}" stroke-width="1.5" />
   ${textBlock({
     x: frontTextX + 20,
     y: frontY + 698,
-    width: 394,
+    width: 402,
     text: benefitText,
     fontSize: 13,
     lineHeight: 17,
@@ -340,6 +334,7 @@ async function exportPdfFromSvg(svg, outputPath, spec) {
       height: Math.ceil(spec.totalHeightIn * 120)
     }
   });
+
   await page.setContent(html, { waitUntil: "load" });
   await page.pdf({
     path: outputPath,

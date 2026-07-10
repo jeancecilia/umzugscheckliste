@@ -31,126 +31,13 @@
 }
 
 .hero-panel {
-  display: grid;
-  grid-template-columns: 1.88in 1fr;
-  gap: 0.28in;
+  display: flex;
+  flex-direction: column;
+  gap: 0.14in;
   margin-top: 0.08in;
-  min-height: 3.88in;
+  min-height: 0;
   padding: 0.28in;
   background: linear-gradient(180deg, #f5efe5 0%, #ebe1d1 100%);
-}
-
-.hero-icon {
-  position: relative;
-  min-height: 3.14in;
-  border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.42);
-}
-
-.hero-icon::before {
-  content: "";
-  position: absolute;
-  left: 0.78in;
-  top: 1.04in;
-  width: 0.03in;
-  height: 1.18in;
-  background: var(--line-strong);
-}
-
-.icon-box,
-.icon-house,
-.icon-check {
-  position: absolute;
-}
-
-.icon-box {
-  left: 0.4in;
-  bottom: 0.5in;
-  width: 0.86in;
-  height: 0.62in;
-  border: 2px solid var(--accent);
-  background: rgba(255, 255, 255, 0.36);
-}
-
-.icon-box::before {
-  content: "";
-  position: absolute;
-  left: 0.12in;
-  top: -0.2in;
-  width: 0.62in;
-  height: 0.2in;
-  border: 2px solid var(--accent);
-  border-bottom: 0;
-}
-
-.icon-house {
-  left: 0.34in;
-  top: 0.42in;
-  width: 0.98in;
-  height: 0.7in;
-  border: 2px solid var(--accent);
-  border-top: 0;
-  background: rgba(255, 255, 255, 0.32);
-}
-
-.icon-house::before {
-  content: "";
-  position: absolute;
-  left: 0.11in;
-  top: -0.38in;
-  width: 0.52in;
-  height: 0.52in;
-  border-top: 2px solid var(--accent);
-  border-left: 2px solid var(--accent);
-  transform: rotate(45deg);
-  background: transparent;
-}
-
-.icon-house::after {
-  content: "";
-  position: absolute;
-  left: 0.38in;
-  bottom: 0;
-  width: 0.16in;
-  height: 0.3in;
-  border: 2px solid var(--accent);
-  border-bottom: 0;
-}
-
-.icon-check {
-  right: 0.28in;
-  top: 1.04in;
-  width: 0.82in;
-  height: 1in;
-  border: 2px solid var(--accent);
-  border-radius: 0.08in;
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.icon-check::before,
-.icon-check::after {
-  content: "";
-  position: absolute;
-  background: var(--accent);
-}
-
-.icon-check::before {
-  left: 0.13in;
-  top: 0.31in;
-  width: 0.16in;
-  height: 0.09in;
-  background: transparent;
-  border-left: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
-  transform: rotate(-45deg);
-}
-
-.icon-check::after {
-  left: 0.34in;
-  top: 0.32in;
-  width: 0.28in;
-  height: 0.03in;
-  box-shadow: 0 0.22in 0 0 var(--accent);
 }
 
 .feature-grid,
@@ -212,8 +99,40 @@
 }
 
 .feature-card {
-  min-height: 1.14in;
+  display: grid;
+  grid-template-columns: 0.42in 1fr;
+  gap: 0.14in;
+  align-items: start;
+  min-height: 1.08in;
   background: rgba(255, 255, 255, 0.68);
+}
+
+.feature-copy {
+  min-width: 0;
+}
+
+.feature-icon-wrap,
+.divider-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--section-accent, var(--accent));
+}
+
+.feature-icon-wrap {
+  width: 0.4in;
+  height: 0.4in;
+  margin-top: 0.01in;
+}
+
+.planner-icon {
+  display: block;
+  overflow: visible;
+}
+
+.feature-icon {
+  width: 0.34in;
+  height: 0.34in;
 }
 
 .benefit-strip {
@@ -376,62 +295,18 @@
   background: rgba(255, 255, 255, 0.45);
 }
 
-.divider-emblem {
-  position: relative;
-  width: 1.3in;
-  height: 0.72in;
-  margin: 0.16in auto 0.08in;
+.divider-icon-wrap {
+  width: 1.08in;
+  height: 1.08in;
+  margin: 0.18in auto 0.04in;
+  border: 1px solid rgba(123, 113, 101, 0.28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.42);
 }
 
-.divider-box,
-.divider-check {
-  position: absolute;
-  border: 1.6px solid var(--accent);
-}
-
-.divider-box-a {
-  left: 0.08in;
-  bottom: 0.03in;
-  width: 0.42in;
-  height: 0.3in;
-}
-
-.divider-box-b {
-  right: 0.08in;
-  top: 0.03in;
-  width: 0.36in;
-  height: 0.28in;
-}
-
-.divider-check {
-  left: 0.49in;
-  top: 0.09in;
-  width: 0.28in;
-  height: 0.4in;
-  border-radius: 0.05in;
-}
-
-.divider-check::before,
-.divider-check::after {
-  content: "";
-  position: absolute;
-  background: var(--accent);
-}
-
-.divider-check::before {
-  left: 0.06in;
-  top: 0.17in;
-  width: 0.05in;
-  height: 0.13in;
-  transform: rotate(45deg);
-}
-
-.divider-check::after {
-  left: 0.11in;
-  top: 0.12in;
-  width: 0.05in;
-  height: 0.2in;
-  transform: rotate(-45deg);
+.divider-icon {
+  width: 0.62in;
+  height: 0.62in;
 }
 
 .divider-content h1,
