@@ -25,8 +25,8 @@
       "height": 1584
     },
     {
-      "page": 11,
-      "file": "page-011.png",
+      "page": 5,
+      "file": "page-005.png",
       "width": 1224,
       "height": 1584
     },
@@ -37,44 +37,62 @@
       "height": 1584
     },
     {
-      "page": 29,
-      "file": "page-029.png",
+      "page": 13,
+      "file": "page-013.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 47,
-      "file": "page-047.png",
+      "page": 30,
+      "file": "page-030.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 50,
-      "file": "page-050.png",
+      "page": 48,
+      "file": "page-048.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 71,
-      "file": "page-071.png",
+      "page": 51,
+      "file": "page-051.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 73,
-      "file": "page-073.png",
+      "page": 64,
+      "file": "page-064.png",
       "width": 1224,
       "height": 1584
     },
     {
-      "page": 79,
-      "file": "page-079.png",
+      "page": 72,
+      "file": "page-072.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 74,
+      "file": "page-074.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 80,
+      "file": "page-080.png",
       "width": 1224,
       "height": 1584
     },
     {
       "page": 81,
       "file": "page-081.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 82,
+      "file": "page-082.png",
       "width": 1224,
       "height": 1584
     },
@@ -103,8 +121,8 @@
       "height": 1584
     },
     {
-      "page": 96,
-      "file": "page-096.png",
+      "page": 94,
+      "file": "page-094.png",
       "width": 1224,
       "height": 1584
     },
@@ -115,8 +133,32 @@
       "height": 1584
     },
     {
-      "page": 106,
-      "file": "page-106.png",
+      "page": 98,
+      "file": "page-098.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 101,
+      "file": "page-101.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 102,
+      "file": "page-102.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 103,
+      "file": "page-103.png",
+      "width": 1224,
+      "height": 1584
+    },
+    {
+      "page": 107,
+      "file": "page-107.png",
       "width": 1224,
       "height": 1584
     }
@@ -131,7 +173,7 @@
     {
       "name": "front",
       "file": "cover-front.png",
-      "width": 1103,
+      "width": 1102,
       "height": 1426
     },
     {
@@ -142,20 +184,21 @@
     }
   ],
   "notesBox": {
+    "page": 6,
     "labelRect": [
-      104.83,
-      452.36,
-      144.15,
-      463.48
+      103.42,
+      443.3,
+      141.88,
+      454.17
     ],
     "sampleRegion": [
-      106.83,
-      473.48,
-      505.17,
-      573.48
+      105.42,
+      464.17,
+      506.58,
+      564.17
     ],
-    "cropFile": "page-005-notes-box-crop.png",
-    "backgroundPixelCount": 160398,
+    "cropFile": "page-006-notes-box-crop.png",
+    "backgroundPixelCount": 159192,
     "dominantColors": [
       {
         "rgb": [
@@ -163,58 +206,70 @@
           255,
           255
         ],
-        "count": 151620,
-        "ratio": 0.945274,
+        "count": 151152,
+        "ratio": 0.949495,
         "saturation": 0,
         "channelDiff": 0,
         "allowedFill": true
       },
       {
         "rgb": [
-          202,
-          194,
-          180
+          201,
+          191,
+          177
         ],
-        "count": 1596,
-        "ratio": 0.00995,
-        "saturation": 0.1089,
-        "channelDiff": 22,
+        "count": 1608,
+        "ratio": 0.010101,
+        "saturation": 0.1194,
+        "channelDiff": 24,
         "allowedFill": false
       },
       {
         "rgb": [
-          216,
-          210,
-          199
-        ],
-        "count": 798,
-        "ratio": 0.004975,
-        "saturation": 0.0787,
-        "channelDiff": 17,
-        "allowedFill": false
-      },
-      {
-        "rgb": [
-          219,
           214,
-          204
+          207,
+          196
         ],
-        "count": 798,
-        "ratio": 0.004975,
-        "saturation": 0.0685,
-        "channelDiff": 15,
+        "count": 1608,
+        "ratio": 0.010101,
+        "saturation": 0.0841,
+        "channelDiff": 18,
         "allowedFill": false
       },
       {
         "rgb": [
-          212,
-          206,
-          194
+          246,
+          244,
+          242
         ],
-        "count": 798,
-        "ratio": 0.004975,
-        "saturation": 0.0849,
-        "channelDiff": 18,
+        "count": 804,
+        "ratio": 0.005051,
+        "saturation": 0.0163,
+        "channelDiff": 4,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          237,
+          234,
+          229
+        ],
+        "count": 804,
+        "ratio": 0.005051,
+        "saturation": 0.0338,
+        "channelDiff": 8,
+        "allowedFill": false
+      },
+      {
+        "rgb": [
+          232,
+          228,
+          222
+        ],
+        "count": 804,
+        "ratio": 0.005051,
+        "saturation": 0.0431,
+        "channelDiff": 10,
         "allowedFill": false
       },
       {
@@ -223,8 +278,8 @@
           218,
           209
         ],
-        "count": 798,
-        "ratio": 0.004975,
+        "count": 804,
+        "ratio": 0.005051,
         "saturation": 0.0628,
         "channelDiff": 14,
         "allowedFill": false
@@ -232,32 +287,20 @@
       {
         "rgb": [
           205,
-          198,
-          184
+          196,
+          183
         ],
-        "count": 798,
-        "ratio": 0.004975,
-        "saturation": 0.1024,
-        "channelDiff": 21,
-        "allowedFill": false
-      },
-      {
-        "rgb": [
-          230,
-          226,
-          220
-        ],
-        "count": 798,
-        "ratio": 0.004975,
-        "saturation": 0.0435,
-        "channelDiff": 10,
+        "count": 804,
+        "ratio": 0.005051,
+        "saturation": 0.1073,
+        "channelDiff": 22,
         "allowedFill": false
       }
     ],
-    "maxSaturation": 0.1089,
-    "maxChannelDiff": 22,
+    "maxSaturation": 0.1194,
+    "maxChannelDiff": 24,
     "magentaPixelCount": 0,
     "highSaturationPixelCount": 0,
-    "allowedFillRatio": 0.945274
+    "allowedFillRatio": 0.949495
   }
 }

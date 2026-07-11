@@ -46,7 +46,13 @@ function getQaRenderPages(pages) {
     "Farbcodes nach Zimmern",
     "Umzugsunternehmen Kostenvergleich",
     "Bezahlte Rechnungen",
+    "Gesamtkosten-Auswertung",
+    "Packliste Dokumente",
     "Nachsendeauftrag",
+    "Familie & Freunde",
+    "Reinigungsplan alte Wohnung",
+    "Reinigungsplan neue Wohnung",
+    "Fotos / Dokumentationsliste",
     "Verträge kündigen / ummelden",
     "Neue Verträge einrichten",
     "Zählerstände",
@@ -57,7 +63,7 @@ function getQaRenderPages(pages) {
   const renderPages = new Set();
 
   for (const page of pages) {
-    if (page.kind === "divider" || requiredTitles.has(page.title)) {
+    if (page.kind === "divider" || page.kind === "publicationPage" || requiredTitles.has(page.title)) {
       renderPages.add(page.sequenceNumber);
     }
   }
@@ -131,6 +137,17 @@ function hasFontFamily(fonts, expectedFamily) {
 
 function findFallbackFonts(fonts) {
   return fonts.filter((font) => /timesnewroman/i.test(font));
+}
+
+function sizeMatchesExactOrTolerance(actualSize, expectedWidth, expectedHeight, tolerance = 0.001) {
+  if (!actualSize) {
+    return false;
+  }
+
+  return (
+    Math.abs(actualSize[0] - expectedWidth) <= tolerance &&
+    Math.abs(actualSize[1] - expectedHeight) <= tolerance
+  );
 }
 
 function clampChannel(value) {
@@ -316,7 +333,7 @@ print(json.dumps({
   return JSON.parse(raw);
 }
 
-function renderQaPagesAndInspectNotesBox(pdfFilePath, renderPages, coverSpec) {
+function renderQaPagesAndInspectNotesBox(pdfFilePath, renderPages, coverSpec, notesBoxPageNumber) {
   fs.rmSync(qaRenderDir, { recursive: true, force: true });
   const script = `
 import fitz, json, os, sys
@@ -328,6 +345,7 @@ pages_to_render = json.loads(sys.argv[3])
 allowed = {(250, 248, 244), (255, 255, 255)}
 cover_pdf_path = sys.argv[4]
 cover_geometry = json.loads(sys.argv[5])
+notes_box_page_number = int(sys.argv[6])
 
 os.makedirs(output_dir, exist_ok=True)
 rendered = []
@@ -395,12 +413,12 @@ for name, rect in [("front", front_rect), ("back", back_rect)]:
         "height": pix.height
     })
 
-page5 = pdf[4]
-matches = page5.search_for("HINWEISE")
+notes_page = pdf[notes_box_page_number - 1]
+matches = notes_page.search_for("HINWEISE")
 if not matches:
-    matches = page5.search_for("Hinweise")
+    matches = notes_page.search_for("Hinweise")
 if not matches:
-    words = page5.get_text("words")
+    words = notes_page.get_text("words")
     hint_words = [word for word in words if str(word[4]).upper().startswith("HINWEIS")]
     if hint_words:
         x0 = min(word[0] for word in hint_words)
@@ -409,20 +427,20 @@ if not matches:
         y1 = max(word[3] for word in hint_words)
         matches = [fitz.Rect(x0, y0, x1, y1)]
 if not matches:
-    raise RuntimeError("Notes-box label on page 5 not found.")
+    raise RuntimeError(f"Notes-box label on page {notes_box_page_number} not found.")
 
 label = matches[0]
 outer_left = max(0, label.x0 - 12)
-outer_right = min(page5.rect.width, page5.rect.width - outer_left)
+outer_right = min(notes_page.rect.width, notes_page.rect.width - outer_left)
 sample_region = fitz.Rect(
     outer_left + 14,
     label.y1 + 10,
     outer_right - 14,
-    min(page5.rect.height - 55, label.y1 + 110)
+    min(notes_page.rect.height - 55, label.y1 + 110)
 )
 
-crop_pix = page5.get_pixmap(matrix=fitz.Matrix(2, 2), clip=sample_region, colorspace=fitz.csRGB, alpha=False)
-crop_path = os.path.join(output_dir, "page-005-notes-box-crop.png")
+crop_pix = notes_page.get_pixmap(matrix=fitz.Matrix(2, 2), clip=sample_region, colorspace=fitz.csRGB, alpha=False)
+crop_path = os.path.join(output_dir, f"page-{notes_box_page_number:03d}-notes-box-crop.png")
 crop_pix.save(crop_path)
 
 samples = crop_pix.samples
@@ -469,9 +487,10 @@ print(json.dumps({
     "renderedPages": rendered,
     "coverRenders": cover_renders,
     "notesBox": {
+        "page": notes_box_page_number,
         "labelRect": [round(label.x0, 2), round(label.y0, 2), round(label.x1, 2), round(label.y1, 2)],
         "sampleRegion": [round(sample_region.x0, 2), round(sample_region.y0, 2), round(sample_region.x1, 2), round(sample_region.y1, 2)],
-        "cropFile": "page-005-notes-box-crop.png",
+        "cropFile": f"page-{notes_box_page_number:03d}-notes-box-crop.png",
         "backgroundPixelCount": background_pixels,
         "dominantColors": dominant_colors,
         "maxSaturation": round(max_saturation, 4),
@@ -492,7 +511,8 @@ print(json.dumps({
       qaRenderDir,
       JSON.stringify(renderPages),
       coverPdfPath,
-      JSON.stringify(coverSpec.geometry)
+      JSON.stringify(coverSpec.geometry),
+      String(notesBoxPageNumber)
     ],
     {
       cwd: rootDir,
@@ -550,7 +570,13 @@ function generateQaReport() {
   const interiorPdf = inspectPdf(pdfPath);
   const cover = inspectCover();
   const qaRenderPages = getQaRenderPages(pages);
-  const qaRenderData = renderQaPagesAndInspectNotesBox(pdfPath, qaRenderPages, cover.spec);
+  const notesBoxPage = pages.find((page) => page.kind === "snapshot" && page.title === "Unser Umzug auf einen Blick");
+  const qaRenderData = renderQaPagesAndInspectNotesBox(
+    pdfPath,
+    qaRenderPages,
+    cover.spec,
+    notesBoxPage ? notesBoxPage.sequenceNumber : 5
+  );
   const contentsCoverage = inspectContentsCoverage(pages);
   const interiorHasProjectFonts =
     hasFontFamily(interiorPdf.fonts, "montserrat") &&
@@ -577,17 +603,21 @@ function generateQaReport() {
   const exactPageTarget = config.book.pageTarget || pages.length;
   const plannedMatchesPdf = pages.length === interiorPdf.pageCount;
   const trimMatches =
-    interiorPdf.pageSizes.length === 1 &&
-    interiorPdf.pageSizes[0][0] === 8.5 &&
-    interiorPdf.pageSizes[0][1] === 11;
+    interiorPdf.pageSizes.length === 1 && sizeMatchesExactOrTolerance(interiorPdf.pageSizes[0], 8.5, 11);
   const coverSizeMatches =
     cover.outputPdf.pageSizes.length === 1 &&
-    cover.outputPdf.pageSizes[0][0] === Number(cover.spec.totalWidthIn.toFixed(6)) &&
-    cover.outputPdf.pageSizes[0][1] === Number(cover.spec.totalHeightIn.toFixed(6));
+    sizeMatchesExactOrTolerance(
+      cover.outputPdf.pageSizes[0],
+      Number(cover.spec.totalWidthIn.toFixed(6)),
+      Number(cover.spec.totalHeightIn.toFixed(6))
+    );
   const templateSizeMatches =
     cover.templatePdf.pageSizes.length === 1 &&
-    cover.templatePdf.pageSizes[0][0] === Number(cover.spec.totalWidthIn.toFixed(6)) &&
-    cover.templatePdf.pageSizes[0][1] === Number(cover.spec.totalHeightIn.toFixed(6));
+    sizeMatchesExactOrTolerance(
+      cover.templatePdf.pageSizes[0],
+      Number(cover.spec.totalWidthIn.toFixed(6)),
+      Number(cover.spec.totalHeightIn.toFixed(6))
+    );
 
   const report = `# QA Report
 
@@ -606,11 +636,11 @@ function generateQaReport() {
 - Sensible Formulierungen: \`${sensitiveHits.length}\`
 - Verdaechtige Innenraum-Farbtreffer im HTML/CSS: \`${interiorSourceScan.suspiciousColors.length + interiorSourceScan.suspiciousTokens.length}\`
 - Maximale gemessene Saettigung im Innen-PDF: \`${interiorPdf.maxSaturation}\`
-- Seite-5-Notes-Box dominante Farben: \`${notesBox.dominantColors
+- Notes-Box auf Seite \`${notesBox.page}\` dominante Farben: \`${notesBox.dominantColors
     .slice(0, 3)
     .map((entry) => `${entry.rgb.join("/")}:${entry.ratio}`)
     .join(", ")}\`
-- Seite-5-Notes-Box erlaubter Fuellanteil: \`${notesBox.allowedFillRatio}\`
+- Notes-Box auf Seite \`${notesBox.page}\` erlaubter Fuellanteil: \`${notesBox.allowedFillRatio}\`
 - Gerenderte QA-Seiten: \`${qaRenderData.renderedPages.map((entry) => entry.page).join(", ")}\`
 - Cover-QA-Renders: \`${qaRenderData.coverRenders.map((entry) => entry.file).join(", ")}\`
 - Verbotene *-updated.pdf-Dateien: \`${updatedPdfCopies.length}\`
@@ -659,7 +689,7 @@ ${renderList(weeklyRanges)}
           .map((entry) => `S. ${entry.page}: Anteil ${entry.ratio}, max. Saettigung ${entry.maxSaturation}`)
           .join(" | ")})`
   }
-- Seite-5-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ${
+- Seite-${notesBox.page}-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ${
     notesBoxPass
       ? "ja"
       : `nein (Diff ${notesBox.maxChannelDiff}, Saettigung ${notesBox.maxSaturation}, Magenta-Pixel ${notesBox.magentaPixelCount}, High-Sat-Pixel ${notesBox.highSaturationPixelCount})`
@@ -694,7 +724,7 @@ ${sensitiveHits.length === 0 ? "- Keine problematischen Passwort-/Zugangsdaten-H
   }
 - ${
     notesBoxPass
-      ? `Die analysierte Seite-5-Notes-Box bleibt neutral; erlaubte Fuellfarben decken ${notesBox.allowedFillRatio} des Hintergrunds ab (${[...ALLOWED_WRITING_SURFACE_COLORS].join(" | ")}).`
+      ? `Die analysierte Seite-${notesBox.page}-Notes-Box bleibt neutral; erlaubte Fuellfarben decken ${notesBox.allowedFillRatio} des Hintergrunds ab (${[...ALLOWED_WRITING_SURFACE_COLORS].join(" | ")}).`
       : renderList(
           notesBox.dominantColors.map(
             (entry) =>

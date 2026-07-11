@@ -19,11 +19,54 @@
           "text": "Zimmerweise packen, Kartons markieren und erste Nacht sowie Notfallbedarf separat planen."
         },
         {
-          "title": "Budget & Übergabe",
-          "text": "Kosten, Adressänderungen, Übergabeprotokolle und Nachbereitung an einem Ort bündeln."
+          "title": "Budget & Kosten",
+          "text": "Geplante, tatsächliche und offene Kosten verständlich zusammenhalten."
+        },
+        {
+          "title": "Adressen & Verträge",
+          "text": "Behörden, Anbieter, Schule, Kita und Rückmeldungen vollständig nachverfolgen."
+        },
+        {
+          "title": "Übergabe & Nachbereitung",
+          "text": "Zählerstände, Schlüssel, Nacharbeiten und offene Punkte sicher dokumentieren."
         }
       ],
-      "benefit": "Mit Wochenplan, Familienseiten, Packlisten, Budgetplaner, Adressänderungen und Übergabeprotokoll für einen wirklich alltagstauglichen Umzug.",
+      "benefit": "Mit Zeitplan, Familienseiten, Packlisten, Budgetplaner, Vertragsübersichten und Übergabeprotokoll für einen wirklich alltagstauglichen Umzug.",
+      "showFooter": false
+    },
+    {
+      "kind": "publicationPage",
+      "title": "Impressum & Veröffentlichungsangaben",
+      "subtitle": "Bibliografische und rechtliche Angaben zu diesem Planer",
+      "bookTitle": "Umzugscheckliste für Familien",
+      "bookSubtitle": "Der praktische Umzugsplaner für einen stressfreien Umzug mit Kindern",
+      "details": [
+        {
+          "label": "Marke / Herausgabe",
+          "text": "Planvoll Familie"
+        },
+        {
+          "label": "Copyright",
+          "text": "© 2026 Planvoll Familie. Alle Rechte vorbehalten."
+        },
+        {
+          "label": "Auflage",
+          "text": "1. Auflage, 2026"
+        },
+        {
+          "label": "Sprache / Format",
+          "text": "Deutsch, Workbook im Paperback-Format"
+        },
+        {
+          "label": "Nutzung",
+          "text": "Für den privaten Familienumzug als organisatorische Arbeitsgrundlage."
+        },
+        {
+          "label": "ISBN / Kontakt",
+          "text": "Falls verwendet, bei der Veröffentlichung ergänzen."
+        }
+      ],
+      "disclaimer": "Dieser Planer ersetzt keine rechtliche, steuerliche oder individuelle Fachberatung. Prüft Fristen, Verträge, Anmeldungen und behördliche Anforderungen immer mit euren Originalunterlagen und den jeweils zuständigen Stellen.",
       "showFooter": false
     },
     {
@@ -56,7 +99,7 @@
     {
       "kind": "howToUse",
       "title": "So nutzt ihr diesen Planer",
-      "intro": "Der Planer ist so aufgebaut, dass ihr zuerst Überblick schafft und dann Woche für Woche sicher durch den Umzug kommt.",
+      "intro": "Der Planer ist so aufgebaut, dass ihr euch zuerst einen Überblick verschafft und dann Woche für Woche sicher durch den Umzug kommt.",
       "steps": [
         "Startet mit den Kerninfos, Kontakten und Prioritäten eures Umzugs.",
         "Arbeitet danach den Zeitplan Schritt für Schritt ab und ergänzt Termine sofort.",
@@ -309,10 +352,9 @@
       "familyReminder": "Achtet darauf, dass Familienroutine und Packstress nicht komplett ineinander kippen.",
       "items": [
         "Internetvertrag ummelden oder neu abschließen",
-        "Stromanbieter informieren",
-        "Gas, Wasser und weitere Versorger prüfen",
+        "Strom-, Gas- und Wasserversorger über den Umzug informieren",
         "Hausrat- und Haftpflichtversicherung kontrollieren",
-        "Schule oder Kita über den Umzug informieren",
+        "Schule oder Kita über den Wechsel informieren und Unterlagen abstimmen",
         "Packstrategie pro Zimmer festlegen",
         "Beschriftung für Kartons testen",
         "Wichtige Möbelmaße notieren",
@@ -332,11 +374,11 @@
       "items": [
         "Nachsendeauftrag vorbereiten",
         "Ummeldung oder Meldeamt-Termin prüfen",
-        "Internet- und Stromanbieter informieren",
-        "Schule oder Kita über den Umzug informieren",
+        "Bestätigungen von Internet und Energieversorgung prüfen",
+        "Rückmeldungen von Schule oder Kita gegenprüfen",
         "Kinderbetreuung für den Umzugstag organisieren",
         "Umzugskartons beschriften",
-        "Halteverbotszone oder Parkplatz prüfen",
+        "Halteverbotszone oder Parkplatz final bestätigen",
         "Sperrmüll oder Entsorgung abstimmen",
         "Wichtige Dokumente separat sammeln",
         "Erste-Nacht-Box beginnen",
@@ -509,7 +551,7 @@
         "Müllbeutel und Putzmittel griffbereit halten",
         "Wichtige Geräte testen",
         "Erste Termine für den nächsten Tag prüfen",
-        "Kurzen Abschluss als Familie machen"
+        "Den Tag als Familie kurz gemeinsam abschließen"
       ]
     },
     {
@@ -527,7 +569,7 @@
         "Wasser am Bett bereitstellen",
         "Wecker für Schule, Kita oder Termine prüfen",
         "Kleidung für den Morgen herauslegen",
-        "Kinder auf Fragen oder Sorgen eingehen",
+        "Auf Fragen oder Sorgen der Kinder eingehen",
         "Wichtige Räume nachts sicher begehbar machen",
         "Dokumentenmappe an festen Ort legen"
       ]
@@ -542,7 +584,7 @@
       "items": [
         "Kinderzimmer weiter einrichten",
         "Schulweg oder Kita-Weg testen",
-        "Hausarzt, Apotheke und wichtige Orte sichern",
+        "Hausarzt, Apotheke und wichtige Orte recherchieren und notieren",
         "Internet, Strom und wichtige Anschlüsse prüfen",
         "Müll- und Wäscheabläufe organisieren",
         "Offene Kartons nach Priorität sortieren",
@@ -568,7 +610,7 @@
         "Rückzahlung der alten Kaution notieren",
         "Doppelmiete oder Nebenkosten prüfen",
         "Familienroutine neu bewerten",
-        "Was im neuen Zuhause noch fehlt ergänzen",
+        "Ergänzen, was im neuen Zuhause noch fehlt",
         "Nicht benötigte Restkartons aussortieren",
         "Erfahrungen für den nächsten Umzug notieren"
       ]

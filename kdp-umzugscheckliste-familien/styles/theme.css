@@ -1,13 +1,13 @@
 :root {
   --paper: #fbf7f0;
-  --panel: #efe8dc;
-  --panel-strong: #dfd5c6;
+  --panel: #eee6d8;
+  --panel-strong: #d8cdbc;
   --writing-surface: #faf8f4;
   --writing-surface-alt: #fff;
-  --line: #b6ab9d;
-  --line-strong: #7b7165;
+  --line: #ab9f90;
+  --line-strong: #675d53;
   --ink: #24211d;
-  --muted: #5c544c;
+  --muted: #4f4740;
   --accent: #746759;
 }
 
@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-  font-size: 10.2pt;
+  font-size: 10.35pt;
   color: var(--ink);
   background: #fff;
 }
@@ -39,7 +39,7 @@ p {
 
 .subtitle {
   color: var(--muted);
-  font-size: 10.4pt;
+  font-size: 10.55pt;
   line-height: 1.5;
 }
 

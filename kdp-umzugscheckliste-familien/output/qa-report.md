@@ -4,20 +4,20 @@
 - Preview-Datei: `output/umzugscheckliste-familien-interior-preview.html`
 - Cover-Datei: `output/umzugscheckliste-familien-cover.pdf`
 - QA-Renders: `output/qa-renders/`
-- Geplante Seiten aus JSON/Generator: `106`
-- Ziel-Seitenzahl aus Config: `106`
-- Tatsaechliche Innen-PDF-Seiten: `106`
+- Geplante Seiten aus JSON/Generator: `107`
+- Ziel-Seitenzahl aus Config: `107`
+- Tatsaechliche Innen-PDF-Seiten: `107`
 - Innen-PDF-Formate: `8.5 x 11 inch`
 - Leerseiten per Textpruefung: `0`
 - Leerseiten per Bildpruefung: `0`
-- Unterschiedliche Seitentypen: `17`
+- Unterschiedliche Seitentypen: `18`
 - Platzhaltertreffer: `0`
 - Sensible Formulierungen: `0`
 - Verdaechtige Innenraum-Farbtreffer im HTML/CSS: `0`
-- Maximale gemessene Saettigung im Innen-PDF: `0.225`
-- Seite-5-Notes-Box dominante Farben: `255/255/255:0.945274, 202/194/180:0.00995, 216/210/199:0.004975`
-- Seite-5-Notes-Box erlaubter Fuellanteil: `0.945274`
-- Gerenderte QA-Seiten: `1, 2, 3, 4, 11, 12, 29, 47, 50, 71, 73, 79, 81, 90, 91, 92, 93, 96, 97, 106`
+- Maximale gemessene Saettigung im Innen-PDF: `0.2222`
+- Notes-Box auf Seite `6` dominante Farben: `255/255/255:0.949495, 201/191/177:0.010101, 214/207/196:0.010101`
+- Notes-Box auf Seite `6` erlaubter Fuellanteil: `0.949495`
+- Gerenderte QA-Seiten: `1, 2, 3, 4, 5, 12, 13, 30, 48, 51, 64, 72, 74, 80, 81, 82, 90, 91, 92, 93, 94, 97, 98, 101, 102, 103, 107`
 - Cover-QA-Renders: `cover-sheet.png, cover-front.png, cover-back.png`
 - Verbotene *-updated.pdf-Dateien: `0`
 - Innen-PDF-Schriften: `AAAAAA+SourceSans3ExtraLight-Bold, BAAAAA+MontserratThin-Bold, CAAAAA+SourceSans3ExtraLight-Regular, DAAAAA+SourceSans3ExtraLight-SemiBold, EAAAAA+MontserratThin-SemiBold`
@@ -28,7 +28,7 @@
 - 12 Wochen vorher: 11 Aufgaben
 - 10 Wochen vorher: 11 Aufgaben
 - 8 Wochen vorher: 11 Aufgaben
-- 6 Wochen vorher: 12 Aufgaben
+- 6 Wochen vorher: 11 Aufgaben
 - 4 Wochen vorher: 12 Aufgaben
 - 3 Wochen vorher: 11 Aufgaben
 - 2 Wochen vorher: 11 Aufgaben
@@ -44,9 +44,9 @@
 
 ## Cover-Geometrie
 
-- Innen-Seitenzahl fuer das Cover: `106`
-- Rueckenbreite: `0.238712 inch`
-- Cover-Gesamtgroesse: `17.488712 x 11.25 inch`
+- Innen-Seitenzahl fuer das Cover: `107`
+- Rueckenbreite: `0.240964 inch`
+- Cover-Gesamtgroesse: `17.490964 x 11.25 inch`
 - Ruecken-Text aktiviert: `nein`
 
 ## Pruefungen
@@ -66,7 +66,7 @@
 - Keine offensichtlichen Times-New-Roman-Fallbacks im Cover-PDF: ja
 - Keine verdaechtigen Magenta-/Pink-/Debug-Stile im Innenraum-HTML/CSS: ja
 - Keine hochgesaettigten Farben im Innen-PDF: ja
-- Seite-5-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ja
+- Seite-6-Box "Zusatzliche Hinweise" ist neutral und einfarbig: ja
 - Keine manuellen *-updated.pdf-Dateien mehr vorhanden: ja
 - Mindestens 8 Seitentypen: ja
 - Platzhaltertext entfernt: ja
@@ -80,7 +80,7 @@
 - Keine problematischen Passwort-/Zugangsdaten-Hinweise gefunden.
 - Keine verdaechtigen Magenta-/Pink-/Debug-Tokens in styles/*.css oder dist/interior.html gefunden.
 - Keine hochgesaettigten Farbflaechen im gerenderten Innen-PDF erkannt.
-- Die analysierte Seite-5-Notes-Box bleibt neutral; erlaubte Fuellfarben decken 0.945274 des Hintergrunds ab (250,248,244 | 255,255,255).
+- Die analysierte Seite-6-Notes-Box bleibt neutral; erlaubte Fuellfarben decken 0.949495 des Hintergrunds ab (250,248,244 | 255,255,255).
 - Die PNG-QA-Renders fuer die risikoreichen Innen- und Coverseiten liegen in `output/qa-renders/`.
 - Manuelle Sichtpruefung bleibt erforderlich, auch wenn die Render-Abdeckung jetzt Titel-, Divider-, Tabellen-, Prozess- und Coverseiten umfasst.
 - KDP Previewer und eine physische Probekopie bleiben der letzte Freigabeschritt.

@@ -170,7 +170,7 @@
         "Schlafsachen",
         "Ladekabel",
         "Wäschekorb",
-        "Dokumente oder Wertsachen",
+        "Dokumente und Wertsachen separat selbst transportieren",
         "Nachtbedarf"
       ]
     },
@@ -265,10 +265,19 @@
       ]
     },
     {
-      "kind": "packlist",
+      "kind": "customTable",
       "title": "Packliste Dokumente",
       "intro": "Dokumente gehören nie in den normalen Umzugsstrom. Sie brauchen eine eigene, geschützte Transportlogik.",
-      "room": "Dokumente",
+      "calloutLabel": "Sicher transportieren",
+      "callout": "Notiert hier, wo jede Unterlagenart transportiert wird und wer sie am Umzugstag bei sich behält.",
+      "tableVariant": "document-pack-table",
+      "columns": [
+        { "label": "Unterlage", "width": "2.25in" },
+        { "label": "Mappe / Tasche / Behälter", "width": "1.8in" },
+        { "label": "Griffbereit", "width": "0.85in", "type": "checkbox", "align": "center" },
+        { "label": "Notizen", "width": "2.1in" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Ausweise",
         "Mietverträge",
@@ -277,7 +286,9 @@
         "Schul- oder Kita-Unterlagen",
         "Medizinische Unterlagen",
         "Kaution / Rechnungen / Quittungen"
-      ]
+      ],
+      "leftLabel": "Wer diese Unterlagen am Umzugstag selbst transportiert",
+      "rightLabel": "Welche Dokumente wir vor dem Umzug noch ergänzen oder kopieren"
     },
     {
       "kind": "checklist",

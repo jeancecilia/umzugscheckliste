@@ -23,6 +23,7 @@
       "intro": "Meldepflichten, Wohnungsgeberbestätigung und weitere formale Schritte sollten hier vollständig dokumentiert werden.",
       "items": [
         "Einwohnermeldeamt",
+        "Wohnungsgeberbestätigung",
         "Familienkasse / Kindergeld",
         "Finanzamt",
         "Kfz-Zulassung / Ummeldung Auto",
@@ -103,9 +104,20 @@
       ]
     },
     {
-      "kind": "addressChange",
+      "kind": "customTable",
       "title": "Familie & Freunde",
-      "intro": "Diese Seite ist für persönliche Kontakte, bei denen Adresse, Termine oder Hilfe wichtig sind.",
+      "intro": "Diese Übersicht ist für persönliche Kontakte, bei denen neue Adresse, Rückmeldung oder Hilfe besonders wichtig sind.",
+      "calloutLabel": "Persönlich",
+      "callout": "Nutzt diese Tabelle für Menschen, bei denen die reine Ummeldung nicht reicht und ihr Rückmeldung oder Absprachen festhalten wollt.",
+      "tableVariant": "personal-contacts-table",
+      "columns": [
+        { "label": "Kontakt", "width": "2.15in" },
+        { "label": "Informiert", "width": "0.8in", "type": "checkbox", "align": "center" },
+        { "label": "Neue Adresse gesendet", "width": "1.25in", "type": "checkbox", "align": "center" },
+        { "label": "Rückmeldung", "width": "1.2in" },
+        { "label": "Notizen", "width": "2in" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Großeltern",
         "Enge Freunde",
@@ -114,7 +126,9 @@
         "Notfallkontakt",
         "Schulfreunde / Eltern",
         "Weitere Kontakte"
-      ]
+      ],
+      "leftLabel": "Wen wir persönlich noch einmal ansprechen wollen",
+      "rightLabel": "Welche Rückmeldungen, Termine oder Hilfen noch offen sind"
     },
     {
       "kind": "customTable",

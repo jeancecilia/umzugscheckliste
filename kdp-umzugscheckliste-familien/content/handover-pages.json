@@ -120,9 +120,21 @@
       ]
     },
     {
-      "kind": "handover",
+      "kind": "customTable",
       "title": "Reinigungsplan alte Wohnung",
       "intro": "Ein klarer Reinigungsplan verhindert hektische Nacharbeiten kurz vor der Übergabe.",
+      "calloutLabel": "Ablauf",
+      "callout": "Haltet pro Bereich fest, was gereinigt werden muss, wer es übernimmt und welches Material noch fehlt.",
+      "tableVariant": "cleaning-plan-table",
+      "columns": [
+        { "label": "Bereich", "width": "1.35in" },
+        { "label": "Aufgabe / Umfang", "width": "2.25in" },
+        { "label": "Verantwortlich", "width": "1.1in" },
+        { "label": "Termin", "width": "0.95in" },
+        { "label": "Erledigt", "width": "0.7in", "type": "checkbox", "align": "center" },
+        { "label": "Material / Notizen", "width": "1.35in" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Küche",
         "Bad",
@@ -131,12 +143,26 @@
         "Wände / Türen",
         "Keller / Balkon",
         "Müll / Leerräumung"
-      ]
+      ],
+      "leftLabel": "Welche Reinigungsmittel oder Hilfen wir bereitlegen",
+      "rightLabel": "Was vor der Übergabe noch kontrolliert werden muss"
     },
     {
-      "kind": "handover",
+      "kind": "customTable",
       "title": "Reinigungsplan neue Wohnung",
       "intro": "Manches lässt sich vor dem Einräumen leichter reinigen. Haltet hier die wichtigsten Schritte fest.",
+      "calloutLabel": "Vorbereitung",
+      "callout": "Notiert, was ihr vor dem Auspacken reinigen, prüfen oder direkt vorbereiten möchtet.",
+      "tableVariant": "cleaning-plan-table",
+      "columns": [
+        { "label": "Bereich", "width": "1.35in" },
+        { "label": "Aufgabe / Umfang", "width": "2.25in" },
+        { "label": "Verantwortlich", "width": "1.1in" },
+        { "label": "Termin", "width": "0.95in" },
+        { "label": "Erledigt", "width": "0.7in", "type": "checkbox", "align": "center" },
+        { "label": "Material / Notizen", "width": "1.35in" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Küche",
         "Bad",
@@ -145,12 +171,26 @@
         "Fenster",
         "Sanitär / Armaturen",
         "Kinderzimmer"
-      ]
+      ],
+      "leftLabel": "Welche Vorarbeiten uns das Auspacken erleichtern",
+      "rightLabel": "Was wir vor dem Einräumen noch besorgen oder prüfen"
     },
     {
-      "kind": "handover",
+      "kind": "customTable",
       "title": "Fotos / Dokumentationsliste",
-      "intro": "Diese Seite hilft euch dabei, Bilder oder Nachweise später sauber wiederzufinden.",
+      "intro": "Diese Seite hilft euch dabei, Bilder, Dateien oder Nachweise später sauber wiederzufinden.",
+      "calloutLabel": "Nachweise",
+      "callout": "Tragt hier ein, was aufgenommen wurde, wo die Datei liegt und ob der Nachweis bereits weitergeleitet wurde.",
+      "tableVariant": "documentation-table",
+      "columns": [
+        { "label": "Aufnahme / Nachweis", "width": "2.15in" },
+        { "label": "Datum", "width": "0.9in" },
+        { "label": "Dateiname / Ordner", "width": "1.65in" },
+        { "label": "Gesichert", "width": "0.75in", "type": "checkbox", "align": "center" },
+        { "label": "Weitergeleitet an", "width": "1.3in" },
+        { "label": "Notizen", "width": "1.25in" }
+      ],
+      "minimumRows": 8,
       "items": [
         "Alte Wohnung gesamt",
         "Neue Wohnung gesamt",
@@ -159,7 +199,9 @@
         "Schlüssel",
         "Abnahme-Unterschriften",
         "Verträge / Protokolle"
-      ]
+      ],
+      "leftLabel": "Welche Nachweise wir doppelt sichern wollen",
+      "rightLabel": "An wen wir Fotos oder Protokolle noch senden müssen"
     },
     {
       "kind": "familyGuide",

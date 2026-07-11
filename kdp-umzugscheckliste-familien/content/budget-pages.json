@@ -153,19 +153,30 @@
       "rightLabel": "Offene Rückfragen zu Rechnungen oder Erstattungen"
     },
     {
-      "kind": "budget",
+      "kind": "customTable",
       "title": "Gesamtkosten-Auswertung",
-      "intro": "Zum Abschluss vergleicht ihr hier Planung und Realität, damit ihr den Überblick nicht verliert.",
+      "intro": "Zum Abschluss haltet ihr hier die wichtigsten Summen, Abweichungen und Erkenntnisse in einer passenden Auswertung fest.",
+      "calloutLabel": "Auswertung",
+      "callout": "Trennt Gesamtzahlen, offene Beträge und Lernerfahrungen klar voneinander, statt sie in Standardkostenzeilen zu pressen.",
+      "tableVariant": "budget-summary-table",
+      "columns": [
+        { "label": "Bereich", "width": "2.35in" },
+        { "label": "Wert / Status", "width": "1.55in" },
+        { "label": "Notizen", "width": "3.45in" }
+      ],
+      "minimumRows": 8,
       "items": [
-        "Geplant gesamt",
-        "Tatsächlich gesamt",
-        "Größte Abweichung",
+        "Geplante Gesamtsumme",
+        "Tatsächliche Gesamtsumme",
+        "Differenz",
+        "Größte Mehrausgabe",
         "Beste Einsparung",
-        "Offene Zahlung",
-        "Rückerstattung / Kaution",
-        "Noch nicht eingeplant",
+        "Offene Zahlungen",
+        "Erwartete Rückerstattungen",
         "Lektion für das nächste Mal"
-      ]
+      ],
+      "leftLabel": "Was wir beim nächsten Umzug früher kalkulieren würden",
+      "rightLabel": "Welche Erkenntnisse wir für die Zukunft festhalten"
     }
   ]
 }

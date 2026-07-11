@@ -240,6 +240,18 @@ function renderContentsCards(items = []) {
     .join("");
 }
 
+function renderPublicationEntries(items = []) {
+  return items
+    .map(
+      (item) => `
+        <div class="publication-entry">
+          <div class="publication-label">${escapeHtml(item.label || "")}</div>
+          <div class="publication-text">${escapeHtml(item.text || "")}</div>
+        </div>`
+    )
+    .join("");
+}
+
 function getSnapshotLineCount(label) {
   const key = normalizeLookupKey(label);
 
@@ -555,6 +567,14 @@ function renderPage(page) {
         cards: renderInfoCards(page.cards || []),
         note: escapeHtml(page.note || ""),
         metaNotes: buildInfoPageMeta(page)
+      });
+    case "publicationPage":
+      return replaceTokens(loadTemplate("publication-page.html"), {
+        ...shared,
+        bookTitle: escapeHtml(page.bookTitle || page.title || ""),
+        bookSubtitle: escapeHtml(page.bookSubtitle || ""),
+        details: renderPublicationEntries(page.details || []),
+        disclaimer: escapeHtml(page.disclaimer || "")
       });
     case "howToUse":
       return replaceTokens(loadTemplate("how-to-use-page.html"), {
